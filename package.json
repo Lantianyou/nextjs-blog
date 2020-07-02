@@ -10,19 +10,23 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "date-fns": "^2.14.0",
-    "gray-matter": "^4.0.2",
     "next": "9.3.5",
     "postcss-flexbugs-fixes": "^4.2.1",
-    "postcss-preset-env": "^6.7.0",
+    "postcss-import": "^12.0.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-syntax-highlighter": "^12.2.1",
     "remark": "^12.0.0",
-    "remark-html": "^11.0.2",
-    "tailwindcss": "^1.4.6"
+    "remark-html": "^11.0.2"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^2.3.0",
     "@types/node": "^14.0.14",
     "@types/react": "^16.9.41",
-    "typescript": "^3.9.5"
+    "gray-matter": "^4.0.2",
+    "postcss-preset-env": "^6.7.0",
+    "react-markdown": "^4.3.1",
+    "tailwindcss": "^1.4.6",
+    "typescript": "^3.9.6"
   }
 }

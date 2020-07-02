@@ -12,7 +12,7 @@ export default function Layout({
 }: {
     children: React.ReactNode
     home?: boolean
-}) {
+    }) {
     return (
         <div className={styles.container}>
             <Head>
@@ -32,9 +32,13 @@ export default function Layout({
             </Head>
             <header className={styles.header}>
                 {home && (
-                    <>
-                        <h1 className={utilStyles.heading2Xl}>{name}</h1>
-                    </>
+                    <h1 className="mb-8">
+                        <Link href="/">
+                            <a className="text-6xl font-black text-black no-underline">
+                                Blog
+                            </a>
+                        </Link>
+                    </h1>
                 )}
             </header>
             <main>{children}</main>
