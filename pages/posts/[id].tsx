@@ -4,11 +4,6 @@ import Layout from '../../components/layout'
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import Date from '../../components/date'
 import utilStyles from '../../styles/utils.module.css'
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-
-const CodeBlock = ({ language, value }) => {
-    return <SyntaxHighlighter language={language}>{value}</SyntaxHighlighter>;
-};
 
 
 export default function Post({
