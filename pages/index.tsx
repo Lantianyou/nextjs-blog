@@ -11,13 +11,13 @@ export default function Home({
     newPostsId: [string]
 }) {
     return (
-        <Layout home>
+        <Layout>
             <Head>
                 <title>{siteTitle}</title>
             </Head>
 
-            <section className="text-xl leading-normal pt-px">
-                <h2 className="leading-snug my-4 text-xl">Blog</h2>
+            <section className="text-xl leading-normal">
+                
                 <ul className="list-none p-0 m-0">
                     {newPostsId.map(id => (
                         <li className="mb-5" key={id}>

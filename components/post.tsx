@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import PostDate from "../components/PostDate"
+import Layout from "./layout"
 export const siteTitle = '兰天游'
 
 export default function Post({
@@ -13,10 +14,11 @@ export default function Post({
     date: string
 }) {
     return (
-        <div className="container max-w-xl px-4 mx-auto">
+        <Layout>
             <Head>
                 <title>{title}</title>
             </Head>
+
             <article>
                 <h1 className="text-3xl leading-tight font-extrabold my-4 tracking-tighter">{title}</h1>
                 <div className="text-gray-500">
@@ -30,6 +32,6 @@ export default function Post({
                     <a>← Back to home</a>
                 </Link>
             </div>
-        </div>
+        </Layout>
     )
 }

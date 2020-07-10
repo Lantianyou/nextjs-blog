@@ -2,7 +2,7 @@ import "../styles/tailwind.css";
 import '../styles/global.css'
 import { AppProps } from 'next/app'
 import { MDXProvider } from '@mdx-js/react'
-import CodeBlock from './CodeBlock'
+import CodeBlock from '../components/CodeBlock'
 
 const mdComponents = {
     pre: props => <div {...props} />,

@@ -1,14 +1,11 @@
 import Head from 'next/head'
-import Link from 'next/link'
-
+import Link from "next/link"
 export const siteTitle = '兰天游 Day dreamer'
 
 export default function Layout({
     children,
-    home
 }: {
     children: React.ReactNode
-    home?: boolean
 }) {
     return (
         <div className="container max-w-xl px-4 mx-auto">
@@ -27,25 +24,15 @@ export default function Layout({
                 <meta name="og:title" content={siteTitle} />
                 <meta name="twitter:card" content="summary_large_image" />
             </Head>
-            <header className="flex-col items-center">
-                {home && (
-                    <h1 className="mb-8">
-                        <Link href="/">
-                            <a className="text-6xl font-black text-black no-underline">
-                                Blog
-                            </a>
-                        </Link>
-                    </h1>
-                )}
-            </header>
-            <main>{children}</main>
-            {!home && (
-                <div className="mt-12">
+            <nav className="flex-col items-center">
+                <h2 className="mb-8">
                     <Link href="/">
-                        <a>← Back to home</a>
+                        <a className="leading-snug my-4 text-xl">Blog</a>
                     </Link>
-                </div>
-            )}
+                </h2>
+            </nav>
+
+            <main>{children}</main>
         </div>
     )
 }
