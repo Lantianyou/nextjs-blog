@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import { GetStaticProps, GetStaticPaths } from 'next'
-import Layout from '../../components/layout'
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import Date from '../../components/date'
 
@@ -15,7 +14,7 @@ export default function Post({
     }
 }) {
     return (
-        <Layout>
+        <>
             <Head>
                 <title>{postData.title}</title>
             </Head>
@@ -26,7 +25,7 @@ export default function Post({
                 </div>
                 <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
             </article>
-        </Layout>
+        </>
     )
 }
 

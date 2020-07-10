@@ -2,6 +2,7 @@ import "../styles/tailwind.css";
 import '../styles/global.css'
 import { AppProps } from 'next/app'
 import { MDXProvider } from '@mdx-js/react'
+import Layout from "../components/layout"
 
 const mdComponents = {
     h1: props => <h1 style={{ color: 'tomato' }} {...props} />
@@ -10,7 +11,9 @@ const mdComponents = {
 export default function App({ Component, pageProps }: AppProps) {
     return (
         <MDXProvider components={mdComponents}>
-            <Component {...pageProps} />
+            <Layout>
+                <Component {...pageProps} />
+            </Layout>
         </MDXProvider>
     )
 }
