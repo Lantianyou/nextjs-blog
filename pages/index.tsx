@@ -4,6 +4,9 @@ import { getNewPostsId } from '../lib/posts'
 import Link from 'next/link'
 import PostDate from '../components/PostDate'
 import { GetStaticProps } from 'next'
+import { ThemeProvider } from 'styled-components'
+import { lightTheme, darkTheme } from "../styles/theme"
+import { GlobalStyles } from '../styles/global'
 
 export default function Home({
     newPostsId
@@ -11,13 +14,12 @@ export default function Home({
     newPostsId: [string]
 }) {
     return (
+
         <Layout>
             <Head>
                 <title>{siteTitle}</title>
             </Head>
-
             <section className="text-xl leading-normal">
-                
                 <ul className="list-none p-0 m-0">
                     {newPostsId.map(id => (
                         <li className="mb-5" key={id}>
