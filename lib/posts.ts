@@ -67,3 +67,9 @@ export async function getPostData(id: string) {
         ...(matterResult.data as { date: string; title: string })
     }
 }
+
+export function getNewPostsId() {
+    const postsDirectory = path.join(process.cwd(), 'pages', 'posts')
+    const fileNames = fs.readdirSync(postsDirectory)
+    return fileNames.filter(fileName => fileName !== "[id].tsx")
+}

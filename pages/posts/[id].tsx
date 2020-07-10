@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { getAllPostIds, getPostData } from '../../lib/posts'
-import Date from '../../components/date'
+import PostDate from '../../components/PostDate'
 import Layout from "../../components/layout"
 
 
@@ -22,7 +22,7 @@ export default function Post({
             <article>
                 <h1 className="text-3xl leading-tight font-extrabold my-4 tracking-tighter">{postData.title}</h1>
                 <div className="text-gray-500">
-                    <Date dateString={postData.date} />
+                    <PostDate dateString={postData.date} />
                 </div>
                 <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
             </article>
