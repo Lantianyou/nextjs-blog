@@ -23,8 +23,9 @@ export default function Home({
       <section className="text-xl leading-normal pt-px">
         <h2 className="leading-snug my-4 text-xl">Blog</h2>
         <ul className="list-none p-0 m-0">
-          {allPostsData.map(({ id, date, title }) => (
-            <li className="mb-5" key={id}>
+          {allPostsData.map(({ id, date, title }) => {
+            console.log(id, date, title)
+            return (<li className="mb-5" key={id}>
               <Link href="/posts/[id]" as={`/posts/${id}`}>
                 <a>{title}</a>
               </Link>
@@ -33,7 +34,8 @@ export default function Home({
                 <Date dateString={date} />
               </small>
             </li>
-          ))}
+            )
+          })}
         </ul>
       </section>
     </Layout>
@@ -42,6 +44,8 @@ export default function Home({
 
 export const getStaticProps: GetStaticProps = async () => {
   const allPostsData = getSortedPostsData()
+  console.log("getStaticProps:GetStaticProps -> allPostsData", allPostsData)
+
   return {
     props: {
       allPostsData
