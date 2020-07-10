@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 
-export const siteTitle = 'Next.js Sample Website'
+export const siteTitle = '兰天游 Day dreamer'
 
 export default function Layout({
     children,

@@ -2,15 +2,17 @@ import "../styles/tailwind.css";
 import '../styles/global.css'
 import { AppProps } from 'next/app'
 import { MDXProvider } from '@mdx-js/react'
+import CodeBlock from './CodeBlock'
 
 const mdComponents = {
-    h1: props => <h1 style={{ color: 'tomato' }} {...props} />
+    pre: props => <div {...props} />,
+    code: CodeBlock
 }
 
 export default function App({ Component, pageProps }: AppProps) {
     return (
         <MDXProvider components={mdComponents}>
-                <Component {...pageProps} />
+            <Component {...pageProps} />
         </MDXProvider>
     )
 }

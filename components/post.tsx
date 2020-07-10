@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import PostDate from "../components/PostDate"
-export const siteTitle = 'Next.js Sample Website'
+export const siteTitle = '兰天游'
 
 export default function Post({
     children,
