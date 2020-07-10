@@ -4,6 +4,9 @@ module.exports = {
     './components/**/*.tsx'
   ],
   theme: {
+    container: {
+      center: true,
+    },
     extend: {},
   },
   variants: {},
