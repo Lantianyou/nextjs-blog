@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import Date from '../../components/date'
+import Layout from "../../components/layout"
 
 
 export default function Post({
@@ -14,7 +15,7 @@ export default function Post({
     }
 }) {
     return (
-        <>
+        <Layout>
             <Head>
                 <title>{postData.title}</title>
             </Head>
@@ -25,7 +26,7 @@ export default function Post({
                 </div>
                 <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
             </article>
-        </>
+        </Layout>
     )
 }
 
@@ -37,9 +38,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
     }
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
-    console.log("getStaticProps:GetStaticProps -> context", context)
-    const postData = await getPostData(context.params.id as string)
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+    const postData = await getPostData(params.id as string)
     return {
         props: {
             postData

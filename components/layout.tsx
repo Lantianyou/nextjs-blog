@@ -39,13 +39,13 @@ export default function Layout({
                 )}
             </header>
             <main>{children}</main>
-            {
+            {!home && (
                 <div className="mt-12">
                     <Link href="/">
                         <a>← Back to home</a>
                     </Link>
                 </div>
-            }
+            )}
         </div>
     )
 }
