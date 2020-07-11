@@ -3,7 +3,8 @@ import Link from "next/link"
 import { ThemeProvider } from 'styled-components'
 import { lightTheme, darkTheme } from "../styles/theme"
 import { GlobalStyles } from '../styles/global'
-import { useState } from 'react'
+import { useDarkMode } from "../lib/useDarkMode"
+import Toggle from "./Toggle"
 export const siteTitle = '兰天游 Day dreamer'
 
 export default function Layout({
@@ -11,16 +12,15 @@ export default function Layout({
 }: {
     children: React.ReactNode
 }) {
-    const [theme, setTheme] = useState('light')
-    const toggleTheme = () => {
-        if (theme === 'light') {
-            setTheme('dark');
-        } else {
-            setTheme('light');
-        }
+    const [theme, toggleTheme, componentMounted] = useDarkMode()
+    if (!componentMounted) {
+        return <div>
+            loading
+        </div>
     }
+    const themeMode = theme === 'light' ? lightTheme : darkTheme
     return (
-        <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+        <ThemeProvider theme={themeMode}>
             <GlobalStyles />
 
             <div className="container max-w-xl px-4 mx-auto">
@@ -43,7 +43,7 @@ export default function Layout({
                     <Link href="/">
                         <a className="leading-snug my-4 text-xl mb-8">Blog</a>
                     </Link>
-                    <button onClick={toggleTheme}>Toggle theme</button>
+                    <Toggle theme={theme} toggleTheme={toggleTheme} />
                 </nav>
 
                 <main>{children}</main>
