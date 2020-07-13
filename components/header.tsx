@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Toggle from "./Toggle"
 
 export default function Header() {
     return (
@@ -6,6 +7,7 @@ export default function Header() {
             <Link href="/">
                 <a className="hover:underline">Blog</a>
             </Link>
+            <Toggle />
         </h2>
     )
 }

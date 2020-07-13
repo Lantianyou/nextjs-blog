@@ -1,26 +1,24 @@
-import { ThemeProvider } from 'styled-components'
+import { Provider as ReduxProvider } from 'react-redux'
 import Meta from "./meta"
-import { lightTheme, darkTheme } from "../styles/theme"
 import { GlobalStyles } from '../styles/global'
-import { useDarkMode } from "../lib/useDarkMode"
-import Toggle from "./Toggle"
+import store from '../lib/store'
+import DarkThemeProvider from './DarkThemeProvider'
 export const siteTitle = '兰天游 Day dreamer'
 
 export default function Layout({
-    children,
+  children,
 }: {
-    children: React.ReactNode
+  children: React.ReactNode
 }) {
-    const [theme, toggleTheme] = useDarkMode()
-    const themeMode = theme === 'light' ? lightTheme : darkTheme
-    return (
-        <ThemeProvider theme={themeMode}>
-            <GlobalStyles />
-            <Meta />
-            <Toggle theme={theme} toggleTheme={toggleTheme} />
-            <div className="min-h-screen">
-                <main>{children}</main>
-            </div>
-        </ThemeProvider>
-    )
+  return (
+    <ReduxProvider store={store}>
+      <DarkThemeProvider>
+        <GlobalStyles />
+        <Meta />
+        <div className="min-h-screen">
+          <main>{children}</main>
+        </div>
+      </DarkThemeProvider>
+    </ReduxProvider>
+  )
 }

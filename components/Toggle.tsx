@@ -1,17 +1,15 @@
-import { func, string } from 'prop-types';
+import { useDispatch } from 'react-redux'
+import { TOGGLE_DARKTHEME } from '../lib/actions'
 
-const Toggle = ({ theme, toggleTheme }) => {
-    const isLight = theme === 'light';
+const Toggle = () => {
+    const dispatch = useDispatch()
     return (
-        <button onClick={toggleTheme} >
+        <button onClick={() => dispatch({ type: TOGGLE_DARKTHEME })} >
             toggle
         </button>
     );
 }
 
-Toggle.prototype = {
-    theme: string.isRequired,
-    toggleTheme: func.isRequired
-}
+
 
 export default Toggle
