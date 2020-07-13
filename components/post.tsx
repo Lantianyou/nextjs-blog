@@ -1,37 +1,42 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import PostDate from "../components/PostDate"
+import Header from "./header"
+import PostHeader from './post-header'
 import Layout from "./layout"
+import Container from './container'
 export const siteTitle = '兰天游'
 
 export default function Post({
-    children,
-    title,
-    date
+  children,
+  title,
+  date,
+  coverImage,
+  author
 }: {
-    children: React.ReactNode,
-    title: String,
-    date: string
+  children: React.ReactNode,
+  title: string,
+  date: string,
+  coverImage: string,
+  author: string
 }) {
-    return (
-        <Layout>
-            <Head>
-                <title>{title}</title>
-            </Head>
+  return (
+    <Layout>
+      <Container>
+        <Header />
+        <article>
+          <Head>
+            <title>{title}</title>
+          </Head>
+          <PostHeader title={title} date={date} coverImage={coverImage} author={author} />
+          {children}
+        </article>
 
-            <article>
-                <h1 className="text-3xl leading-tight font-extrabold my-4 tracking-tighter">{title}</h1>
-                <div className="text-gray-500">
-                    <PostDate dateString={date} />
-                </div>
-                {children}
-            </article>
-
-            <div className="my-12">
-                <Link href="/">
-                    <a>← Back to home</a>
-                </Link>
-            </div>
-        </Layout>
-    )
+        <div className="my-12">
+          <Link href="/">
+            <a>← Back to home</a>
+          </Link>
+        </div>
+      </Container>
+    </Layout>
+  )
 }

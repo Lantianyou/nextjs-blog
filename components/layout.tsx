@@ -1,6 +1,5 @@
-import Head from 'next/head'
-import Link from "next/link"
 import { ThemeProvider } from 'styled-components'
+import Meta from "./meta"
 import { lightTheme, darkTheme } from "../styles/theme"
 import { GlobalStyles } from '../styles/global'
 import { useDarkMode } from "../lib/useDarkMode"
@@ -12,40 +11,14 @@ export default function Layout({
 }: {
     children: React.ReactNode
 }) {
-    const [theme, toggleTheme, componentMounted] = useDarkMode()
-    if (!componentMounted) {
-        return <div>
-            loading
-        </div>
-    }
+    const [theme, toggleTheme] = useDarkMode()
     const themeMode = theme === 'light' ? lightTheme : darkTheme
     return (
         <ThemeProvider theme={themeMode}>
             <GlobalStyles />
-
+            <Meta />
             <div className="container max-w-xl px-4 mx-auto">
-                <Head>
-                    <link rel="icon" href="/favicon.ico" />
-                    <meta
-                        name="description"
-                        content="Learn how to build a personal website using Next.js"
-                    />
-                    <meta
-                        property="og:image"
-                        content={`https://og-image.now.sh/${encodeURI(
-                            siteTitle
-                        )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
-                    />
-                    <meta name="og:title" content={siteTitle} />
-                    <meta name="twitter:card" content="summary_large_image" />
-                </Head>
-                <nav className="flex items-center justify-between">
-                    <Link href="/">
-                        <a className="leading-snug my-4 text-xl mb-8">Blog</a>
-                    </Link>
-                    <Toggle theme={theme} toggleTheme={toggleTheme} />
-                </nav>
-
+                <Toggle theme={theme} toggleTheme={toggleTheme} />
                 <main>{children}</main>
             </div>
         </ThemeProvider>
