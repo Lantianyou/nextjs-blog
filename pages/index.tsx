@@ -37,21 +37,21 @@ export default function Home() {
 }
 
 
-export const getStaticPaths: GetStaticPaths = async () => {
-    const newPostsId = await getNewPostsId()
-    const paths = newPostsId.map(newPostId => ({
-        params: { id: newPostId }
-    }))
-    console.log("getStaticPaths:GetStaticPaths -> paths", paths)
-    return { paths, fallback: false }
-}
+// export const getStaticPaths: GetStaticPaths = async () => {
+//     const newPostsId = await getNewPostsId()
+//     const paths = newPostsId.map(newPostId => ({
+//         params: { id: newPostId }
+//     }))
+//     console.log("getStaticPaths:GetStaticPaths -> paths", paths)
+//     return { paths, fallback: false }
+// }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-    // const allPostsData = getSortedPostsData()
-    const newPostsId = getNewPostsId()
-    return {
-        props: {
-            newPostsId
-        }
-    }
-}
+// export const getStaticProps: GetStaticProps = async ({ params }) => {
+//     // const allPostsData = getSortedPostsData()
+//     const newPostsId = getNewPostsId()
+//     return {
+//         props: {
+//             newPostsId
+//         }
+//     }
+// }
