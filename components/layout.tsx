@@ -17,10 +17,8 @@ export default function Layout({
         <ThemeProvider theme={themeMode}>
             <GlobalStyles />
             <Meta />
-            <div className="container max-w-xl px-4 mx-auto">
-                <Toggle theme={theme} toggleTheme={toggleTheme} />
-                <main>{children}</main>
-            </div>
+            <Toggle theme={theme} toggleTheme={toggleTheme} />
+            <main>{children}</main>
         </ThemeProvider>
     )
 }

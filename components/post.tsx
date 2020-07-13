@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Header from "./header"
 import PostHeader from './post-header'
+import PostBody from './post-body'
 import Layout from "./layout"
 import Container from './container'
 export const siteTitle = '兰天游'
@@ -17,7 +18,10 @@ export default function Post({
   title: string,
   date: string,
   coverImage: string,
-  author: string
+  author: {
+    name: string,
+    picture: string
+  }
 }) {
   return (
     <Layout>
@@ -28,7 +32,9 @@ export default function Post({
             <title>{title}</title>
           </Head>
           <PostHeader title={title} date={date} coverImage={coverImage} author={author} />
-          {children}
+          <PostBody>
+            {children}
+          </PostBody>
         </article>
 
         <div className="my-12">
