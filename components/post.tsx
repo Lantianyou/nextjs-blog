@@ -47,7 +47,7 @@ export default function Post({
           </Link>
           <Link href={`https://twitter.com/intent/tweet?text=${title} https://youngerbobo.com/posts/time-to-build`}>
             <a className="twitter-share-button">
-              Tweet</a>
+              分享到twitter</a>
           </Link>
         </div>
       </Container>
