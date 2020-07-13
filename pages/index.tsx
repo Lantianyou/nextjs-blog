@@ -1,12 +1,10 @@
 import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layout'
+import Container from '../components/container'
+import Intro from '../components/Intro'
 import { getNewPostsId } from '../lib/posts'
 import Link from 'next/link'
-import PostDate from '../components/PostDate'
 import { GetStaticProps } from 'next'
-import { ThemeProvider } from 'styled-components'
-import { lightTheme, darkTheme } from "../styles/theme"
-import { GlobalStyles } from '../styles/global'
 
 export default function Home({
     newPostsId
@@ -14,27 +12,29 @@ export default function Home({
     newPostsId: [string]
 }) {
     return (
-
         <Layout>
             <Head>
                 <title>{siteTitle}</title>
             </Head>
-            <section className="text-xl leading-normal">
-                <ul className="list-none p-0 m-0">
-                    {newPostsId.map(id => (
-                        <li className="mb-5" key={id}>
-                            <Link href="/posts/[id]" as={`/posts/${id}`}>
-                                {/* <a>{id}</a> */}
-                                <a>此刻，创造之时</a>
-                            </Link>
-                            <br />
-                            {/* <small className="text-gray-500">
+            <Container>
+                <Intro />
+                <section className="text-xl leading-normal">
+                    <ul className="list-none p-0 m-0">
+                        {newPostsId.map(id => (
+                            <li className="mb-5" key={id}>
+                                <Link href="/posts/[id]" as={`/posts/${id}`}>
+                                    {/* <a>{id}</a> */}
+                                    <a>此刻，创造之时</a>
+                                </Link>
+                                <br />
+                                {/* <small className="text-gray-500">
                                 <PostDate dateString={date} />
                             </small> */}
-                        </li>
-                    ))}
-                </ul>
-            </section>
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+            </Container>
         </Layout>
     )
 }
