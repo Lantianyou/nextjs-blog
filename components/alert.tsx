@@ -10,21 +10,21 @@ export default function Alert({ preview }) {
       })}
     >
       <Container>
-        <div className="py-2 text-center text-sm">
+        <div>
           {preview ? (
-            <>
+            <div className="py-2 text-center text-sm">
               This is page is a preview.{' '}
               <a
                 href="/api/exit-preview"
                 className="underline hover:text-cyan duration-200 transition-colors"
               >
-                Click here
+                预览模式
               </a>{' '}
               to exit preview mode.
-            </>
+            </div>
           ) : (
               <>
-                The source code for this blog is{' '}
+                {/* The source code for this blog is{' '} */}
               </>
             )}
         </div>

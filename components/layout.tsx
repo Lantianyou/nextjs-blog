@@ -4,11 +4,14 @@ import DarkThemeProvider from './DarkThemeProvider'
 import { GlobalStyles } from '../styles/global'
 import store from '../lib/store'
 import Footer from './footer'
+import Alert from './alert'
 export const siteTitle = '兰天游 Day dreamer'
 
 export default function Layout({
+  preview,
   children,
 }: {
+  preview: boolean,
   children: React.ReactNode
 }) {
   return (
@@ -17,6 +20,7 @@ export default function Layout({
         <GlobalStyles />
         <Meta />
         <div className="min-h-screen">
+          <Alert preview={preview} />
           <main>{children}</main>
         </div>
         <Footer />
