@@ -12,18 +12,19 @@ export default function Post({
   title,
   date,
   coverImage,
-  author
+  description,
+  author,
 }: {
   children: React.ReactNode,
   title: string,
   date: string,
   coverImage: string,
+  description: string,
   author: {
     name: string,
     picture: string
   }
 }) {
-  const imagePath = `/images/${coverImage}`
   return (
     <Layout>
       <Container>
@@ -32,8 +33,8 @@ export default function Post({
           <Head>
             <title>{title}</title>
             <meta name="twitter:title" content={title} />
-            <meta name="twitter:description" content="DESCRIPTION_FOR_YOUR_PAGE" />
-            <meta name="twitter:image" content={imagePath} />
+            <meta name="twitter:description" content={description} />
+            <meta name="twitter:image" content={`https://youngerbobo.com/images/${coverImage}`} />
           </Head>
           <PostHeader title={title} date={date} coverImage={coverImage} author={author} />
           <PostBody>
