@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Router from 'next/router'
 import NProgress from 'nprogress'
-const siteTitle = '兰天游 Day dreamer'
+const siteTitle = '兰天游 最重要的事'
 
 Router.events.on('routeChangeStart', () => {
     NProgress.start();

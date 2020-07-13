@@ -17,6 +17,8 @@
     "classnames": "^2.2.6",
     "date-fns": "^2.14.0",
     "next": "9.3.5",
+    "next-compose-plugins": "^2.2.0",
+    "next-optimized-images": "^2.6.1",
     "nprogress": "^0.2.0",
     "path": "^0.12.7",
     "postcss-flexbugs-fixes": "^4.2.1",
@@ -40,6 +42,7 @@
     "postcss-preset-env": "^6.7.0",
     "svg-react-loader": "^0.4.6",
     "tailwindcss": "^1.4.6",
-    "typescript": "^3.9.6"
+    "typescript": "^3.9.6",
+    "webp-loader": "^0.6.0"
   }
 }
