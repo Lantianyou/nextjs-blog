@@ -26,6 +26,6 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/CodeBlock.js",
-    "custome.d.ts"
+    "custome.d.ts", "lib/post-title.js"
   ]
 }
