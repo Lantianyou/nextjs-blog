@@ -23,6 +23,7 @@ export default function Post({
     picture: string
   }
 }) {
+  const imagePath = `/images/${coverImage}`
   return (
     <Layout>
       <Container>
@@ -30,6 +31,9 @@ export default function Post({
         <article>
           <Head>
             <title>{title}</title>
+            <meta name="twitter:title" content={title} />
+            <meta name="twitter:description" content="DESCRIPTION_FOR_YOUR_PAGE" />
+            <meta name="twitter:image" content={imagePath} />
           </Head>
           <PostHeader title={title} date={date} coverImage={coverImage} author={author} />
           <PostBody>
