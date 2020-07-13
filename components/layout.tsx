@@ -18,7 +18,9 @@ export default function Layout({
             <GlobalStyles />
             <Meta />
             <Toggle theme={theme} toggleTheme={toggleTheme} />
-            <main>{children}</main>
+            <div className="min-h-screen">
+                <main>{children}</main>
+            </div>
         </ThemeProvider>
     )
 }
