@@ -1,5 +1,5 @@
+import Avatar from './Avatar'
 import CoverImage from './cover-image'
-import Avatar from './avatar'
 import PostTitle from './post-title'
 import DateFormater from './post-date'
 
