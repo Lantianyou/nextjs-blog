@@ -1,12 +1,6 @@
 import { GetStaticProps, GetStaticPaths } from 'next'
-import path from "path"
-import fs from 'fs'
-import matter from 'gray-matter'
-import remark from 'remark'
-import html from 'remark-html'
 import Post from '../../components/post'
-
-const blogsDirectory = path.join(process.cwd(), 'blogs')
+import { getBlogsSlug, getBlogPostAndMetadata, blogsDirectory } from '../../lib/getBlogs'
 
 const Blog = ({ htmlString, data }) => {
   const { author, date, title, cover, description } = data
@@ -20,33 +14,22 @@ const Blog = ({ htmlString, data }) => {
 
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const fileName = path.join(blogsDirectory, params.slug + '.md')
-  const markdownWithMetaData = fs.readFileSync(fileName, 'utf-8').toString()
-  const parsedMarkdown = matter(markdownWithMetaData)
-  const processedContent = await remark()
-    .use(html)
-    .process(parsedMarkdown.content)
-  const htmlString = processedContent.toString()
-
+  const postAndMetadata = await getBlogPostAndMetadata(params.slug)
   return {
-    props: {
-      htmlString,
-      data: parsedMarkdown.data
-    }
+    props: postAndMetadata
   }
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  let mdFiles = fs.readdirSync(blogsDirectory)
-  const paths = mdFiles
-    .filter(mdFile => mdFile.includes('.md'))
-    .map(mdFile => mdFile.replace('.md', ''))
-    .map(mdFile => ({
+  const slugs = getBlogsSlug()
+  const paths = slugs.map(slug => (
+    {
       params: {
-        slug: mdFile
+        slug
       }
-    }))
-
+    }
+  ))
+  console.log("getStaticPaths:GetStaticPaths -> paths", paths)
   return { paths, fallback: false }
 }
 
