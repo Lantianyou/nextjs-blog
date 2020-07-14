@@ -5,7 +5,7 @@ import { GlobalStyles } from '../styles/global'
 import store from '../lib/store'
 import Footer from './footer'
 import Alert from './alert'
-export const siteTitle = '兰天游 Day dreamer'
+export const siteTitle = '兰天游 最重要的事'
 
 export default function Layout({
   preview,

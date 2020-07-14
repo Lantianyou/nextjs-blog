@@ -10,7 +10,6 @@ import posts from '../lib/post-title'
 import PostDate from '../components/post-date'
 
 export default function Home({ blogMetadata }) {
-    console.log("Home -> blogSlugs", blogMetadata)
 
     return (
         <Layout preview={false}>

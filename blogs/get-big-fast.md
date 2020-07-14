@@ -1,5 +1,5 @@
 ---
-title: '此刻，创造之时'
+title: 快速垄断
 cover: 'skyscraper.jpg'
 date: '2020-07-09'
 author:
