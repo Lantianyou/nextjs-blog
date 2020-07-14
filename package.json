@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next export"
   },
   "dependencies": {
     "@mapbox/rehype-prism": "^0.5.0",
@@ -30,8 +31,10 @@
     "redux": "^4.0.5",
     "rehype-highlight": "^4.0.0",
     "remark": "^12.0.0",
+    "remark-emoji": "^2.1.0",
     "remark-highlight.js": "^6.0.0",
     "remark-html": "^11.0.2",
+    "remark-images": "^2.0.0",
     "simple-functional-loader": "^1.2.1",
     "styled-components": "^5.1.1",
     "to-vfile": "^6.1.0",
