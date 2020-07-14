@@ -1,8 +1,5 @@
-const rehypePrism = require('@mapbox/rehype-prism')
 const withPlugins = require('next-compose-plugins')
 const optimizedImages = require('next-optimized-images')
-
-
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
 })
@@ -37,9 +34,6 @@ module.exports = withPlugins([
   }],
   [withMDX, {
     pageExtensions: ['ts', 'tsx', 'mdx'],
-    options: {
-      rehypePlugins: [rehypePrism],
-    },
     loaders: [
       {
         test: /\.(jpe?g|png)$/i,

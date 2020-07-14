@@ -25,7 +25,6 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "pages/CodeBlock.js",
-    "custome.d.ts", "lib/post-title.js"
+    "custome.d.ts"
   ]
 }
