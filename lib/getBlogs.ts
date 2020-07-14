@@ -2,7 +2,15 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import remark from 'remark'
-import html from 'remark-html'
+import remark2rehype from 'remark-rehype'
+import markdown from 'remark-parse'
+import remarkSlug from 'remark-slug'
+import toc from 'remark-toc'
+import stringify from 'rehype-stringify'
+import highlight from 'rehype-highlight'
+
+// 对Markdown进行再parse，使得markdown可以带有html元素
+import raw from 'rehype-raw'
 
 export const blogsDirectory = path.join(process.cwd(), 'blogs')
 
@@ -36,8 +44,15 @@ export const getBlogPostAndMetadata = async (slug) => {
     const markdownWithMetaData = fs.readFileSync(fileDir, 'utf-8').toString()
     const parsedMarkdown = matter(markdownWithMetaData)
 
+    // 显示Markdown需要Markdown parser和HTML stringifier
+    // 似乎被卡在CSS上
     const processedContent = await remark()
-        .use(html)
+        .use(markdown)
+        .use(remarkSlug)
+        .use(toc)
+        .use(remark2rehype, { allowDangerousHtml: true })
+        .use(stringify)
+        .use(highlight)
         .process(parsedMarkdown.content)
     const htmlString = processedContent.toString()
 

@@ -29,7 +29,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
       }
     }
   ))
-  console.log("getStaticPaths:GetStaticPaths -> paths", paths)
   return { paths, fallback: false }
 }
 
