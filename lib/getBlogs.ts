@@ -27,9 +27,12 @@ const getBlogMetadata = (slug) => {
     const markdownWithMetaData = fs.readFileSync(fileDir, 'utf-8').toString()
     const parsedMarkdown = matter(markdownWithMetaData)
     const meta = {
-        id: slug,
+        slug: slug,
         title: parsedMarkdown.data.title,
-        date: parsedMarkdown.data.date
+        date: parsedMarkdown.data.date,
+        author: parsedMarkdown.data.author,
+        coverImage: parsedMarkdown.data.cover,
+        excerpt: parsedMarkdown.data.description
     }
     return meta
 }
