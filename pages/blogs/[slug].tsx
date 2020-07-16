@@ -3,10 +3,10 @@ import Post from '../../components/post'
 import { getBlogsSlug, getBlogPostAndMetadata, blogsDirectory } from '../../lib/getBlogs'
 
 const Blog = ({ htmlString, data }) => {
-  const { author, date, title, cover, description } = data
+  const { author, date, title, coverImage, description } = data
   return (
     <>
-      <Post author={author} title={title} date={date} coverImage={cover} description={description}>
+      <Post author={author} title={title} date={date} coverImage={coverImage} description={description}>
         <div dangerouslySetInnerHTML={{ __html: htmlString }} />
       </Post>
     </>)

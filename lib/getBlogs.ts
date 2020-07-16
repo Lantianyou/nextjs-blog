@@ -10,7 +10,7 @@ import stringify from 'rehype-stringify'
 import highlight from 'rehype-highlight'
 
 // 对Markdown进行再parse，使得markdown可以带有html元素
-import raw from 'rehype-raw'
+// import raw from 'rehype-raw'
 
 export const blogsDirectory = path.join(process.cwd(), 'blogs')
 
@@ -28,11 +28,12 @@ const getBlogMetadata = (slug) => {
     const parsedMarkdown = matter(markdownWithMetaData)
     const meta = {
         slug: slug,
-        title: parsedMarkdown.data.title,
-        date: parsedMarkdown.data.date,
-        author: parsedMarkdown.data.author,
-        coverImage: parsedMarkdown.data.cover,
-        excerpt: parsedMarkdown.data.description
+        ...parsedMarkdown.data,
+        // title: parsedMarkdown.data.title,
+        // date: parsedMarkdown.data.date,
+        // author: parsedMarkdown.data.author,
+        // coverImage: parsedMarkdown.data.cover,
+        // excerpt: parsedMarkdown.data.description
     }
     return meta
 }
