@@ -5,7 +5,7 @@ date: '2020-07-15'
 author:
   name: '兰天游'    
   picture: ''
-description: ''
+excerpt: ''
 ---
 
 肯尼迪总统对美国新闻与出版协会演讲

@@ -5,7 +5,7 @@ date: '2020-07-09'
 author:
   name: '兰天游'    
   picture: ''
-description: ''
+excerpt: ''
 ---
 
 本文发表于华尔街日报，3年前，雷曼兄弟宣告破产
