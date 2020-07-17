@@ -1,6 +1,6 @@
 ---
 title: '秘密社会'
-coverImage: 'kennedy.jpeg'
+coverImage: 'kennedy.webp'
 date: '2020-07-15'
 author:
   name: '兰天游'    

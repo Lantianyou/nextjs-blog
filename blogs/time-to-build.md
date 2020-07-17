@@ -1,6 +1,6 @@
 ---
 title: '此刻，创造之时'
-coverImage: 'skyscraper.jpg'
+coverImage: 'skyscraper.webp'
 date: '2020-07-09'
 author:
   name: '兰天游'    
