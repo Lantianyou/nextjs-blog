@@ -1,7 +1,6 @@
 const withPlugins = require('next-compose-plugins')
 const optimizedImages = require('next-optimized-images')
-const images = require('remark-images')
-const emoji = require('remark-emoji')
+const path = require("path")
 
 
 const withMDX = require('@next/mdx')({
@@ -16,7 +15,7 @@ module.exports = withPlugins([
     handleImages: ['jpeg', 'png', 'svg', 'webp', 'gif'],
     removeOriginalExtension: false,
     optimizeImages: true,
-    optimizeImagesInDev: false,
+    optimizeImagesInDev: true,
     mozjpeg: {
       quality: 80,
     },

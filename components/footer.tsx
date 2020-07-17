@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import Container from './container'
-import Icon from 'svg-react-loader?name=Icon!../public/images/twitter.svg';
 
 
 export default function Footer() {
