@@ -23,10 +23,10 @@ module.exports = withPlugins([
       optimizationLevel: 3,
     },
     pngquant: false,
-    gifsicle: {
-      interlaced: true,
-      optimizationLevel: 3,
-    },
+    // gifsicle: {
+    //   interlaced: true,
+    //   optimizationLevel: 3,
+    // },
     svgo: {
       // enable/disable svgo plugins here
     },
