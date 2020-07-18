@@ -48,11 +48,12 @@ export const getBlogPostAndMetadata = async (slug) => {
     const processedContent = await remark()
         .use(markdown)
         .use(remarkSlug)
-        .use(toc)
+        .use(toc, { heading: '目录' })
         .use(remark2rehype, { allowDangerousHtml: true })
         .use(stringify)
         .use(highlight)
         .process(parsedMarkdown.content)
+
     const htmlString = processedContent.toString()
 
     return {

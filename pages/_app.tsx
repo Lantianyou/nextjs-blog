@@ -1,5 +1,6 @@
 import "../styles/tailwind.css";
 import '../styles/global.css'
+import '../styles/github-markdown.css'
 import { AppProps } from 'next/app'
 import { MDXProvider } from '@mdx-js/react'
 import CodeBlock from '../components/CodeBlock'

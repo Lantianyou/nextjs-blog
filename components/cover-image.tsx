@@ -4,7 +4,6 @@ import cn from 'classname'
 export default function CoverImage({ title, src, slug }) {
     const image = (
         <>
-            <img className="blur-image" src={require(`../images/${src}`)} />
             <img src={require(`../images/${src}`)}
                 alt={`Cover Image for ${title}`}
                 className={cn('shadow-small', {
