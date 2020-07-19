@@ -1,6 +1,8 @@
 ---
 title: '养老金：美国政府200万亿美元债务'
-coverImage: ''
+cover:
+  image: ''
+  description: ''
 date: '2020-07-09'
 author:
   name: '兰天游'    

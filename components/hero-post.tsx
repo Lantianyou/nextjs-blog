@@ -5,16 +5,17 @@ import Link from 'next/link'
 
 export default function HeroPost({
     title,
-    coverImage,
+    cover,
     date,
     excerpt,
     author,
     slug,
 }) {
+    const { image, description } = cover
     return (
         <section>
             <div className="mb-8 md:mb-16">
-                <CoverImage title={title} src={coverImage} slug={slug} />
+                <CoverImage title={title} src={image} description={description} slug={slug} />
             </div>
             <div className="md:grid md:grid-cols-2 md:col-gap-16 lg:col-gap-8 mb-20 md:mb-28">
                 <div>

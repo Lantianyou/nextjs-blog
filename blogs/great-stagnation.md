@@ -1,6 +1,8 @@
 ---
 title: 大停滞
-coverImage: 'supersonic.jpg'
+cover:
+  image: 'supersonic.jpg'
+  description: '超音速飞机'
 date: '2020-07-09'
 author:
   name: '兰天游'    

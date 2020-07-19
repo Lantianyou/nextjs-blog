@@ -1,6 +1,8 @@
 ---
 title: '长期停滞'
-coverImage: 'stock.jpg'
+cover:
+  image: 'stock.jpg'
+  description: ''
 date: '2020-07-18'
 author:
   name: '兰天游'    

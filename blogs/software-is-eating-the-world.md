@@ -1,6 +1,8 @@
 ---
 title: 为什么软件正在吞噬整个世界
-coverImage: 'software.jpg'
+cover:
+  image: 'software.jpg'
+  description: ''
 date: '2020-07-09'
 author:
   name: '兰天游'    

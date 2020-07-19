@@ -20,7 +20,7 @@ export default function Home({ blogMetadata }) {
                 {heroPost &&
                     <HeroPost
                         title={heroPost.title}
-                        coverImage={heroPost.coverImage}
+                        cover={heroPost.cover}
                         date={heroPost.date}
                         author={heroPost.author}
                         slug={heroPost.slug}
