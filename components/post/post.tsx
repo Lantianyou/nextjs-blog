@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import Header from "./header"
+import Header from "components/header"
 import PostHeader from './post-header'
 import PostBody from './post-body'
-import Layout from "./layout"
-import Container from './container'
+import Layout from "components/layout"
+import Container from 'components/container'
 export const siteTitle = '兰天游'
 
 export default function Post({
@@ -39,7 +39,7 @@ export default function Post({
             <meta name="twitter:description" content={excerpt} />
             <meta name="twitter:image" content={`https://youngerbobo.com/images/${cover.image}`} />
           </Head>
-          <PostHeader title={title} date={date} cover={cover} author={author} />
+          <PostHeader title={title} date={date} cover={cover} author={author} slug=''/>
           <PostBody>
             {children}
           </PostBody>

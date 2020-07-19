@@ -4,8 +4,8 @@ import Layout, { siteTitle } from '../components/layout'
 import Container from '../components/container'
 import Intro from '../components/Intro'
 import { getBlogsMetadata } from '../lib/getBlogs'
-import HeroPost from '../components/hero-post'
-import MorePosts from '../components/more-posts'
+import HeroPost from 'components/post/hero-post'
+import MorePosts from 'components/post/more-posts'
 
 export default function Home({ blogMetadata }) {
     const heroPost = blogMetadata[0]
