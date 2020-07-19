@@ -26,7 +26,7 @@ export default function Post({
   }
 }) {
   return (
-    <Layout preview={false}>
+    <Layout preview={true}>
       <Container>
         <Header />
         <article>

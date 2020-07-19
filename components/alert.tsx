@@ -15,10 +15,10 @@ export default function Alert({ preview }) {
             <div className="py-2 text-center text-sm">
               This is page is a preview.{' '}
               <a
-                href="/api/exit-preview"
+                href="/about"
                 className="underline hover:text-cyan duration-200 transition-colors"
               >
-                预览模式
+                应届生——正在找工作
               </a>{' '}
               to exit preview mode.
             </div>

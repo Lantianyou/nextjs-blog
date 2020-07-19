@@ -1,5 +1,7 @@
+import styles from '../styles/github-markdown.module.css'
+import cn from 'classnames'
 export default function PostBody({ children }) {
-    return (<div className='max-w-2xl mx-auto markdown-body'>
+    return (<div className={cn('max-w-2xl', 'mx-auto', 'markdown-body', styles['markdown-body'])}>
         {children}
-    </div>)
+    </div >)
 }

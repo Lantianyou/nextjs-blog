@@ -1,6 +1,6 @@
 import { GetStaticProps, GetStaticPaths } from 'next'
 import Post from '../../components/post'
-import { getBlogsSlug, getBlogPostAndMetadata, blogsDirectory } from '../../lib/getBlogs'
+import { getBlogsSlug, getBlogPostAndMetadata } from '../../lib/getBlogs'
 
 const Blog = ({ htmlString, data }) => {
   const { author, date, title, coverImage, excerpt } = data
