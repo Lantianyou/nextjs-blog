@@ -1,4 +1,3 @@
-import Avatar from 'components/Avatar';
 import PostDate from './post-date';
 import CoverImage from './cover-image'
 import Link from 'next/link'
