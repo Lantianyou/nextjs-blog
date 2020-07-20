@@ -47,13 +47,12 @@ export default function Post({
           </PostBody>
         </article>
         <div className="my-12">
-          <Link href="/">
+          <Link href="/" as='/'>
             <a>← Back to home</a>
           </Link>
-          <Link href={`https://twitter.com/intent/tweet?text=${title} https://youngerbobo.com/blogs/time-to-build`}>
-            <a className="twitter-share-button">
-              分享到twitter</a>
-          </Link>
+          <a className="twitter-share-button" href={`https://twitter.com/intent/tweet?text=${title} https://youngerbobo.com/blogs/${slug}`}>
+            分享到twitter
+          </a>
         </div>
       </Container>
     </Layout >

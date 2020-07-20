@@ -6,7 +6,7 @@ export default function PostHeader({ title, cover, date, author, slug }) {
   const { image, description } = cover
   return (
     <>
-      <div className="mb-8 md:mb-16 -mx-5 sm:mx-0">
+      <div className="md:mb-4 -mx-5 sm:mx-0">
         <CoverImage title={title} src={image} slug={slug} description={description} />
       </div>
       <PostTitle>
