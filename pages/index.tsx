@@ -16,7 +16,7 @@ export default function Home({ blogMetadata }) {
             <Head>
                 <title>{siteTitle}</title>
             </Head>
-            <HeaderImage />
+        {/* <HeaderImage /> */}
             <Container>
                 {/* <Intro /> */}
                 {heroPost &&

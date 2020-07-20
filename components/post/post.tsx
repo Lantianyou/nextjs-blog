@@ -34,7 +34,7 @@ export default function Post({
 }) {
   return (
     <Layout preview={true}>
-      <HeaderImage />
+      {/* <HeaderImage /> */}
       <Container>
 
         <article className='relative'>
