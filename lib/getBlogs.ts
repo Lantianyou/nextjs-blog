@@ -78,17 +78,3 @@ interface BlogMetadata {
     }
     excerpt: string
 }
-
-interface MetaData {
-    title: string
-    cover: {
-        image: string
-        description: string
-    }
-    date: string
-    author: {
-        name: string
-        picture: string
-    }
-    excerpt: string
-}

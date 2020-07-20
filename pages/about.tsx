@@ -1,13 +1,26 @@
-import cn from 'classnames'
-import Container from 'components/container'
-import styles from './about.module.css'
+import Head from 'next/head';
 import Mail from 'components/icons/mail'
 import Call from 'components/icons/call'
 
 export default function About() {
   return (
-    <Container>
-      <article className={cn('redume', 'max-w-2xl', 'p-6', 'mx-auto', 'bg-white', 'page', 'max-w-a4', 'xsm:p-8', 'sm:p-9', 'md:p-16', styles.resume)} >
+    <>
+      <article className='resume max-w-2xl p-6 mx-auto max-w-a4 xsm:p-8 sm:p-9 md:p-16'  >
+        <style jsx>{`
+        @media print {
+          body {
+            width: 21cm;
+            height: 29.7cm;
+          } 
+        }
+
+        @page {
+          padding: 0;
+          margin: 0cm;
+          size: A4 portrait;
+        }
+      
+      `}</style>
         <header className="flex-col items-center mb-8 md:mb-11">
           <h1 className="text-5xl font-semibold ">
             兰天游
@@ -53,11 +66,6 @@ export default function About() {
                 >
                   Go
                 </li>
-                <li
-                  className="px-3 mr-1.5 mt-1.5 text-base  print:bg-white print:border-inset bg-gray-200"
-                >
-                  Node
-                </li>
               </ul>
             </section>
           </div>
@@ -81,15 +89,8 @@ export default function About() {
                   独立开发了一个电商网站具有注册，登陆，创建删除商品，购买支付等功能。通过GraphQL而不是REST实现前后端通信。
                 </p>
               </header>
-
-              <p className="pl-7 mt-2 text-md  leading-normal">
-                前端: Nextjs & GraphQL
-              </p>
               <p className="mt-2 text-md  leading-normal">
                 利用Next.JS 实现了全局布局设计，让导航栏显示加载时进度条，利用CSS实现购物车的折叠和弹出，对各个React Component用Jest简单测试，主要难点在于全部商品页的Pagination
-              </p>
-              <p className="pl-7 mt-2 text-md  leading-normal">
-                后端: GraphQL Yoga & Prisma
               </p>
               <p className="mt-2 text-md  leading-normal">
                 独立设计GraphQL schema以便前后端分离开发，利用Stripe实现支付，整个数据库用Docker容器化
@@ -143,6 +144,7 @@ export default function About() {
             </section>
           </div>
         </section>
-      </article>
-    </Container >)
+      </article >
+    </>
+  )
 }
