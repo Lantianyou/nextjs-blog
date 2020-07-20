@@ -1,6 +1,6 @@
 import cn from 'classnames'
-import Container from '../components/container'
-import styles from '../styles/about.module.css'
+import Container from 'components/container'
+import styles from './about.module.css'
 import Mail from 'components/icons/mail'
 import Call from 'components/icons/call'
 
@@ -19,13 +19,13 @@ export default function About() {
               <ul>
                 <li className="mt-1.5 leading-normal  pl-7 text-md">
                   <span className='inline-block'>
-                  <Mail color='rgba(117, 117, 117, 1)' size={30} className='inline-block'/>
+                    <Mail color='rgba(117, 117, 117, 1)' size={30} />
                   </span>
                   dtlantianyou@gmail.com
                 </li>
                 <li className="mt-1.5 leading-normal  pl-7 text-md">
                   <span className='inline-block'>
-                  <Call color='rgba(117, 117, 117, 1)' size={30} className='inline-block'/>
+                    <Call color='rgba(117, 117, 117, 1)' size={30} />
                   </span>
                   151 1078 5777
                 </li>
