@@ -17,7 +17,7 @@ export default function Alert({ preview }) {
                 href="/about"
                 className="underline hover:text-cyan duration-200 transition-colors"
               >
-                应届生——正在找工作
+                正在找工作
               </a>{' '}
             </div>
           ) : (

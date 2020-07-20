@@ -6,6 +6,7 @@ import Intro from '../components/Intro'
 import { getBlogsMetadata } from '../lib/getBlogs'
 import HeroPost from 'components/post/hero-post'
 import MorePosts from 'components/post/more-posts'
+import HeaderImage from 'components/header-image'
 
 export default function Home({ blogMetadata }) {
     const heroPost = blogMetadata[0]
@@ -15,8 +16,9 @@ export default function Home({ blogMetadata }) {
             <Head>
                 <title>{siteTitle}</title>
             </Head>
+            <HeaderImage />
             <Container>
-                <Intro />
+                {/* <Intro /> */}
                 {heroPost &&
                     <HeroPost
                         title={heroPost.title}

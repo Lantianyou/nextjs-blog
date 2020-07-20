@@ -5,7 +5,9 @@ import PostHeader from './post-header'
 import PostBody from './post-body'
 import Layout from "components/layout"
 import Container from 'components/container'
+import HeaderImage from 'components/header-image'
 export const siteTitle = '兰天游'
+
 
 export default function Post({
   children,
@@ -32,9 +34,10 @@ export default function Post({
 }) {
   return (
     <Layout preview={true}>
+      <HeaderImage />
       <Container>
-        <Header />
-        <article>
+
+        <article className='relative'>
           <Head>
             <title>{title}</title>
             <meta name="twitter:title" content={title} />
