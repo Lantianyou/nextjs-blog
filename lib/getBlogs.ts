@@ -35,7 +35,8 @@ const getBlogMetadata = (slug) => {
 
 export const getBlogsMetadata = () => {
     const blogs = getBlogsSlug()
-    return blogs.map(blog => getBlogMetadata(blog))
+    return blogs
+        .map(blog => getBlogMetadata(blog))
 }
 
 export const getBlogPostAndMetadata = async (slug) => {

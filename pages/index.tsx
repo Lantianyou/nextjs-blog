@@ -35,6 +35,7 @@ export default function Home({ blogMetadata }) {
 
 export const getStaticProps: GetStaticProps = async () => {
     const blogMetadata = getBlogsMetadata()
+    blogMetadata.sort((a, b) => a.date > b.date ? -1 : 1)
     return {
         props: {
             blogMetadata
