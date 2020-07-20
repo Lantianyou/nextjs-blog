@@ -22,21 +22,22 @@ export const getBlogsSlug = () => {
         .map(fileName => fileName.replace('.md', ''))
 }
 
-const getBlogMetadata = (slug) => {
+const getBlogMetadata = (slug): BlogMetadata => {
     const fileDir = path.join(blogsDirectory, slug + '.md')
     const markdownWithMetaData = fs.readFileSync(fileDir, 'utf-8').toString()
-    const parsedMarkdown = matter(markdownWithMetaData)
-    const meta = {
-        slug: slug,
-        ...parsedMarkdown.data,
+    const { data } = matter(markdownWithMetaData)
+
+    let meta = {
+        slug,
+        ...data,
     }
-    return meta
+
+    return meta as BlogMetadata
 }
 
-export const getBlogsMetadata = () => {
+export const getBlogsMetadata = (): BlogMetadata[] => {
     const blogs = getBlogsSlug()
-    return blogs
-        .map(blog => getBlogMetadata(blog))
+    return blogs.map(blog => getBlogMetadata(blog))
 }
 
 export const getBlogPostAndMetadata = async (slug) => {
@@ -61,4 +62,33 @@ export const getBlogPostAndMetadata = async (slug) => {
         htmlString,
         data: parsedMarkdown.data
     }
+}
+
+interface BlogMetadata {
+    slug: string
+    title: string
+    cover: {
+        image: string
+        description: string
+    }
+    date: string
+    author: {
+        name: string
+        picture: string
+    }
+    excerpt: string
+}
+
+interface MetaData {
+    title: string
+    cover: {
+        image: string
+        description: string
+    }
+    date: string
+    author: {
+        name: string
+        picture: string
+    }
+    excerpt: string
 }
