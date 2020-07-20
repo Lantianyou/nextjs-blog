@@ -13,7 +13,7 @@ export default function CoverImage({ title, src, slug, description }) {
                     'hover:shadow-medium transition-shadow duration-200': slug,
                 })} />
             <figcaption>
-                <span style={{ fontSize: '0.875rem', margin: '0.125rem 0', color: '#666' }}>{description}</span>
+                <span className='text-sm' style={{ margin: '0.125rem 0', color: '#666' }}>{description}</span>
             </figcaption>
         </div>
     )

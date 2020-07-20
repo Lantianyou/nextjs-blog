@@ -14,10 +14,10 @@ const Blog = ({ htmlString, data, slug }) => {
 
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const postAndMetadata = await getBlogPostAndMetadata(params.slug)
-  postAndMetadata['slug'] = params.slug
+  const { slug } = params
+  const postAndMetadata = await getBlogPostAndMetadata(slug)
   return {
-    props: postAndMetadata
+    props: { ...postAndMetadata, slug }
   }
 }
 
