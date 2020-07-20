@@ -9,7 +9,7 @@ export default function PostHeader({ title, cover, date, author, slug }) {
       <div className="md:mb-4 -mx-5 sm:mx-0">
         <CoverImage title={title} src={image} slug={slug} description={description} />
       </div>
-      <PostTitle>
+      <PostTitle >
         {title}
       </PostTitle>
       <div style={{ color: '#666', fontSize: '0.6875rem' }}>
