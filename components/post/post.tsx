@@ -14,6 +14,7 @@ export default function Post({
   cover,
   excerpt,
   author,
+  slug
 }: {
   children: React.ReactNode,
   title: string,
@@ -26,7 +27,8 @@ export default function Post({
   author: {
     name: string,
     picture: string
-  }
+  },
+  slug: string
 }) {
   return (
     <Layout preview={true}>
@@ -39,7 +41,7 @@ export default function Post({
             <meta name="twitter:description" content={excerpt} />
             <meta name="twitter:image" content={`https://youngerbobo.com/images/${cover.image}`} />
           </Head>
-          <PostHeader title={title} date={date} cover={cover} author={author} slug=''/>
+          <PostHeader title={title} date={date} cover={cover} author={author} slug={slug} />
           <PostBody>
             {children}
           </PostBody>

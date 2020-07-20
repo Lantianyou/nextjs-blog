@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Avatar from 'components/Avatar'
 import CoverImage from './cover-image'
 import PostDate from './post-date'
 
@@ -30,7 +29,6 @@ export default function HeroPost({
                 </div>
                 <div>
                     <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-                    <Avatar name={author.name} picture={author.picture} />
                 </div>
             </div>
         </section>

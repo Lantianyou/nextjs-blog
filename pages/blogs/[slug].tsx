@@ -2,11 +2,11 @@ import { GetStaticProps, GetStaticPaths } from 'next'
 import Post from 'components/post/post'
 import { getBlogsSlug, getBlogPostAndMetadata } from '../../lib/getBlogs'
 
-const Blog = ({ htmlString, data ,slug}) => {
+const Blog = ({ htmlString, data, slug }) => {
   const { author, date, title, cover, excerpt } = data
   return (
     <>
-      <Post author={author} title={title} date={date} cover={cover} excerpt={excerpt}>
+      <Post author={author} title={title} date={date} cover={cover} excerpt={excerpt} slug={slug}>
         <div dangerouslySetInnerHTML={{ __html: htmlString }} />
       </Post>
     </>)
@@ -15,7 +15,7 @@ const Blog = ({ htmlString, data ,slug}) => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const postAndMetadata = await getBlogPostAndMetadata(params.slug)
-  postAndMetadata.slug = params.slug
+  postAndMetadata['slug'] = params.slug
   return {
     props: postAndMetadata
   }

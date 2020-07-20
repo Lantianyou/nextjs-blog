@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import cn from 'classname'
+import cn from 'classnames'
 
 export default function CoverImage({ title, src, slug, description }) {
     if (!src) {
