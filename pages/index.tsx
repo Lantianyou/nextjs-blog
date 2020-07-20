@@ -1,12 +1,10 @@
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout'
+import Layout, { siteTitle } from 'components/layout'
 import Container from '../components/container'
-import Intro from '../components/Intro'
 import { getBlogsMetadata } from '../lib/getBlogs'
 import HeroPost from 'components/post/hero-post'
 import MorePosts from 'components/post/more-posts'
-import HeaderImage from 'components/header-image'
 
 export default function Home({ blogMetadata }) {
     const heroPost = blogMetadata[0]
@@ -16,9 +14,7 @@ export default function Home({ blogMetadata }) {
             <Head>
                 <title>{siteTitle}</title>
             </Head>
-        {/* <HeaderImage /> */}
             <Container>
-                {/* <Intro /> */}
                 {heroPost &&
                     <HeroPost
                         title={heroPost.title}

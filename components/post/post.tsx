@@ -1,11 +1,9 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import Header from "components/header"
 import PostHeader from './post-header'
 import PostBody from './post-body'
 import Layout from "components/layout"
 import Container from 'components/container'
-import HeaderImage from 'components/header-image'
 export const siteTitle = '兰天游'
 
 
@@ -34,9 +32,7 @@ export default function Post({
 }) {
   return (
     <Layout preview={true}>
-      {/* <HeaderImage /> */}
       <Container>
-
         <article className='relative'>
           <Head>
             <title>{title}</title>
