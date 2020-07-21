@@ -1,8 +1,7 @@
-import fs from 'fs'
-import path from 'path'
+const fs = require('fs')
+const path = require('path')
 
 export default async (req, res) => {
-
 
   const fileName = 'resume.pdf'
   const filePath = path.join(process.cwd(), 'public', 'assets', fileName)
