@@ -40,7 +40,7 @@ export default function Post({
             <meta name="twitter:description" content={excerpt} />
             <meta name="twitter:image" content={`https://youngerbobo.com/images/${cover.image}`} />
           </Head>
-          <PostHeader title={title} date={date} cover={cover} author={author} slug={slug} />
+            <PostHeader title={title} date={date} cover={cover} author={author} slug={slug} />
           <PostBody>
             {children}
           </PostBody>

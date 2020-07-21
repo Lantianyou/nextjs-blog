@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Mail from 'components/icons/mail'
 import Call from 'components/icons/call'
 
