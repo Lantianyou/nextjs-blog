@@ -3,7 +3,7 @@ import 'firebase/firestore'
 // import 'firebase/storage'
 
 export default function () {
-    let posts = [{
+    const posts = [{
         slug: 'American-bankrupcy',
         title: '养老金：美国政府200万亿美元债务',
         cover: { image: '', description: '' },
@@ -72,12 +72,14 @@ export default function () {
 
     const firestore = firebase.firestore()
     posts.forEach(async (post) => {
-        const docRef = await firestore.collection('posts').add(post)
+        const docRef = await firestore.collection('posts').doc(post.slug).set(post)
     })
     const getPosts = async () => {
         // const docRef = await firestore.collection('posts').add({ title: 'secret' })
         const snapshots = await firestore.collection('posts').get()
-        snapshots.docs.map(doc => console.log(doc.data(), doc.id))
+        snapshots.docs.map(async doc => {
+            console.log(doc.data())
+        })
     }
     getPosts()
 
