@@ -7,12 +7,13 @@ function HeaderImage() {
 
   return (<>
     <SiteNav />
-    <header role='banner' className='bg-cover' style={{
+    <header role='banner' className='bg-cover max-h-full flex justify-center items-center' style={{
       backgroundImage: `url(${require('../images/supersonic.jpg')})`,
-      height: '300px',
       backgroundRepeat: 'no-repeat',
+      height: '300px',
       backgroundPosition: 'center center',
-      backgroundAttachment: 'fixed',
+      // parallax effect
+      // backgroundAttachment: 'fixed',
     }}>
       <SiteBranding />
     </header>
