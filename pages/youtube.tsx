@@ -17,7 +17,7 @@ export default () => {
         <Layout preview={true}>
             <Container>
                 <div>
-                    <YouTube videoId="2g811Eo7K8U" opts={opts} />
+                    <YouTube videoId="2g811Eo7K8U" />
                 </div>
             </Container>
         </Layout>

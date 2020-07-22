@@ -12,13 +12,5 @@ const preferences = (state = { darkThemeEnabled: false }, action) => {
   }
 };
 
-const fixes = (state = { passCover: false }, action) => {
-  switch (action.type) {
-    case actions.PASS_COVER:
-      return { ...state, passCover: !state.passCover }
-    default:
-      return state
-  }
-}
 
-export default combineReducers({ preferences, fixes });
+export default combineReducers({ preferences });

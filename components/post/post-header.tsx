@@ -3,7 +3,7 @@ import PostDate from './post-date'
 
 export default function PostHeader({ title, cover, date, author, slug }) {
   return (
-    <div className='fixed'>
+    <div className='sticky' style={{ top: '0.75em' }}>
       <PostTitle >
         {title}
       </PostTitle>
