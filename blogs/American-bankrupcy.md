@@ -9,4 +9,28 @@ author:
   picture: ''
 excerpt: ''
 ---
+
+```javascript
+export const getBlogsSlug = () => {
+    const fileNames = fs.readdirSync(blogsDirectory)
+    return fileNames
+        .filter(fileName => fileName.includes('.md'))
+        .map(fileName => fileName.replace('.md', ''))
+}
+
+const getBlogMetadata = (slug): BlogMetadata => {
+    const fileDir = path.join(blogsDirectory, slug + '.md')
+    const markdownWithMetaData = fs.readFileSync(fileDir, 'utf-8').toString()
+    const { data } = matter(markdownWithMetaData)
+
+    let meta = {
+        slug,
+        ...data,
+    }
+
+    return meta as BlogMetadata
+}
+```
+
+
 [Stan Druckmiller 美国养老金债务危机](https://www.youtube.com/watch?v=fbgIiAnpcPc)

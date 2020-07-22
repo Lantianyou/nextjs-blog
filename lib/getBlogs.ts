@@ -7,7 +7,7 @@ import markdown from 'remark-parse'
 import remarkSlug from 'remark-slug'
 import toc from 'remark-toc'
 import stringify from 'rehype-stringify'
-import highlight from 'rehype-highlight'
+import rehypePrisma from '@mapbox/rehype-prism'
 
 
 // 对Markdown进行再parse，使得markdown可以带有html元素
@@ -46,15 +46,13 @@ export const getBlogPostAndMetadata = async (slug) => {
     const markdownWithMetaData = fs.readFileSync(fileDir, 'utf-8').toString()
     const parsedMarkdown = matter(markdownWithMetaData)
 
-    // 显示Markdown需要Markdown parser和HTML stringifier
-    // 似乎被卡在CSS上
     const processedContent = await remark()
         .use(markdown)
         .use(remarkSlug)
         .use(toc, { heading: '目录' })
         .use(remark2rehype, { allowDangerousHtml: true })
         .use(stringify)
-        .use(highlight)
+        .use(rehypePrisma)
         .process(parsedMarkdown.content)
 
     const htmlString = processedContent.toString()
