@@ -1,9 +1,9 @@
 import PostTitle from './post-title'
 import PostDate from './post-date'
 
-export default function PostHeader({ title, cover, date, author, slug }) {
+export default function PostHeader({ title, date }: { title: string, date: string }) {
   return (
-    <div className='xl:sticky mx-auto max-w-2xl' style={{ top: '0.75em' }}>
+    <div className='xl:sticky mx-auto max-w-2xl my-8' style={{ top: '0.75em' }}>
       <PostTitle >
         {title}
       </PostTitle>

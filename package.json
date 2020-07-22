@@ -17,8 +17,6 @@
     "classname": "0.0.0",
     "classnames": "^2.2.6",
     "date-fns": "^2.14.0",
-    "firebase": "^7.16.1",
-    "firebase-admin": "^9.0.0",
     "image-trace-loader": "^1.0.2",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-optipng": "^8.0.0",

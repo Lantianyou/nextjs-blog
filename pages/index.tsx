@@ -5,8 +5,6 @@ import Container from '../components/container'
 import { getBlogsMetadata } from '../lib/getBlogs'
 import HeroPost from 'components/post/hero-post'
 import MorePosts from 'components/post/more-posts'
-import firebase from 'lib/firebase'
-import 'firebase/firestore'
 
 
 export default function Home({ blogMetadata }) {
@@ -38,17 +36,7 @@ export default function Home({ blogMetadata }) {
 
 export const getStaticProps: GetStaticProps = async () => {
     const blogMetadata = getBlogsMetadata()
-    const blogMetaData2 = []
     blogMetadata.sort((a, b) => a.date > b.date ? -1 : 1)
-
-    const firestore = firebase.firestore()
-    const getPosts = async () => {
-        const snapshots = await firestore.collection('posts').get()
-        snapshots.docs.map(doc => blogMetaData2.push(doc.data()))
-    }
-    getPosts()
-
-    console.log(blogMetaData2)
 
     return {
         props: {

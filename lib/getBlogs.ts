@@ -9,21 +9,9 @@ import toc from 'remark-toc'
 import stringify from 'rehype-stringify'
 import highlight from 'rehype-highlight'
 
-import firebase from 'lib/firebase'
-import 'firebase/firestore'
 
 // 对Markdown进行再parse，使得markdown可以带有html元素
 // import raw from 'rehype-raw'
-
-export const addBlogs = async () => {
-    const blogsMetadata = getBlogsMetadata()
-    console.log(blogsMetadata)
-    const firestore = firebase.firestore()
-    blogsMetadata.forEach(async (blogMetadata) => {
-        const docRef = await firestore.collection('posts').add(blogMetadata)
-    })
-
-}
 
 export const blogsDirectory = path.join(process.cwd(), 'blogs')
 
