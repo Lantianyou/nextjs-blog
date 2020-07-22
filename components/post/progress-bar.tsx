@@ -1,36 +1,44 @@
 import { useState, useEffect } from 'react'
 
 export default function ProgressBar() {
-  const [progress, setProgress] = useState(0)
 
-  let totalDocScrollLength;
-
-  const onScroll = () => {
-    if (!totalDocScrollLength) {
-      totalDocScrollLength = getTotalDocScrollLength()
-    }
-    const scrollY = window.pageYOffset
-    const progress = scrollY / totalDocScrollLength * 100
-    setProgress(progress)
+  const onScroll1 = () => {
+    const progress = window.pageYOffset / (document.body.offsetHeight - window.innerHeight)
+    document.body.style.setProperty('--scroll', progress.toString())
   }
 
   useEffect(() => {
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
+    window.addEventListener('scroll', onScroll1)
+    return () => window.removeEventListener('scroll', onScroll1)
   }, [])
 
+  return (
+    <div className="sticky top-0">
+      <style jsx>{`
+        .progress {
+          width: 0%;
+          background-color: rgb(20, 255, 226);
+          animation: progress 1s linear;
 
-  const getTotalDocScrollLength = () => {
-    const docHeight = Math.max(
-      document.body.scrollHeight, document.documentElement.scrollHeight,
-      document.body.offsetHeight, document.documentElement.offsetHeight,
-      document.body.clientHeight, document.documentElement.clientHeight
-    );
-    const winHeight = window.innerHeight
-    const totalDocScrollLength = docHeight - winHeight;
-    return totalDocScrollLength
-  }
-  return (<div className="sticky top-0">
-    <div className="w-full bg-red-300 h-1" style={{ transform: `translate3d(${-100 + progress}%,0,0)` }}></div>
-  </div>)
+          // should be in global :root {}
+          /* Pause the animation */
+            animation-play-state: paused;
+            /* Bind the animation to scroll */
+            animation-delay: calc(var(--scroll) * -1s);
+            /* These last 2 properites clean up overshoot weirdness */
+            animation-iteration-count: 1;
+            animation-fill-mode: both;
+        }
+
+        @keyframes progress {
+          to {
+            background-color: rgb(20, 255, 226);
+            width: 100%;
+          }
+        }
+      `}</style>
+
+      <div className="w-full h-1 progress"></div>
+    </div>
+  )
 }
