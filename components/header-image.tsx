@@ -6,8 +6,6 @@ function HeaderImage() {
 
   const [opacity, setOpacity] = useState(0)
 
-
-
   const onScroll = () => {
     const scrollY = window.pageYOffset
     const opacity = 1 - scrollY / 547
@@ -16,7 +14,6 @@ function HeaderImage() {
 
   useEffect(() => {
     window.addEventListener('scroll', onScroll)
-    console.log("SiteBranding -> onScrol", 'called useeffect')
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 

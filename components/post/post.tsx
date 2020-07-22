@@ -48,7 +48,6 @@ export default function Post({
 
   useEffect(() => {
     window.addEventListener('scroll', onScroll)
-    console.log("SiteBranding -> onScrol", 'called useeffect')
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
