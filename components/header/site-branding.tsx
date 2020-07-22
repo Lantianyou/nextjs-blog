@@ -1,7 +1,7 @@
 export default function SiteBranding({ opacity }) {
+
     return (
-        <div className='site-branding-wrapper relative text-center' style={{
-        }} >
+        <div className='site-branding-wrapper relative text-center'>
             <div className="site-branding inline-block p-8" style={{
                 background: "#1d1d1d",
                 color: '#ffffff',

@@ -1,10 +1,24 @@
+import { useState, useEffect } from 'react'
 import SiteBranding from 'components/header/site-branding'
 import SiteNav from 'components/header/site-nav'
-import ProgressBar from 'components/header/progress-bar'
 
 function HeaderImage() {
 
-  const opacity = Math.max(1 - scrollY / 547, 0)
+  const [opacity, setOpacity] = useState(0)
+
+
+
+  const onScroll = () => {
+    const scrollY = window.pageYOffset
+    const opacity = 1 - scrollY / 547
+    setOpacity(opacity)
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', onScroll)
+    console.log("SiteBranding -> onScrol", 'called useeffect')
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   return (<>
     <header role='banner' className='relative' >
@@ -17,7 +31,6 @@ function HeaderImage() {
       </div>
     </header>
     <SiteNav />
-    <ProgressBar progress={75} />
   </>
   )
 }

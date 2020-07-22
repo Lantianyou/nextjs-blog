@@ -1,9 +1,11 @@
+import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import PostHeader from './post-header'
 import PostBody from './post-body'
 import Layout from "components/layout"
 import Container from 'components/container'
+import ProgressBar from 'components/post/progress-bar'
 export const siteTitle = '兰天游'
 
 
@@ -30,8 +32,41 @@ export default function Post({
   },
   slug: string
 }) {
+
+  const [progress, setProgress] = useState(0)
+
+  let totalDocScrollLength;
+
+  const onScroll = () => {
+    if (!totalDocScrollLength) {
+      totalDocScrollLength = getTotalDocScrollLength()
+    }
+    const scrollY = window.pageYOffset
+    const progress = scrollY / totalDocScrollLength * 100
+    setProgress(progress)
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', onScroll)
+    console.log("SiteBranding -> onScrol", 'called useeffect')
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+
+  const getTotalDocScrollLength = () => {
+    const docHeight = Math.max(
+      document.body.scrollHeight, document.documentElement.scrollHeight,
+      document.body.offsetHeight, document.documentElement.offsetHeight,
+      document.body.clientHeight, document.documentElement.clientHeight
+    );
+    const winHeight = window.innerHeight
+    const totalDocScrollLength = docHeight - winHeight;
+    return totalDocScrollLength
+  }
+
   return (
     <Layout preview={true}>
+      <ProgressBar progress={progress} />
       <Container>
         <article className='relative'>
           <Head>
@@ -40,7 +75,7 @@ export default function Post({
             <meta name="twitter:description" content={excerpt} />
             <meta name="twitter:image" content={`https://youngerbobo.com/images/${cover.image}`} />
           </Head>
-            <PostHeader title={title} date={date} cover={cover} author={author} slug={slug} />
+          <PostHeader title={title} date={date} cover={cover} author={author} slug={slug} />
           <PostBody>
             {children}
           </PostBody>
