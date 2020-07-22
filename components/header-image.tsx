@@ -7,14 +7,14 @@ function HeaderImage() {
 
   return (<>
     <SiteNav />
-    <header role='banner' className='w-full h-full'>
-      <div className='site-header-image bg-center w-full h-full bg-cover min-h-full' style={{
-        backgroundImage: `url(${require('../images/supersonic.jpg')})`,
-        padding: '10% 0',
-        backgroundPosition: 'fixed',
-      }} >
-        <SiteBranding />
-      </div>
+    <header role='banner' className='bg-cover' style={{
+      backgroundImage: `url(${require('../images/supersonic.jpg')})`,
+      height: '300px',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center center',
+      backgroundAttachment: 'fixed',
+    }}>
+      <SiteBranding />
     </header>
   </>
   )

@@ -2,7 +2,7 @@ export default function SiteBranding() {
 
   return (
     <div className='text-center'>
-      <div className="site-branding inline-block p-8">
+      <div className="site-branding inline-block p-6">
         <style jsx>{`
           .site-branding {
             background: #1d1d1d;
@@ -10,8 +10,6 @@ export default function SiteBranding() {
             opacity: 1;
 
             animation: site-branding 1s linear;
-
-         
 
           @keyframe site-branding {
             to {
