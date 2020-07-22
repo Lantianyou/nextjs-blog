@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import PostHeader from './post-header'
@@ -33,39 +32,11 @@ export default function Post({
   slug: string
 }) {
 
-  const [progress, setProgress] = useState(0)
 
-  let totalDocScrollLength;
-
-  const onScroll = () => {
-    if (!totalDocScrollLength) {
-      totalDocScrollLength = getTotalDocScrollLength()
-    }
-    const scrollY = window.pageYOffset
-    const progress = scrollY / totalDocScrollLength * 100
-    setProgress(progress)
-  }
-
-  useEffect(() => {
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
-
-  const getTotalDocScrollLength = () => {
-    const docHeight = Math.max(
-      document.body.scrollHeight, document.documentElement.scrollHeight,
-      document.body.offsetHeight, document.documentElement.offsetHeight,
-      document.body.clientHeight, document.documentElement.clientHeight
-    );
-    const winHeight = window.innerHeight
-    const totalDocScrollLength = docHeight - winHeight;
-    return totalDocScrollLength
-  }
 
   return (
     <Layout preview={true}>
-      <ProgressBar progress={progress} />
+      <ProgressBar />
       <Container>
         <article>
           <Head>
