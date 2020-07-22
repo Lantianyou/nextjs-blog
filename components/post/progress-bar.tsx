@@ -2,14 +2,14 @@ import { useEffect } from 'react'
 
 export default function ProgressBar() {
 
-  const onScroll1 = () => {
+  const onScroll = () => {
     const progress = window.pageYOffset / (document.body.offsetHeight - window.innerHeight)
     document.body.style.setProperty('--scroll', progress.toString())
   }
 
   useEffect(() => {
-    window.addEventListener('scroll', onScroll1)
-    return () => window.removeEventListener('scroll', onScroll1)
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   return (
