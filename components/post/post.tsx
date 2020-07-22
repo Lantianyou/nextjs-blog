@@ -67,7 +67,7 @@ export default function Post({
     <Layout preview={true}>
       <ProgressBar progress={progress} />
       <Container>
-        <article className='relative'>
+        <article>
           <Head>
             <title>{title}</title>
             <meta name="twitter:title" content={title} />
