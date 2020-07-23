@@ -10,6 +10,8 @@ author:
 excerpt: ''
 ---
 
+## 目录
+
 [彼得.蒂尔和埃里克·维因斯坦](https://www.youtube.com/watch?v=nM9f0W2KD5s)
 
 *彼得.蒂尔是PayPal联合创始人和CEO，Facebook早期投资人，Palantir联合创始人。商业上，创办的PayPal公司走出了伊隆·马斯克（TELA/SolarCity/SpaceX），陳士駿（YouTube）,
