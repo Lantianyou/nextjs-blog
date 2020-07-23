@@ -7,7 +7,7 @@ export default function SiteNav() {
     <div className='max-w-full'>
       <nav className={cn('mx-auto max-w-2xl flex justify-between text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight')} >
         <Link href="/" as='/'>
-          <a className="hover:underline" style={{ width: '95%' }}>Blog</a>
+          <a className="hover:underline" aria-label="首页" style={{ width: '95%' }}>Blog</a>
         </Link>
         <Toggle />
       </nav>

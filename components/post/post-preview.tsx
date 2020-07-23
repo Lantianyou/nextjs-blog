@@ -16,14 +16,14 @@ export default function PostPreview({
             <div className="content">
                 <h3 className="text-3xl mb-3 leading-snug">
                     <Link as={`/posts/${slug}`} href="/posts/[slug]">
-                        <a>{title}</a>
+                        <a aria-label={title}>{title}</a>
                     </Link>
                 </h3>
                 <PostDate dateString={date} />
 
                 <p className="text-lg leading-relaxed mb-4">{excerpt || 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores aliquam dolor magni, dolores atque recusandae molestias animi reiciendis dicta voluptas eius sint, corrupti iste optio repellat omnis sapiente blanditiis nemo?'}</p>
                 <p><Link as={`/posts/${slug}`} href="/posts/[slug]">
-                    <a>Read more</a>
+                    <a aria-label={title}>Read more</a>
                 </Link></p>
             </div>
             <div className="image pl-2" style={{
