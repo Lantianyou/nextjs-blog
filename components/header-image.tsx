@@ -15,6 +15,7 @@ function HeaderImage() {
       // parallax effect
       // backgroundAttachment: 'fixed',
     }}>
+      
       <SiteBranding />
     </header>
   </>
