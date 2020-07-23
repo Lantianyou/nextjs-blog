@@ -7,7 +7,7 @@ date: '2020-07-09'
 author:
   name: '兰天游'    
   picture: ''
-excerpt: ''
+excerpt: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. At illum molestias esse possimus excepturi debitis aspernatur, nulla assumenda rem impedit in. Iusto accusamus quasi harum expedita explicabo rerum suscipit laboriosam?'
 ---
 
 翻译自Andy Jassy访谈
