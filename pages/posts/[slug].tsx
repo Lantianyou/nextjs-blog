@@ -7,6 +7,16 @@ const Blog = ({ htmlString, data, slug }) => {
   return (
     <>
       <Post author={author} title={title} date={date} cover={cover} excerpt={excerpt} slug={slug}>
+        <style jsx global>{`
+        :target {
+          animation: yellowflash-bg 2s;
+        }
+
+        @keyframes yellowflash-bg {
+          from { background: yellow; }
+          to   { background: transparent; }
+        }
+        `}</style>
         <div dangerouslySetInnerHTML={{ __html: htmlString }} />
       </Post>
     </>
