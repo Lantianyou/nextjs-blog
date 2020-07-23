@@ -41,7 +41,7 @@ export default function Post({
             <title>{title}</title>
             <meta name="twitter:title" content={title} />
             <meta name="twitter:description" content={excerpt} />
-            <meta name="twitter:image" content={`https://youngerbobo.com/images/${cover.image}`} />
+            <meta name="twitter:image" content={`https://lantianyou.xyz/images/${cover.image}`} />
           </Head>
           <PostHeader title={title} date={date} />
           <PostBody>
@@ -52,7 +52,7 @@ export default function Post({
           <Link href="/" as='/'>
             <a>← Back to home</a>
           </Link>
-          <a className="twitter-share-button" href={`https://twitter.com/intent/tweet?text=${title} https://youngerbobo.com/blogs/${slug}`}>
+          <a className="twitter-share-button" href={`https://twitter.com/intent/tweet?text=${title} https://lantianyou.xyz/posts/${slug}`}>
             分享到twitter
           </a>
         </div>

@@ -2,14 +2,14 @@ import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Layout, { siteTitle } from 'components/layout'
 import Container from '../components/container'
-import { getBlogsMetadata } from '../lib/getBlogs'
+import { getPostsMetadata } from '../lib/getPosts'
 import HeroPost from 'components/post/hero-post'
 import MorePosts from 'components/post/more-posts'
 
 
-export default function Home({ blogMetadata }) {
-    const heroPost = blogMetadata[0]
-    const morePosts = blogMetadata.slice(1)
+export default function Home({ postMetadata }) {
+    const heroPost = postMetadata[0]
+    const morePosts = postMetadata.slice(1)
     return (
         <Layout preview={false}>
             <Head>
@@ -21,7 +21,6 @@ export default function Home({ blogMetadata }) {
                         title={heroPost.title}
                         cover={heroPost.cover}
                         date={heroPost.date}
-                        author={heroPost.author}
                         slug={heroPost.slug}
                         excerpt={heroPost.excerpt}
                     />
@@ -35,12 +34,12 @@ export default function Home({ blogMetadata }) {
 
 
 export const getStaticProps: GetStaticProps = async () => {
-    const blogMetadata = getBlogsMetadata()
-    blogMetadata.sort((a, b) => a.date > b.date ? -1 : 1)
+    const postMetadata = getPostsMetadata()
+    postMetadata.sort((a, b) => a.date > b.date ? -1 : 1)
 
     return {
         props: {
-            blogMetadata
+            postMetadata
         }
     }
 }

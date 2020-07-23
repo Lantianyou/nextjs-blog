@@ -1,6 +1,6 @@
 import { GetStaticProps, GetStaticPaths } from 'next'
 import Post from 'components/post/post'
-import { getBlogsSlug, getBlogPostAndMetadata } from 'lib/getBlogs'
+import { getPostsSlug, getPostAndMetadata } from 'lib/getPosts'
 
 const Blog = ({ htmlString, data, slug }) => {
   const { author, date, title, cover, excerpt } = data
@@ -16,14 +16,14 @@ const Blog = ({ htmlString, data, slug }) => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params
-  const postAndMetadata = await getBlogPostAndMetadata(slug)
+  const postAndMetadata = await getPostAndMetadata(slug)
   return {
     props: { ...postAndMetadata, slug }
   }
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const slugs = getBlogsSlug()
+  const slugs = getPostsSlug()
   const paths = slugs.map(slug => (
     {
       params: {

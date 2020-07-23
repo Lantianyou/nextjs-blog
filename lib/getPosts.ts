@@ -13,10 +13,10 @@ import rehypePrisma from '@mapbox/rehype-prism'
 // 对Markdown进行再parse，使得markdown可以带有html元素
 // import raw from 'rehype-raw'
 
-export const blogsDirectory = path.join(process.cwd(), 'blogs')
+export const postsDir = path.join(process.cwd(), 'posts')
 
-const getBlogMetadata = (slug): BlogMetadata => {
-    const fileDir = path.join(blogsDirectory, slug + '.md')
+const getPostMetadata = (slug): PostMetadata => {
+    const fileDir = path.join(postsDir, slug + '.md')
     const markdownWithMetaData = fs.readFileSync(fileDir, 'utf-8').toString()
     const { data } = matter(markdownWithMetaData)
 
@@ -25,23 +25,23 @@ const getBlogMetadata = (slug): BlogMetadata => {
         ...data,
     }
 
-    return meta as BlogMetadata
+    return meta as PostMetadata
 }
 
-export const getBlogsMetadata = (): BlogMetadata[] => {
-    const blogs = getBlogsSlug()
-    return blogs.map(blog => getBlogMetadata(blog))
+export const getPostsMetadata = (): PostMetadata[] => {
+    const posts = getPostsSlug()
+    return posts.map(post => getPostMetadata(post))
 }
 
-export const getBlogsSlug = () => {
-    const fileNames = fs.readdirSync(blogsDirectory)
+export const getPostsSlug = () => {
+    const fileNames = fs.readdirSync(postsDir)
     return fileNames
         .filter(fileName => fileName.includes('.md'))
         .map(fileName => fileName.replace('.md', ''))
 }
 
-export const getBlogPostAndMetadata = async (slug) => {
-    const fileDir = path.join(blogsDirectory, slug + '.md')
+export const getPostAndMetadata = async (slug) => {
+    const fileDir = path.join(postsDir, slug + '.md')
     const markdownWithMetaData = fs.readFileSync(fileDir, 'utf-8').toString()
     const parsedMarkdown = matter(markdownWithMetaData)
 
@@ -62,7 +62,7 @@ export const getBlogPostAndMetadata = async (slug) => {
     }
 }
 
-interface BlogMetadata {
+interface PostMetadata {
     slug: string
     title: string
     cover: {
