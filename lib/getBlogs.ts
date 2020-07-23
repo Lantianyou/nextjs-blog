@@ -15,14 +15,6 @@ import rehypePrisma from '@mapbox/rehype-prism'
 
 export const blogsDirectory = path.join(process.cwd(), 'blogs')
 
-
-export const getBlogsSlug = () => {
-    const fileNames = fs.readdirSync(blogsDirectory)
-    return fileNames
-        .filter(fileName => fileName.includes('.md'))
-        .map(fileName => fileName.replace('.md', ''))
-}
-
 const getBlogMetadata = (slug): BlogMetadata => {
     const fileDir = path.join(blogsDirectory, slug + '.md')
     const markdownWithMetaData = fs.readFileSync(fileDir, 'utf-8').toString()
@@ -39,6 +31,13 @@ const getBlogMetadata = (slug): BlogMetadata => {
 export const getBlogsMetadata = (): BlogMetadata[] => {
     const blogs = getBlogsSlug()
     return blogs.map(blog => getBlogMetadata(blog))
+}
+
+export const getBlogsSlug = () => {
+    const fileNames = fs.readdirSync(blogsDirectory)
+    return fileNames
+        .filter(fileName => fileName.includes('.md'))
+        .map(fileName => fileName.replace('.md', ''))
 }
 
 export const getBlogPostAndMetadata = async (slug) => {
