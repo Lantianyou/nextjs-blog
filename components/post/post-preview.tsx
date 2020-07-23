@@ -26,7 +26,7 @@ export default function PostPreview({
                     <a>Read more</a>
                 </Link></p>
             </div>
-            <div className="image" style={{
+            <div className="image pl-2" style={{
                 width: '300px',
                 minWidth: '300px'
             }}>
