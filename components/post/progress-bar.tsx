@@ -17,7 +17,7 @@ export default function ProgressBar() {
       <style jsx>{`
         .progress {
           width: 0%;
-          background-color: rgb(20, 255, 226);
+          background-color:  #0070f3;
           animation: progress 1s linear;
 
           // should be in global :root {}
