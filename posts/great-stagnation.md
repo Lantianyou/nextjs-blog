@@ -7,7 +7,7 @@ date: '2020-07-09'
 author:
   name: '兰天游'    
   picture: 'profile.jpg'
-excerpt: ''
+excerpt: 主线故事/教育/政治/哲学
 ---
 
 ## 目录
