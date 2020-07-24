@@ -1,5 +1,5 @@
 ---
-title: 迁移到云
+title: 快速垄断
 cover:
   image: 'cloud.jpg'
   description: ''
