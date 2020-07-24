@@ -22,7 +22,6 @@ export default function Layout({
         <Meta />
         <div className="min-h-screen">
           <Alert preview={preview} />
-          <HeaderImage />
           <main>{children}</main>
         </div>
         <Footer />

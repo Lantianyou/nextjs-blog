@@ -5,6 +5,7 @@ import Container from '../components/container'
 import { getPostsMetadata } from '../lib/getPosts'
 import HeroPost from 'components/post/hero-post'
 import MorePosts from 'components/post/more-posts'
+import HeaderImage from 'components/header-image'
 
 
 export default function Home({ postMetadata }) {
@@ -15,6 +16,7 @@ export default function Home({ postMetadata }) {
             <Head>
                 <title>{siteTitle}</title>
             </Head>
+            <HeaderImage />
             <Container>
                 {heroPost &&
                     <HeroPost
