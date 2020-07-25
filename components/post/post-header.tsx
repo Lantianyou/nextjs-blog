@@ -7,7 +7,7 @@ export default function PostHeader({ title, date }: { title: string, date: strin
       <PostTitle >
         {title}
       </PostTitle>
-      <div style={{ color: '#666', fontSize: '0.6875rem' }} className='text-center md:text-left'>
+      <div  className='text-center md:text-left'>
         <PostDate dateString={date} />
       </div>
     </div>
