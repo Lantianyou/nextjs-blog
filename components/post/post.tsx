@@ -6,6 +6,8 @@ import Layout from "components/layout"
 import Container from 'components/container'
 import ProgressBar from 'components/post/progress-bar'
 import PostFooter from 'components/post/post-footer'
+import SiteNav from 'components/header/site-nav'
+
 export const siteTitle = '兰天游'
 
 
@@ -41,6 +43,7 @@ export default function Post({
         <meta name="twitter:description" content={excerpt} />
         <meta name="twitter:image" content={`https://lantianyou.xyz/images/${cover.image}`} />
       </Head>
+      <SiteNav />
       <ProgressBar />
       <Container>
         <PostHeader title={title} date={date} />

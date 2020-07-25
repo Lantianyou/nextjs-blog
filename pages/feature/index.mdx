@@ -1,10 +1,13 @@
-# feature
-
+export const meta = {
+    title:'feature',
+    date:'2020-07-26'
+}
+import PostBody from 'components/post/post-body'
 import YouTube from 'react-youtube';
 
+<PostBody>
 
 <div><YouTube videoId="2g811Eo7K8U" /></div>
-
 
 ```javascript
 export const getBlogsSlug = () => {
@@ -27,3 +30,5 @@ const getBlogMetadata = (slug): BlogMetadata => {
     return meta as BlogMetadata
 }
 ```
+
+</PostBody>
