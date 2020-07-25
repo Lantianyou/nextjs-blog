@@ -3,8 +3,6 @@ import Head from 'next/head'
 import MarkDownContent from 'components/non-markdown'
 import { getMathPost } from 'lib/getPosts'
 
-
-
 export default function Post({ htmlString }) {
   return (
     <>
@@ -20,7 +18,7 @@ export default function Post({ htmlString }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const content = await getMathPost()
+  const content = await getMathPost('pavlue.md')
   const htmlString = { __html: content }
 
   return {
