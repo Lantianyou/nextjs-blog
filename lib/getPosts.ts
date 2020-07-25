@@ -6,6 +6,8 @@ import remark2rehype from 'remark-rehype'
 import markdown from 'remark-parse'
 import remarkSlug from 'remark-slug'
 import toc from 'remark-toc'
+import math from 'remark-math'
+import katex from 'rehype-katex'
 import stringify from 'rehype-stringify'
 import rehypePrisma from '@mapbox/rehype-prism'
 
@@ -47,9 +49,11 @@ export const getPostAndMetadata = async (slug) => {
 
     const processedContent = await remark()
         .use(markdown)
+        .use(math)
         .use(remarkSlug)
         .use(toc, { heading: '目录' })
         .use(remark2rehype, { allowDangerousHtml: true })
+        .use(katex)
         .use(stringify)
         .use(rehypePrisma)
         .process(parsedMarkdown.content)

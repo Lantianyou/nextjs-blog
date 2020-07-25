@@ -32,5 +32,18 @@ const getBlogMetadata = (slug): BlogMetadata => {
 }
 ```
 
+Lift($L$) can be determined by Lift Coefficient ($C_L$) like the following equation.
+
+$$
+L = \frac{1}{2} \rho v^2 S C_L
+$$
+
+
+Lift($L$) can be determined by Lift Coefficient ($C_L$) like the following equation.
+
+$$
+L = \frac{1}{2} \rho v^2 S C_L
+$$
+
 
 [Stan Druckmiller 美国养老金债务危机](https://www.youtube.com/watch?v=fbgIiAnpcPc)
