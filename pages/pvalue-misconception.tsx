@@ -18,7 +18,7 @@ export default function Post({ htmlString }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const content = await getMathPost('pavlue.md')
+  const content = await getMathPost('pvalue.md')
   const htmlString = { __html: content }
 
   return {
