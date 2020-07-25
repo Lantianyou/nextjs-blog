@@ -10,28 +10,6 @@ author:
 excerpt: ''
 ---
 
-```javascript
-export const getBlogsSlug = () => {
-    const fileNames = fs.readdirSync(blogsDirectory)
-    return fileNames
-        .filter(fileName => fileName.includes('.md'))
-        .map(fileName => fileName.replace('.md', ''))
-}
-
-const getBlogMetadata = (slug): BlogMetadata => {
-    const fileDir = path.join(blogsDirectory, slug + '.md')
-    const markdownWithMetaData = fs.readFileSync(fileDir, 'utf-8').toString()
-    const { data } = matter(markdownWithMetaData)
-
-    let meta = {
-        slug,
-        ...data,
-    }
-
-    return meta as BlogMetadata
-}
-```
-
 Lift($L$) can be determined by Lift Coefficient ($C_L$) like the following equation.
 
 $$

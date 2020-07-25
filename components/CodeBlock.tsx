@@ -1,4 +1,3 @@
-import React from 'react'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
@@ -8,7 +7,10 @@ import nightOwlLight from "prism-react-renderer/themes/nightOwlLight";
 const CodeBlock = ({ children, className }) => {
     const language = className.replace(/language-/, '')
     const themeContext = useContext(ThemeContext);
-    const codeTheme = themeContext['theme'] === 'light' ? nightOwlLight : nightOwl
+    console.log(themeContext, '!!!!!')
+
+    // const codeTheme = themeContext['theme'] === 'light' ? nightOwlLight : nightOwl
+    const codeTheme = nightOwlLight
     return (
         <Highlight {...defaultProps} code={children} theme={codeTheme} language={language}>
             {({ className, style, tokens, getLineProps, getTokenProps }) => (

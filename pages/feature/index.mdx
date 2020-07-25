@@ -1,0 +1,28 @@
+# feature
+
+import YouTube from 'react-youtube';
+
+<div><YouTube videoId="2g811Eo7K8U" /></div>
+
+
+```javascript
+export const getBlogsSlug = () => {
+    const fileNames = fs.readdirSync(blogsDirectory)
+    return fileNames
+        .filter(fileName => fileName.includes('.md'))
+        .map(fileName => fileName.replace('.md', ''))
+}
+
+const getBlogMetadata = (slug): BlogMetadata => {
+    const fileDir = path.join(blogsDirectory, slug + '.md')
+    const markdownWithMetaData = fs.readFileSync(fileDir, 'utf-8').toString()
+    const { data } = matter(markdownWithMetaData)
+
+    let meta = {
+        slug,
+        ...data,
+    }
+
+    return meta as BlogMetadata
+}
+```
