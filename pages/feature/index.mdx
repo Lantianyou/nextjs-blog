@@ -2,13 +2,16 @@ export const meta = {
     title:'feature',
     date:'2020-07-26'
 }
-import PostBody from 'components/post/post-body'
+import MarkDownContent from 'components/non-markdown'
 import YouTube from 'react-youtube';
 
-<PostBody>
+<MarkDownContent title={meta.title} date={meta.date}>
+
+## 插入视频
 
 <div><YouTube videoId="2g811Eo7K8U" /></div>
 
+## 代码高亮
 ```javascript
 export const getBlogsSlug = () => {
     const fileNames = fs.readdirSync(blogsDirectory)
@@ -31,4 +34,4 @@ const getBlogMetadata = (slug): BlogMetadata => {
 }
 ```
 
-</PostBody>
+</MarkDownContent>
