@@ -5,7 +5,7 @@ export default function MoreStories({ posts }) {
         <section>
             <h2 className="mb-8 text-6xl md:text-7xl font-bold tracking-tighter leading-tight">
                 More Stories
-      </h2>
+            </h2>
             <div className="flex flex-col mb-32">
                 {posts.map((post) => (
                     <PostPreview

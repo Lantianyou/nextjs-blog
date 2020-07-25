@@ -6,16 +6,16 @@ export default function CoverImage({ title, src, slug, description }) {
         return <div></div>
     }
     const image = (
-        <div>
+        <>
             <img src={require(`../../images/${src}`)}
                 alt={`Cover Image for ${title}`}
-                className={cn('shadow-small', {
+                className={cn('shadow-small h-64', {
                     'hover:shadow-medium transition-shadow duration-200': slug,
                 })} />
             <figcaption>
                 <span className='text-sm' style={{ margin: '0.125rem 0', color: '#666' }}>{description}</span>
             </figcaption>
-        </div>
+        </>
     )
     return (
         <div className="-mx-5 sm:mx-0">

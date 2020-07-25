@@ -28,7 +28,6 @@ export default function Home({ postMetadata }) {
                     />
                 }
                 <MorePosts posts={morePosts} />
-
             </Container>
         </Layout >
     )

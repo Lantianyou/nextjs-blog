@@ -10,12 +10,11 @@ function HeaderImage() {
     <header role='banner' className='bg-cover max-h-full flex justify-center items-center' style={{
       backgroundImage: `url(${require('../images/supersonic.jpg')})`,
       backgroundRepeat: 'no-repeat',
-      height: '300px',
       backgroundPosition: 'center center',
       // parallax effect
       // backgroundAttachment: 'fixed',
     }}>
-      
+
       <SiteBranding />
     </header>
   </>

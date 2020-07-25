@@ -1,7 +1,7 @@
 export default function SiteBranding() {
 
   return (
-    <div className="site-branding p-6">
+    <div className="site-branding xl:py-20 md:py-16 sm:p-8">
       <style jsx>{`
         .site-branding {
           background: '#1f1f1f';

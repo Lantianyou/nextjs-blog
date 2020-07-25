@@ -32,7 +32,7 @@ export default function ProgressBar() {
 
         @keyframes progress {
           to {
-            background-color: rgb(20, 255, 226);
+            background-color: #0070f3;
             width: 100%;
           }
         }
