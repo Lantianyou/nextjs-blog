@@ -35,20 +35,18 @@ export default function Post({
 
   return (
     <Layout preview={true}>
+      <Head>
+        <title>{title}</title>
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={excerpt} />
+        <meta name="twitter:image" content={`https://lantianyou.xyz/images/${cover.image}`} />
+      </Head>
       <ProgressBar />
       <Container>
-        <article id="article-top">
-          <Head>
-            <title>{title}</title>
-            <meta name="twitter:title" content={title} />
-            <meta name="twitter:description" content={excerpt} />
-            <meta name="twitter:image" content={`https://lantianyou.xyz/images/${cover.image}`} />
-          </Head>
-          <PostHeader title={title} date={date} />
-          <PostBody>
-            {children}
-          </PostBody>
-        </article>
+        <PostHeader title={title} date={date} />
+        <PostBody>
+          {children}
+        </PostBody>
         <PostFooter slug={slug} title={title} />
       </Container>
     </Layout >
