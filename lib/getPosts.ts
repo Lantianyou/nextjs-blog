@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path from 'path'
+import unified from 'unified'
 import matter from 'gray-matter'
 import remark from 'remark'
 import remark2rehype from 'remark-rehype'
@@ -79,4 +80,21 @@ interface PostMetadata {
         picture: string
     }
     excerpt: string
+}
+
+// 带有数学公式的Markdown
+export const getMathPost = async (fileName = 'example.md') => {
+
+    const fileDir = path.join(process.cwd(), 'otherPost', fileName)
+
+    const processor = await unified()
+        .use(markdown)
+        .use(math)
+        .use(remark2rehype)
+        .use(katex)
+        .use(stringify)
+        .process(fs.readFileSync(fileDir))
+
+    return processor.toString()
+
 }

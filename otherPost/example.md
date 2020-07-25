@@ -1,3 +1,5 @@
+
+
 Lift($L$) can be determined by Lift Coefficient ($C_L$) like the following equation.
 
 $$
