@@ -14,15 +14,14 @@ export default function MarkDownContent({ title, date, children }) {
 
 
 
-  return loading ? <div>isloading</div> :
-    <>
-      <SiteNav />
-      <ProgressBar />
-      <Container>
-        <PostHeader title={title} date={date} />
-        <PostBody>
-          {children}
-        </PostBody>
-      </Container>
-    </>
+  return (<> loading ? <div>isloading</div>:
+    <SiteNav />
+    <ProgressBar />
+    <Container>
+      <PostHeader title={title} date={date} />
+      <PostBody>
+        {children}
+      </PostBody>
+    </Container>
+  </>)
 }
