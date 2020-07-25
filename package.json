@@ -42,6 +42,7 @@
     "react-redux": "^7.2.0",
     "react-reveal": "^1.2.2",
     "react-scroll": "^1.8.0",
+    "react-twitter-widgets": "^1.9.5",
     "react-youtube": "^7.11.2",
     "redux": "^4.0.5",
     "rehype-document": "^5.1.0",

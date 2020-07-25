@@ -2,6 +2,7 @@ export const meta = {
     title:'feature',
     date:'2020-07-26'
 }
+import {Tweet} from 'react-twitter-widgets'
 import MarkDownContent from 'components/non-markdown'
 import YouTube from 'react-youtube';
 
@@ -12,6 +13,7 @@ import YouTube from 'react-youtube';
 <div><YouTube videoId="2g811Eo7K8U" /></div>
 
 ## 代码高亮
+
 ```javascript
 export const getBlogsSlug = () => {
     const fileNames = fs.readdirSync(blogsDirectory)
@@ -33,5 +35,9 @@ const getBlogMetadata = (slug): BlogMetadata => {
     return meta as BlogMetadata
 }
 ```
+
+## 嵌入twitter
+
+<Tweet tweetId="1285964302441156610" />
 
 </MarkDownContent>
