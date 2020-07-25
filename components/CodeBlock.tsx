@@ -6,11 +6,13 @@ import nightOwlLight from "prism-react-renderer/themes/nightOwlLight";
 
 const CodeBlock = ({ children, className }) => {
     const language = className.replace(/language-/, '')
-    const themeContext = useContext(ThemeContext);
-    console.log(themeContext, '!!!!!')
+    // const themeContext = useContext(ThemeContext);
+    // console.log(themeContext, '!!!!!')
 
-    // const codeTheme = themeContext['theme'] === 'light' ? nightOwlLight : nightOwl
+    // const darkThemeEnabled = useSelector((state) => state.preferences.darkThemeEnabled)
+    // const codeTheme = darkThemeEnabled ? nightOwl : nightOwlLight
     const codeTheme = nightOwlLight
+
     return (
         <Highlight {...defaultProps} code={children} theme={codeTheme} language={language}>
             {({ className, style, tokens, getLineProps, getTokenProps }) => (
