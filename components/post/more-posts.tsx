@@ -7,7 +7,7 @@ export default function MoreStories({ posts }) {
                 More Stories
             </h2>
             <div className="flex flex-col mb-32">
-                {posts.map((post) => (
+                {posts.map((post, ind) => (
                     <PostPreview
                         key={post.slug}
                         title={post.title}
@@ -16,6 +16,7 @@ export default function MoreStories({ posts }) {
                         author={post.author}
                         slug={post.slug}
                         excerpt={post.excerpt}
+                        isOdd={ind % 2 == 0}
                     />
                 ))}
             </div>
