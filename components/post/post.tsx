@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { Link as ScrollLink } from 'react-scroll'
 import PostHeader from './post-header'
 import PostBody from './post-body'
 import Layout from "components/layout"
@@ -36,7 +37,7 @@ export default function Post({
     <Layout preview={true}>
       <ProgressBar />
       <Container>
-        <article>
+        <article id="article-top">
           <Head>
             <title>{title}</title>
             <meta name="twitter:title" content={title} />
@@ -55,6 +56,9 @@ export default function Post({
           <a className="twitter-share-button" href={`https://twitter.com/intent/tweet?text=${title} https://lantianyou.xyz/posts/${slug}`}>
             分享到twitter
           </a>
+          <ScrollLink to='article-top' smooth duration={1000}>
+            返回
+          </ScrollLink>
         </div>
       </Container>
     </Layout >
