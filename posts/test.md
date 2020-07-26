@@ -47,3 +47,5 @@ $$
 
 
 [Stan Druckmiller 美国养老金债务危机](https://www.youtube.com/watch?v=fbgIiAnpcPc)
+
+https://www.wikiwand.com/en/Henry_George_theorem#/:~:text=The%20Henry%20George%20theorem,%20named,of%20the%20last%20marginal%20investment
