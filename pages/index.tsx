@@ -7,6 +7,7 @@ import HeroPost from 'components/post/hero-post'
 import MorePosts from 'components/post/more-posts'
 import HeaderImage from 'components/header-image'
 import SiteNav from 'components/header/site-nav'
+import * as data from '../posts.json'
 
 
 export default function Home({ postMetadata }) {
@@ -39,6 +40,7 @@ export default function Home({ postMetadata }) {
 export const getStaticProps: GetStaticProps = async () => {
     const postMetadata = getPostsMetadata()
     postMetadata.sort((a, b) => a.date > b.date ? -1 : 1)
+    postMetadata.push(data.posts)
 
     return {
         props: {

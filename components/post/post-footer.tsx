@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { Link as ScrollLink } from 'react-scroll'
 import { ArrowUp, ArrowLeft } from 'react-feather'
 
-export default function PostFooter({ slug, title }) {
+export default function PostFooter({ slug, title }: { slug: string, title: string }) {
   return (
     <div className="my-12 max-w-2xl mx-auto flex justify-between">
       <Link href="/" as='/'>
