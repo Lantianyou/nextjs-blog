@@ -11,7 +11,7 @@ export default function PostFooter({ slug, title }) {
       <a className="twitter-share-button" href={`https://twitter.com/intent/tweet?text=${title} https://lantianyou.xyz/posts/${slug}`}>
         分享到twitter
           </a>
-      <ScrollLink to='article-top' smooth duration={1000}>
+      <ScrollLink to='article-top' smooth duration={300}>
         <ArrowUp />
       </ScrollLink>
     </div>
