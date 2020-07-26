@@ -4,24 +4,25 @@ import Container from 'components/container'
 import PostHeader from 'components/post/post-header'
 import PostBody from 'components/post/post-body'
 import SiteNav from './header/site-nav'
+import MyLoader from 'components/content-loader'
 
-export default function MarkDownContent({ title, date, children }) {
-  const [loading, setLoading] = useState(true)
+
+
+export default function MarkDownContent({ title, date, children, loading }) {
+  const [isLoading, setIsLoading] = useState(loading)
 
   useEffect(() => {
-    setLoading(false)
+    setIsLoading(false)
   }, [])
 
-
-
-  return (<> loading ? <div>isloading</div>:
+  return <>
     <SiteNav />
     <ProgressBar />
     <Container>
       <PostHeader title={title} date={date} />
       <PostBody>
-        {children}
+        {isLoading ? <MyLoader /> : children}
       </PostBody>
     </Container>
-  </>)
+  </>
 }

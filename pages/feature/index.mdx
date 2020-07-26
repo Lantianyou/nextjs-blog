@@ -7,7 +7,14 @@ import {Tweet} from 'react-twitter-widgets'
 import MarkDownContent from 'components/non-markdown'
 import YouTube from 'react-youtube';
 
-<MarkDownContent title={meta.title} date={meta.date}>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css"
+  integrity="sha384-BdGj8xC2eZkQaxoQ8nSLefg4AV4/AwB3Fj+8SUSo7pnKP6Eoy18liIKTPn9oBYNG"
+  crossOrigin="anonymous"
+/>
+
+<MarkDownContent title={meta.title} date={meta.date} loading={true}>
 
 ## 插入视频
 
@@ -37,8 +44,16 @@ const getBlogMetadata = (slug): BlogMetadata => {
 }
 ```
 
+
+
+Lift($L$) can be determined by Lift Coefficient ($C_L$) like the following equation.
+$$
+L = \frac{1}{2} \rho v^2 S C_L
+$$
+
 ## 嵌入twitter
 
 <Tweet tweetId="1285964302441156610" />
 
 </MarkDownContent>
+
