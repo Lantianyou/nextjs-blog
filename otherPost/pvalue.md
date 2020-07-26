@@ -16,21 +16,27 @@ P值的完整定义是：**在原假设为真的情况下，观测到的结果�
 
 这无疑是最所知最广，误解最大的一条。让人感觉观测到的数据就足够判断出原假设成立与否。P值是在原假设成立的基础上计算的，所以P值不可能还同时是原假设错误的概率。比如连抛4次硬币，结果都是正面，双向检验的$P=0.125$，但这不意味硬币是公平的概率是0.125。
 
-## 误解2: 不显著的差别（P>0.05）意味着没有差别
+## 误解2: 不显著的差别（P>0.05）意味着实验组和对照组没有差别
 
-差别指的是实验组和对照组的差别。不显著的差别仅仅意味着原效应和观察到的结果，以及置信区间内的效应在统计上相合。不能说明原效应是最有可能的情况。实验数据最支持的效应永远是观察到的效应，和显著性无关。
+不显著的差别仅仅意味着零结果（P>0.05）和观察到的结果在统计上相合。结果还包括置信区间。不能说明零结果是最有可能的情况。实验数据最支持的效应永远是观察到的效应，和显著性无关。
 
-## 误解3:统计显著的发现在临床上是重要的
+## 误解3: 统计显著的发现在临床上是重要的
 
-这大部分情况下是错的。第一、或许效果太小在临床上不重要。P值包含着效应程度大小的信息，可以用效应估计和置信区间的形式给出。第二、指标本身在临床上不重要，因为有可能产生一些替代性结果（[Surrogate endpoint - Wikiwand](https://www.wikiwand.com/en/Surrogate_endpoint#/:~:text=In%20clinical%20trials,%20a%20surrogate,necessarily%20have%20a%20guaranteed%20relationship.)）。比如无法收集到某个抗癌药物的存活率，那么用响应率来代替存活率。
+这大部分情况下是错的。第一、或许效果太小在临床上不重要。P值包含着效应程度大小的信息，可以用效应估计和置信区间的形式给出。第二、指标本身在临床上不重要，因为它可能是替代性指标（[Surrogate endpoint - Wikiwand](https://www.wikiwand.com/en/Surrogate_endpoint#/:~:text=In%20clinical%20trials,%20a%20surrogate,necessarily%20have%20a%20guaranteed%20relationship.)）。比如无法收集到某个抗癌药物的存活率，那么用响应率来代替存活率，对药物产生响应显著不意味着抗癌药能延长生命。
 
-## 误解4: 产生既显著又不显著的实验是自相矛盾的
+## 误解4: 同时在显著性水平以上和以下的P值是自相矛盾的实验
 
-即使估计处理效果完全相同，通过改变估计的准确程度（一般通过改变样本了），也能让实验也可以有不同程度的显著性。只有在差异的结果不太可能是偶然发生的情况下，实验才是统计上矛盾的。对应的，置信区间有很小或者不重合，要接受异质性检验。
+即使估计处理效果完全相同，通过改变估计的准确程度（一般通过改变样本量），也能让实验产生不同程度的显著性。只有在对照组和实验组的差异不太可能是偶然，相应的置信区间只有很少或者不重合，并且要有异质性检验后，才能说明实验是矛盾的。
 
 ## 误解5: P值相同的检验为否定原假设提供相同证据
 
-效应差距很大的观察结果可能产生一样的P值，比如治疗效应3%和19%的两个实验P值都是0.05。但是很明显他们是差距很大的两个结果。如果我们认为10%的好处就足够抵消诊断的副作用，那我们完全可以采用产生较大效应的结果，拒绝效应较小，比如小于10%的结果。当然，即使（诊疗效果的）置信区间较低端不接近于0，也产生了相同P值。
+效应差距很大的观察结果可能产生一样的P值，比如处理效应3%和19%的两个实验P值都是0.05。但是很明显，他们是差距很大的两个结果。如果我们认为10%的效用就足够抵消副作用，那完全可以采用产生效应较大的结果，拒绝效应较小，比如小于10%的结果。
+
+听起来好像有点不协调，因为P值显示的是多大程度上反证原假设。并没有“正面证据”——那么$P=0.05$是反证原假设，那么证明了什么？在上面例子中，如果把证据量化，哪个实验证明了10%以上的效应，那么19%是更明显的证据。
+
+## 误解6: $P=0.05$意味着我们观测到了原假设成立情况下只有5%可能发生的数据
+
+That this is not the case is seen immediately from the P value’s definition, the probability of the observed data, plus more extreme data, under the null hypothesis. The result with the P value of exactly .05 (or any other value) is the most probable of all the other possible results included in the “tail area” that defines the P value. The probability of any individ- ual result is actually quite small, and Fisher said he threw in the rest of the tail area “as an approximation.” As we will see later in this chapter, the inclusion of these rarer outcomes poses serious logical and quantitative problems for the P value, and using comparative rather than single probabilities to measure evidence eliminates the need to include outcomes other than what was observed.
 
 ## 误解7: $P=0.05$ 和 $P \leq 0.05$ **含义相同**
 
@@ -45,7 +51,6 @@ P值的完整定义是：**在原假设为真的情况下，观测到的结果�
 用另一种方式讲，假设我们在检验一个已知有效药物，比如原假设避孕药不能避孕。假如我们拒绝原假设，那么错误拒绝原假设（第一类错误）的概率是0。因为拒绝原假设的结论都是错的（避孕药能避孕），那么P值大小根本无所谓。相反的，如果原假设是止咳药不能避孕，那么所有拒绝原假设的实验结论都是错的（第一类错误概率是1），也和P值无关。
 
 很显然，拒绝原假设是正确还是错误不止取决于P值。
-
 
 ## 误解10: 显著性水平0.05，犯第一类错误的概率是0.05
 
