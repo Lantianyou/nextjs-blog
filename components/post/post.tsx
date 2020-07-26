@@ -38,7 +38,7 @@ export default function Post({
         <meta name="twitter:description" content={excerpt} />
         <meta name="twitter:image" content={`https://lantianyou.xyz/images/${cover.image}`} />
       </Head>
-      <MarkDownContent title={title} date={date} >
+      <MarkDownContent title={title} date={date} loading={true}>
         {children}
       </MarkDownContent>
     </Layout >

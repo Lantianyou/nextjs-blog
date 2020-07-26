@@ -1,6 +1,5 @@
 const withPlugins = require('next-compose-plugins')
 const optimizedImages = require('next-optimized-images')
-const rehypePrism = require('@mapbox/rehype-prism')
 const remarkMath = require('remark-math')
 const rehypeKatex = require('rehype-katex')
 const path = require("path")
@@ -44,15 +43,6 @@ module.exports = withPlugins([
   }],
   [withMDX, {
     pageExtensions: ['ts', 'tsx', 'mdx'],
-    loaders: [
-      {
-        test: /\.(jpe?g|png)$/i,
-        loaders: [
-          'file-loader',
-          'webp-loader'
-        ]
-      }
-    ]
   }]
 
 ]);

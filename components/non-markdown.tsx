@@ -8,7 +8,17 @@ import MyLoader from 'components/content-loader'
 
 
 
-export default function MarkDownContent({ title, date, children, loading }) {
+export default function MarkDownContent({
+  title,
+  date,
+  children,
+  loading
+}: {
+  title: string,
+  date: string,
+  children: React.ReactNode,
+  loading: boolean
+}) {
   const [isLoading, setIsLoading] = useState(loading)
 
   useEffect(() => {
