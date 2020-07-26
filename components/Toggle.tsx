@@ -1,5 +1,4 @@
-import Moon from 'components/icons/moon'
-import Sun from 'components/icons/sun'
+import {Moon, Sun} from 'react-feather'
 import { useDispatch, connect } from 'react-redux'
 import { TOGGLE_DARKTHEME } from 'lib/actions'
 

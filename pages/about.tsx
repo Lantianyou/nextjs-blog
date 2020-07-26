@@ -1,5 +1,4 @@
-import Mail from 'components/icons/mail'
-import Call from 'components/icons/call'
+import { Mail, Phone } from 'react-feather'
 
 export default function About() {
   return (
@@ -37,7 +36,7 @@ export default function About() {
                 </li>
                 <li className="mt-1.5 leading-normal  pl-7 text-md">
                   <span className='inline-block'>
-                    <Call color='rgba(117, 117, 117, 1)' size={30} />
+                    <Phone color='rgba(117, 117, 117, 1)' size={30} />
                   </span>
                   151 1078 5777
                 </li>
