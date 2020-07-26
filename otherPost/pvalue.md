@@ -66,12 +66,14 @@ That this is not the case is seen immediately from the P value’s definition, t
 
 这个误解基本概括了其他所有误解。这等价于实验效应的规模毫无意义，科学结论的仅有证据就是眼前的实验，信心和行动能直接由统计结果得出。需要结合其他人的工作才能根据我们的实验得出结论。在某些情形下，即使P值显著，科学上成立的结论或许仍然是原假设；另外的情况是，不显著的P值可能仍然要拒绝原假设。我们必须同时考虑实验本身的严重误差和结论是错误的，来支撑行为。
 
-## P值替代
+## 结论
+
+<!-- ## P值替代
 
 只有一种推断——贝叶斯公式——计算出的数字比其他解释更具深度。贝叶斯公式可以写作如下：
-$$
+
 Odds(取得数据后原假设成立) = Odds(取得数据前原假设成立) * 贝叶斯因子
-$$
+
 
 或者写作：
 
@@ -79,25 +81,14 @@ $$
 后验概率(H_0, 已知数据) = 前验概率(H_0, 已知数据) * \frac{Pr(数据，H_0成立)}{Pr(数据，H_1成立)}
 $$
 
-Odds（优势）$Odds=\frac{probability}{1-probability}$
+Odds（优势）$Odds=\frac{probability}{1-probability}$ -->
 
-最振奋的是，P值不在公式里。我们使用了贝叶斯因子，基本相当于诊断检验的似然比。能度量
+<!-- 最振奋的是，P值不在公式里。我们使用了贝叶斯因子，基本相当于诊断检验的似然比。 -->
 
-It measures how strongly the ob-
-served data are predicted by two competing hypotheses, and
-is a measure of evidence that has most of the properties that
-we normally mistakenly ascribe to the P value.
+P值度量观测到的数据在两个完全相反假设下，多有把握预测出现观察到数据。P值是对证据的度量，而不是其他很多误解。P值的另一个批评是极大高估了反对原假设的证据
 
-The main point
-here is that our intuition about what constitutes a good mea-
-sure of evidence is correct; what is problematic is that the P
-value has few of them. 
+最根本的问题是理解到没有什么标准方法能产生出一个数字，这个数字能揭示出一个结论的概率。某个假设的正确与否既取决于实验内**和**实验外，还要看假设蕴含的内在机制的合理性和其他证据。如果背后的机制是不太合理的，显著的P值也不能说明这个机制是合理的。很少有一次实验就提供充分证据。认识到这一点，就能防止P值的滥用。
 
-P value greatly overstates the evidence against the null hypothesis
-
-最根本的问题是理解到没有什么标准方法能产生出一个数字来揭示出一个结论的概率。某个断言的正确与否既取决于实验内又取决于实验外，还要看断言蕴含的内在机制的可能性和事实证据。
-如果背后的机制是不太合理的，显著的P值也不能说明这个机制是合理的。很少有一次实验就提供充分证据。认识到这一点，就能防止P值的滥用。
-
-第二、效应的程度十分重要。实验结果更多反映在整个置信区间，而不是P值或者效应估计。置信区间同时包含了从数据估计的效应的规模和不精确。理解到这一点，就会发现标准方法计算出的数据不能检验结论正确与否。
+还有，效应的规模十分重要。实验结果应该呈现整个置信区间，而不单是P值或者效应估计。置信区间同时包含了从观测到的数据估计出的效应规模和不精确程度。
 
 [A dirty dozen](https://www.semanticscholar.org/paper/A-dirty-dozen%3A-twelve-p-value-misconceptions.-Goodman/3ace8fea1e22ac42546178c3246a80b080679775)
