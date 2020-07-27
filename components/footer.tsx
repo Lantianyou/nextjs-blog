@@ -6,7 +6,7 @@ import { Twitter, Mail, GitHub } from 'react-feather';
 export default function Footer() {
   return (
     <footer className="bg-accent-1 border-t border-accent-2">
-      <div className="flex flex-col lg:flex-row justify-around items-center max-w-2xl mx-auto">
+      <div className="flex flex-col md:flex-row justify-around items-center max-w-2xl mx-auto">
         {/* 颜色取自medium */}
         <a href="https://github.com/Lantianyou/nextjs-blog" className="py-2" aria-label='源代码'>
           <GitHub size={30} color='rgba(117, 117, 117, 1)' /></a>

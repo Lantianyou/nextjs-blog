@@ -3,8 +3,9 @@ import path from 'path'
 // import unified from 'unified'
 import matter from 'gray-matter'
 import remark from 'remark'
+import emogi from 'remark-emoji'
+import images from 'remark-images'
 import remark2rehype from 'remark-rehype'
-import markdown from 'remark-parse'
 import remarkSlug from 'remark-slug'
 import toc from 'remark-toc'
 import math from 'remark-math'
@@ -48,14 +49,15 @@ export const getPostAndMetadata = async (slug) => {
     const parsedMarkdown = matter(markdownWithMetaData)
 
     const processedContent = await remark()
-        .use(markdown)
         .use(math)
-        .use(remarkSlug)
+        .use(emogi)
+        .use(images)
         .use(toc, { heading: '目录' })
+        .use(remarkSlug)
         .use(remark2rehype, { allowDangerousHtml: true })
         .use(katex)
-        .use(stringify)
         .use(rehypePrisma)
+        .use(stringify)
         .process(parsedMarkdown.content)
 
     const htmlString = processedContent.toString()
@@ -93,7 +95,5 @@ interface PostMetadata {
 //         .use(katex)
 //         .use(stringify)
 //         .process(fs.readFileSync(fileDir))
-
 //     return processor.toString()
-
 // }
