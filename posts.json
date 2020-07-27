@@ -15,20 +15,6 @@
       }
     },
     {
-      "slug": "think-different",
-      "title": "Think Different",
-      "cover": {
-        "image": "spacex.jpg",
-        "description": "超音速飞机"
-      },
-      "date": "2020-07-24",
-      "author": {
-        "name": "兰天游",
-        "picture": ""
-      },
-      "excerpt": "主线故事/教育/政治/哲学"
-    },
-    {
       "slug": "great-stagnation",
       "title": "大停滞",
       "cover": {
@@ -54,7 +40,7 @@
         "name": "兰天游",
         "picture": ""
       },
-      "excerpt": ""
+      "excerpt": "长期停滞（secular stagnation）在某种程度已经发生"
     },
     {
       "slug": "secret-society",
@@ -139,20 +125,6 @@
         "picture": ""
       },
       "excerpt": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At illum molestias esse possimus excepturi debitis aspernatur, nulla assumenda rem impedit in. Iusto accusamus quasi harum expedita explicabo rerum suscipit laboriosam?"
-    },
-    {
-      "slug": "get-big-fast",
-      "title": "快速垄断",
-      "cover": {
-        "image": "cloud.jpg",
-        "description": ""
-      },
-      "date": "2020-07-09",
-      "author": {
-        "name": "兰天游",
-        "picture": ""
-      },
-      "excerpt": ""
     }
   ]
 }
