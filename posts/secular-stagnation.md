@@ -7,7 +7,7 @@ date: '2020-07-18'
 author:
   name: '兰天游'    
   picture: 'profile.jpg'
-excerpt: ''
+excerpt: 长期停滞（secular stagnation）在某种程度已经发生
 ---
 
 [拉里·萨姆尔森在纽约经济俱乐部讲话](https://www.youtube.com/watch?v=Fmxw1Ju7Hts)
