@@ -6,7 +6,6 @@ import Container from 'components/container'
 import HeroPost from 'components/post/hero-post'
 import MorePosts from 'components/post/more-posts'
 import HeaderImage from 'components/header-image'
-import SiteNav from 'components/header/site-nav'
 import * as data from '../posts.json'
 
 
@@ -18,7 +17,6 @@ export default function Home({ postsMetadata }) {
             <Head>
                 <title>{siteTitle}</title>
             </Head>
-            <SiteNav />
             <HeaderImage />
             <Container>
                 {heroPost &&
