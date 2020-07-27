@@ -5,7 +5,7 @@ import { getMathPost } from 'lib/getPosts'
 import * as data from '../../posts.json'
 
 export default function Post({ htmlString }) {
-  const { title, date, slug } = data.posts
+  const { title, date, slug } = data.posts.find(post => post.id === 'pvalue-misconception')
   return (
     <>
       <Head>

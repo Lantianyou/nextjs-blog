@@ -1,8 +1,8 @@
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Layout, { siteTitle } from 'components/layout'
-import Container from '../components/container'
-import { getPostsMetadata } from '../lib/getPosts'
+import Container from 'components/container'
+// import { getPostsMetadata } from '../lib/getPosts'
 import HeroPost from 'components/post/hero-post'
 import MorePosts from 'components/post/more-posts'
 import HeaderImage from 'components/header-image'
@@ -10,9 +10,9 @@ import SiteNav from 'components/header/site-nav'
 import * as data from '../posts.json'
 
 
-export default function Home({ postMetadata }) {
-    const heroPost = postMetadata[0]
-    const morePosts = postMetadata.slice(1)
+export default function Home({ postsMetadata }) {
+    const heroPost = postsMetadata[0]
+    const morePosts = postsMetadata.slice(1)
     return (
         <Layout preview={false}>
             <Head>
@@ -38,13 +38,13 @@ export default function Home({ postMetadata }) {
 
 
 export const getStaticProps: GetStaticProps = async () => {
-    const postMetadata = getPostsMetadata()
-    postMetadata.sort((a, b) => a.date > b.date ? -1 : 1)
-    postMetadata.push(data.posts)
+    // const postsMetadata = getPostsMetadata()
+    const postsMetadata = data.posts
+    postsMetadata.sort((a, b) => a.date > b.date ? -1 : 1)
 
     return {
         props: {
-            postMetadata
+            postsMetadata
         }
     }
 }
