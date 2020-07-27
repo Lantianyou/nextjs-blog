@@ -14,7 +14,6 @@
     "@mdx-js/react": "^1.6.6",
     "@next/bundle-analyzer": "^9.4.4",
     "@next/mdx": "^9.4.4",
-    "@rebass/forms": "^4.0.6",
     "babel-register": "^6.26.0",
     "classname": "0.0.0",
     "classnames": "^2.2.6",
