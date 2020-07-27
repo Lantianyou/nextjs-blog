@@ -9,9 +9,9 @@ const Toggle = ({ darkThemeEnabled }) => {
 
   return (
     <div className={cn({ 'bg-gray-600': darkThemeEnabled }, { 'bg-black': !darkThemeEnabled })}>
-      <Button onClick={() => dispatch({ type: TOGGLE_DARKTHEME })}>
+      <button onClick={() => dispatch({ type: TOGGLE_DARKTHEME })}>
         {darkThemeEnabled ? <Sun size={30} /> : <Moon size={30} />}
-      </Button>
+      </button>
 
     </div>
   );
