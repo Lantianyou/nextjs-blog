@@ -6,8 +6,8 @@ export default function MyLoader(props) {
       height={160}
       width={400}
       speed={2}
-      primaryColor="#f3f3f3"
-      secondaryColor="#ecebeb"
+      // primaryColor="#f3f3f3"
+      // secondaryColor="#ecebeb"
       {...props}
     >
       <circle cx="10" cy="20" r="8" />

@@ -22,9 +22,9 @@ export default function MarkDownContent({
 }) {
   const [isLoading, setIsLoading] = useState(loading)
 
-  useEffect(() => {
-    setIsLoading(false)
-  }, [])
+  // useEffect(() => {
+  //   setIsLoading(false)
+  // }, [])
 
   return <>
     <SiteNav />
