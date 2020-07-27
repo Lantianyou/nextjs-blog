@@ -49,6 +49,7 @@ export const getPostAndMetadata = async (slug) => {
 
     const processedContent = await remark()
         .use(markdown)
+        .use(math)
         .use(remarkSlug)
         .use(toc, { heading: '目录' })
         .use(remark2rehype, { allowDangerousHtml: true })

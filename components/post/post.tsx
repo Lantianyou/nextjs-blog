@@ -2,7 +2,6 @@ import Head from 'next/head'
 
 import Layout from "components/layout"
 import MarkDownContent from 'components/non-markdown'
-import PostFooter from './post-footer'
 
 export const siteTitle = '兰天游'
 
@@ -42,7 +41,6 @@ export default function Post({
       <MarkDownContent title={title} date={date} loading={true} slug={slug}>
         {children}
       </MarkDownContent>
-      <PostFooter slug={slug} title={title} />
     </Layout >
   )
 }
