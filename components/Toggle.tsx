@@ -1,6 +1,6 @@
 import cn from 'classnames'
 import { Moon, Sun } from 'react-feather'
-import { Button } from 'rebass'
+// import { Button } from 'rebass'
 import { useDispatch, connect } from 'react-redux'
 import { TOGGLE_DARKTHEME } from 'lib/actions'
 
