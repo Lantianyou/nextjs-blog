@@ -17,7 +17,7 @@ const CodeBlock = ({ children, className }) => {
 
   const copy = (<div className='text-center py-4'>
     < CopyToClipboard text={text} onCopy={() => setCopied(true)} >
-      <button>复制</button>
+      <button aria-label='复制代码块'>复制</button>
     </ CopyToClipboard></div>)
 
   return (

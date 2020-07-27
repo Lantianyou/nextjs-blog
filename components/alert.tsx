@@ -14,6 +14,7 @@ export default function Alert({ preview }) {
           {preview ? (
             <div className="py-2 text-center text-sm">
               <a
+                aria-label='alert link'
                 href="/about"
                 className="underline hover:text-cyan duration-200 transition-colors"
               >

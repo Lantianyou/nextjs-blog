@@ -1,6 +1,5 @@
 import cn from 'classnames'
 import { Moon, Sun } from 'react-feather'
-// import { Button } from 'rebass'
 import { useDispatch, connect } from 'react-redux'
 import { TOGGLE_DARKTHEME } from 'lib/actions'
 
@@ -9,7 +8,7 @@ const Toggle = ({ darkThemeEnabled }) => {
 
   return (
     <div className={cn({ 'bg-gray-600': darkThemeEnabled }, { 'bg-black': !darkThemeEnabled })}>
-      <button onClick={() => dispatch({ type: TOGGLE_DARKTHEME })}>
+      <button aria-label='切换暗色模式' onClick={() => dispatch({ type: TOGGLE_DARKTHEME })}>
         {darkThemeEnabled ? <Sun size={30} /> : <Moon size={30} />}
       </button>
 

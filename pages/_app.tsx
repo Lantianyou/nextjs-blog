@@ -1,6 +1,5 @@
 import "styles/tailwind.css";
 import 'styles/global.css'
-// import 'styles/prism.css'
 import { Provider as ReduxProvider } from 'react-redux'
 import { GlobalStyles } from 'styles/global'
 import DarkThemeProvider from 'components/DarkThemeProvider'
