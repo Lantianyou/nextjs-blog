@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 // import unified from 'unified'
+import minify from 'rehype-preset-minify'
 import matter from 'gray-matter'
 import remark from 'remark'
 import emogi from 'remark-emoji'
@@ -9,6 +10,7 @@ import remark2rehype from 'remark-rehype'
 import remarkSlug from 'remark-slug'
 import toc from 'remark-toc'
 import math from 'remark-math'
+import footnotes from 'remark-footnotes'
 import katex from 'rehype-katex'
 import stringify from 'rehype-stringify'
 import rehypePrisma from '@mapbox/rehype-prism'
@@ -52,11 +54,13 @@ export const getPostAndMetadata = async (slug) => {
         .use(math)
         .use(emogi)
         .use(images)
+        .use(footnotes)
         .use(toc, { heading: '目录' })
         .use(remarkSlug)
         .use(remark2rehype, { allowDangerousHtml: true })
         .use(katex)
         .use(rehypePrisma)
+        .use(minify)
         .use(stringify)
         .process(parsedMarkdown.content)
 
