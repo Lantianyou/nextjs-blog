@@ -22,7 +22,7 @@ export default function Meta() {
         <link rel="icon" href="/favicon.ico" />
         <meta
             name="description"
-            content="Learn how to build a personal website using Next.js"
+            content="兰天游的个人网站"
         />
         <meta
             property="og:image"
