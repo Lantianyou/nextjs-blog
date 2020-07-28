@@ -3,8 +3,6 @@ const optimizedImages = require('next-optimized-images')
 const remarkMath = require('remark-math')
 const rehypeKatex = require('rehype-katex')
 const path = require("path")
-// const withCss = require('@zeit/next-css')
-// const withPurgeCss = require('next-purgecss')
 
 
 const withMDX = require('@next/mdx')({

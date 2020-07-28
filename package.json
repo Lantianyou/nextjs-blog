@@ -65,17 +65,13 @@
     "simple-functional-loader": "^1.2.1",
     "styled-components": "^5.1.1",
     "svg-sprite-loader": "^5.0.0",
-    "universal-config": "^0.3.0",
-    "unsplash-js": "^6.0.0",
-    "xhr2": "^0.2.0"
+    "universal-config": "^0.3.0"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.3.0",
     "@types/node": "^14.0.20",
     "@types/react": "^16.9.41",
-    "@zeit/next-css": "^1.0.1",
     "gray-matter": "^4.0.2",
-    "gulp-responsive": "^3.0.1",
     "next-images": "^1.4.0",
     "postcss-preset-env": "^6.7.0",
     "svg-react-loader": "^0.4.6",
