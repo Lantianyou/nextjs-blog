@@ -12,15 +12,18 @@ export default function Alert({ preview }) {
       <Container>
         <div>
           {preview ? (
-            <div className="py-2 text-center text-sm">
+            <div className="py-2 text-center text-sm flex justify-center">
+              <a href='https://drive.google.com/file/d/1xdfY1iilJy5ciTbGk5KezG0cqnPtOhix/view?usp=sharing' className="underline hover:text-cyan duration-200 transition-colors mx-10"
+              >正在找工作：求职信</a>
+
               <a
-                aria-label='alert link'
-                href="/about"
+                href="https://drive.google.com/file/d/1fYUWbfEQARGHPFZ0r349N7b4UjoNCzbB/view?usp=sharing"
                 className="underline hover:text-cyan duration-200 transition-colors"
               >
-                正在找工作
+                简历
               </a>{' '}
             </div>
+
           ) : (
               <>
                 {/* The source code for this blog is{' '} */}
