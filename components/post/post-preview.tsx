@@ -36,7 +36,7 @@ export default function PostPreview({
       delay={500}
       distance='30px'
     >
-      <div className='flex flex-col items-center md:flex-row justify-between lg:py-10'>
+      <section className='flex flex-col items-center md:flex-row justify-between lg:py-10 mb-10'>
         <div className="content">
           <h3 className="text-3xl leading-snug">
             <Link as={`/posts/${slug}`} href="/posts/[slug]">
@@ -44,7 +44,6 @@ export default function PostPreview({
             </Link>
           </h3>
           <PostDate dateString={date} />
-
           <p className="text-lg leading-relaxed my-4 hidden md:block">{excerpt}</p>
         </div>
         <div className="image pl-2" style={{
@@ -53,7 +52,7 @@ export default function PostPreview({
         }}>
           <CoverImage slug={slug} title={title} src={image} description={description} />
         </div>
-      </div>
+      </section>
     </Fade>
   )
 }
