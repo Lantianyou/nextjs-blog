@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Layout from 'components/layout'
 import { siteTitle } from 'components/meta'
 import Container from 'components/container'
+import SiteNav from 'components/header/site-nav'
 // import { getPostsMetadata } from '../lib/getPosts'
 import HeroPost from 'components/post/hero-post'
 import MorePosts from 'components/post/more-posts'
@@ -18,6 +19,7 @@ export default function Home({ postsMetadata }) {
             <Head>
                 <title>{siteTitle}</title>
             </Head>
+            <SiteNav />
             <HeaderImage />
             <Container>
                 {heroPost &&

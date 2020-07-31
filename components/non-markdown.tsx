@@ -5,6 +5,7 @@ import PostHeader from 'components/post/post-header'
 import PostBody from 'components/post/post-body'
 import PostFooter from 'components/post/post-footer'
 import MyLoader from 'components/content-loader'
+import SiteNav from 'components/header/site-nav'
 
 export default function MarkDownContent({
   title,
@@ -27,6 +28,7 @@ export default function MarkDownContent({
 
   return (
     <>
+      <div className='max-w-2xl mx-auto'><SiteNav /></div>
       <ProgressBar />
       <Container>
         <PostHeader title={title} date={date} />
