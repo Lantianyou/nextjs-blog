@@ -2,7 +2,7 @@
   "posts": [
     {
       "title": "P值的12种错误解释",
-      "date": "2020-07-26",
+      "date": "2020-07-18",
       "cover": {
         "image": "",
         "description": ""
@@ -35,7 +35,7 @@
         "image": "stock.jpg",
         "description": ""
       },
-      "date": "2020-07-18",
+      "date": "2020-07-26",
       "author": {
         "name": "兰天游",
         "picture": ""
@@ -49,12 +49,12 @@
         "image": "kennedy.jpeg",
         "description": ""
       },
-      "date": "2020-07-15",
+      "date": "2020-07-24",
       "author": {
         "name": "兰天游",
         "picture": ""
       },
-      "excerpt": ""
+      "excerpt": "我们的生活方式在受到冲击。那些以我们为敌的人在全球进发，我们友人的生存正处于危急之中。但是没有任何战争宣布进行，没有任何一国的边境被军队跨越，没有任何一枚导弹正在发射。"
     },
     {
       "slug": "time-to-build",
@@ -71,27 +71,13 @@
       "excerpt": "尽管有诸多先前预警，西方文明的每个机构都对新冠肺炎大流行病毫无防备。这样机构效率的重大挫败将在这个十年被常常提起，但是现在来问为什么，和我们需要为此做些什么还不迟。"
     },
     {
-      "slug": "the-other-side",
-      "title": "迁移到云",
-      "cover": {
-        "image": "cloud.jpg",
-        "description": ""
-      },
-      "date": "2020-07-09",
-      "author": {
-        "name": "兰天游",
-        "picture": ""
-      },
-      "excerpt": ""
-    },
-    {
       "slug": "test",
       "title": "养老金：美国政府200万亿美元债务",
       "cover": {
         "image": "",
         "description": ""
       },
-      "date": "2020-07-09",
+      "date": "2020-06-09",
       "author": {
         "name": "兰天游",
         "picture": ""
@@ -105,7 +91,7 @@
         "image": "software.jpg",
         "description": ""
       },
-      "date": "2020-07-09",
+      "date": "2020-07-31",
       "author": {
         "name": "兰天游",
         "picture": ""
@@ -124,7 +110,7 @@
         "name": "兰天游",
         "picture": ""
       },
-      "excerpt": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At illum molestias esse possimus excepturi debitis aspernatur, nulla assumenda rem impedit in. Iusto accusamus quasi harum expedita explicabo rerum suscipit laboriosam?"
+      "excerpt": "Andy Jassy可能是科技界最神秘但位高权重的人物，他在22岁从哈佛商学院毕业后就加入了刚刚成立的亚马逊，随后担任AWS部门CEO。AWS(Amazon Web Service)是世界第一的云平台，驱动了亚马逊和诸多客户的创新迭代。"
     }
   ]
 }

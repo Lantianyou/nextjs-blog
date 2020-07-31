@@ -45,7 +45,7 @@ export default function PostPreview({
           </h3>
           <PostDate dateString={date} />
 
-          <p className="text-lg leading-relaxed my-4 hidden md:block">{excerpt || 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores aliquam dolor magni, dolores atque recusandae molestias animi reiciendis dicta voluptas eius sint, corrupti iste optio repellat omnis sapiente blanditiis nemo?'}</p>
+          <p className="text-lg leading-relaxed my-4 hidden md:block">{excerpt}</p>
         </div>
         <div className="image pl-2" style={{
           width: '300px',
