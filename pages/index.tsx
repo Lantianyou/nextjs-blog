@@ -1,6 +1,7 @@
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
-import Layout, { siteTitle } from 'components/layout'
+import Layout from 'components/layout'
+import { siteTitle } from 'components/meta'
 import Container from 'components/container'
 // import { getPostsMetadata } from '../lib/getPosts'
 import HeroPost from 'components/post/hero-post'
