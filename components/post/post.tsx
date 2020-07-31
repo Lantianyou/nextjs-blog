@@ -1,7 +1,7 @@
 import Head from 'next/head'
-
 import Layout from "components/layout"
 import MarkDownContent from 'components/non-markdown'
+import Signature from 'components/signature'
 
 export const siteTitle = '兰天游'
 
@@ -40,6 +40,7 @@ export default function Post({
       </Head>
       <MarkDownContent title={title} date={date} loading={true} slug={slug}>
         {children}
+        <Signature author={author} />
       </MarkDownContent>
     </Layout >
   )
