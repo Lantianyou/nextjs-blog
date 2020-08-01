@@ -1,6 +1,5 @@
 import fs from 'fs'
 import path from 'path'
-// import unified from 'unified'
 import minify from 'rehype-preset-minify'
 import matter from 'gray-matter'
 import remark from 'remark'
@@ -8,7 +7,6 @@ import emogi from 'remark-emoji'
 import images from 'remark-images'
 import remark2rehype from 'remark-rehype'
 import remarkSlug from 'remark-slug'
-import toc from 'remark-toc'
 import math from 'remark-math'
 import footnotes from 'remark-footnotes'
 import katex from 'rehype-katex'
@@ -55,7 +53,6 @@ export const getPostAndMetadata = async (slug) => {
         .use(emogi)
         .use(images)
         .use(footnotes)
-        .use(toc, { heading: '目录' })
         .use(remarkSlug)
         .use(remark2rehype, { allowDangerousHtml: true })
         .use(katex)
@@ -65,6 +62,8 @@ export const getPostAndMetadata = async (slug) => {
         .process(parsedMarkdown.content)
 
     const htmlString = processedContent.toString()
+
+    // fs.appendFileSync(`${postsDir}/${slug}.html`, htmlString)
 
     return {
         htmlString,

@@ -20,6 +20,7 @@ export default function MarkDownContent({
   loading: boolean,
   slug: string
 }) {
+
   const [isLoading, setIsLoading] = useState(loading)
 
   useEffect(() => {

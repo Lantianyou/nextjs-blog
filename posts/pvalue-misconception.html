@@ -1,0 +1,333 @@
+<p>
+  P值可能是最常使用，但最多误解的统计学概念。JAMA杂志调查显示，88%的人表示很了解P值，但是只有62%的人能正确回答出一个非常简单的P值问题。似乎不管解释多少遍P值到底是什么，还是没有人能正确理解。在最常使用统计学的生物医学领域，过去70年里发表过无数描述P值含义的文章，但是每一代的研究者都好像在故意忽略它们。
+<p>使用P值的人不理解P值不是他们的错。第一个引入P值的统计学家——费舍——也不能准确解释P值的推断含义。他描述过他怎么使用P值的，但是从没直接解释过P值的推断含义。
+<p>费舍建议将比较小的P值称为“显著”。在他1926年写作的第一本现代统计学教材《供研究人员使用的统计方法》里写道：
+<blockquote>
+  <p>笔者本人常用较小的5%作为显著性标准水平…. 只有在实验设计正确，且几乎展现不示出这种显著性水平的情况下，才能认为实验证据能够支撑所验证的科学事实。
+</blockquote>
+<p>换句话说，小于0.05的P值最初的含义仅仅意味着要重复实验。如果再次的实验同样产生显著的P值，那么才能说明观察到的现象不是巧合。所以“显著”仅仅意味着要进行更多实验，而不是证明本身。
+<p>P值还要和“假设检验”一起来理解，导致P值的含义更加复杂。鉴于P值造成了许多误解，本文总结了P值被最常误解的12种方式。
+<p>P值的完整定义是：<strong>在原假设为真的情况下，观测到的结果和更极端的结果出现的概率</strong>，数学表达式是：<span class="math math-inline"><span class=katex><span
+        class=katex-mathml><math xmlns=http://www.w3.org/1998/Math/MathML>
+          <semantics>
+            <mrow>
+              <mi>P</mi>
+              <mi>r</mi>
+              <mo stretchy=false>(</mo>
+              <mi>X</mi>
+              <mo>≥</mo>
+              <mi>x</mi>
+              <mi mathvariant=normal>∣</mi>
+              <msub>
+                <mi>H</mi>
+                <mn>0</mn>
+              </msub>
+              <mo stretchy=false>)</mo>
+            </mrow>
+            <annotation encoding=application/x-tex>Pr(X \geq x| H_0 )</annotation>
+          </semantics>
+        </math></span><span class=katex-html aria-hidden=true><span class=base><span class=strut
+            style=height:1em;vertical-align:-.25em></span><span class="mord mathdefault"
+            style=margin-right:.13889em>P</span><span class="mord mathdefault" style=margin-right:.02778em>r</span><span
+            class=mopen>(</span><span class="mord mathdefault" style=margin-right:.07847em>X</span><span class=mspace
+            style=margin-right:.2777777777777778em></span><span class=mrel>≥</span><span class=mspace
+            style=margin-right:.2777777777777778em></span></span><span class=base><span class=strut
+            style=height:1em;vertical-align:-.25em></span><span class="mord mathdefault">x</span><span
+            class=mord>∣</span><span class=mord><span class="mord mathdefault" style=margin-right:.08125em>H</span><span
+              class=msupsub><span class="vlist-t vlist-t2"><span class=vlist-r><span class=vlist
+                    style=height:.30110799999999993em><span
+                      style=top:-2.5500000000000003em;margin-left:-.08125em;margin-right:.05em><span class=pstrut
+                        style=height:2.7em></span><span class="mtight reset-size6 size3 sizing"><span
+                          class="mord mtight">0</span></span></span></span><span class=vlist-s>​</span></span><span
+                  class=vlist-r><span class=vlist
+                    style=height:.15em><span></span></span></span></span></span></span><span
+            class=mclose>)</span></span></span></span></span>
+<h2 id=误解1-005的p值意味着原假设只有005的概率为真>误解1: 0.05的P值意味着原假设只有0.05的概率为真</h2>
+<p>这无疑是最所知最广，误解最大的一条。让人感觉通过观测到的数据就足够判断出原假设成立与否。P值是在原假设成立的基础上计算的，所以P值不可能还同时是原假设错误的概率。比如连抛4次硬币，结果都是正面，双向检验的<span
+    class="math math-inline"><span class=katex><span class=katex-mathml><math xmlns=http://www.w3.org/1998/Math/MathML>
+          <semantics>
+            <mrow>
+              <mi>P</mi>
+              <mo>=</mo>
+              <mn>0.125</mn>
+            </mrow>
+            <annotation encoding=application/x-tex>P=0.125</annotation>
+          </semantics>
+        </math></span><span class=katex-html aria-hidden=true><span class=base><span class=strut
+            style=height:.68333em;vertical-align:0></span><span class="mord mathdefault"
+            style=margin-right:.13889em>P</span><span class=mspace style=margin-right:.2777777777777778em></span><span
+            class=mrel>=</span><span class=mspace style=margin-right:.2777777777777778em></span></span><span
+          class=base><span class=strut style=height:.64444em;vertical-align:0></span><span class=mord>0</span><span
+            class=mord>.</span><span class=mord>1</span><span class=mord>2</span><span
+            class=mord>5</span></span></span></span></span>，但这不意味硬币是公平的概率是0.125。
+<h2 id=误解2-不显著的差别（p005）意味着实验组和对照组没有差别>误解2: 不显著的差别（P>0.05）意味着实验组和对照组没有差别</h2>
+<p>不显著的差别仅仅意味着零结果（原假设预测的结果）和观察到的结果在统计上相合。结果还包括置信区间。不能说明零结果是最有可能的情况。在一个给定实验，数据最支持的效应永远是观察到的效应，和显著性无关。
+<h2 id=误解3-统计显著的发现在临床上是重要的>误解3: 统计显著的发现在临床上是重要的</h2>
+<p>这大部分情况下是错的。第一、或许效果太小在临床上不重要。P值包含着效应程度大小的信息，可以用效应估计和置信区间的形式给出。第二、指标本身在临床上不重要，因为它可能是替代性指标（<a
+    href="https://www.wikiwand.com/en/Surrogate_endpoint#/:~:text=In%20clinical%20trials,%20a%20surrogate,necessarily%20have%20a%20guaranteed%20relationship.">Surrogate
+    endpoint - Wikiwand</a>）。比如无法收集到某个抗癌药物的存活率，那么用响应率来代替存活率，对药物产生响应显著不意味着抗癌药能延长生命。
+<h2 id=误解4-同时在显著性水平上下的p值是自相矛盾的实验>误解4: 同时在显著性水平上下的P值是自相矛盾的实验</h2>
+<p>即使估计处理效果完全相同，通过改变估计的准确程度（一般通过改变样本量），也能让实验产生不同程度的显著性。只有在对照组和实验组的差异不可能是偶然，相应的置信区间不重合或者很少重合，并且要有异质性检验后，才能说明实验是矛盾的。
+<h2 id=误解5-p值相同的检验为否定原假设提供相同证据>误解5: P值相同的检验为否定原假设提供相同证据</h2>
+<p>
+  效应差距很大的观察结果可能产生一样的P值，比如处理效应3%和19%的两个实验P值都是0.05。但是很明显，他们是差距很大的两个结果。如果我们认为10%的正面效用就足够抵消副作用，那完全可以采用产生处理效应较大的结果，拒绝处理效应较小，比如小于10%的结果。
+<p>听起来好像有点不协调，因为P值显示的是多大程度上反证原假设。并没有“正面证据”——那么<span class="math math-inline"><span class=katex><span
+        class=katex-mathml><math xmlns=http://www.w3.org/1998/Math/MathML>
+          <semantics>
+            <mrow>
+              <mi>P</mi>
+              <mo>=</mo>
+              <mn>0.05</mn>
+            </mrow>
+            <annotation encoding=application/x-tex>P=0.05</annotation>
+          </semantics>
+        </math></span><span class=katex-html aria-hidden=true><span class=base><span class=strut
+            style=height:.68333em;vertical-align:0></span><span class="mord mathdefault"
+            style=margin-right:.13889em>P</span><span class=mspace style=margin-right:.2777777777777778em></span><span
+            class=mrel>=</span><span class=mspace style=margin-right:.2777777777777778em></span></span><span
+          class=base><span class=strut style=height:.64444em;vertical-align:0></span><span class=mord>0</span><span
+            class=mord>.</span><span class=mord>0</span><span
+            class=mord>5</span></span></span></span></span>是反证原假设，那么证明了什么？在上面例子中，一个实验的正面效果是3%，另一个实验是19%。
+  如果把证据量化，哪个实验证明了10%以上的效应（相对原假设），那么19%是更明显的证据。
+<h2 id=误解6-p005意味着我们观测到了原假设成立情况下只有5可能发生的数据>误解6: <span class="math math-inline"><span class=katex><span
+        class=katex-mathml><math xmlns=http://www.w3.org/1998/Math/MathML>
+          <semantics>
+            <mrow>
+              <mi>P</mi>
+              <mo>=</mo>
+              <mn>0.05</mn>
+            </mrow>
+            <annotation encoding=application/x-tex>P=0.05</annotation>
+          </semantics>
+        </math></span><span class=katex-html aria-hidden=true><span class=base><span class=strut
+            style=height:.68333em;vertical-align:0></span><span class="mord mathdefault"
+            style=margin-right:.13889em>P</span><span class=mspace style=margin-right:.2777777777777778em></span><span
+            class=mrel>=</span><span class=mspace style=margin-right:.2777777777777778em></span></span><span
+          class=base><span class=strut style=height:.64444em;vertical-align:0></span><span class=mord>0</span><span
+            class=mord>.</span><span class=mord>0</span><span
+            class=mord>5</span></span></span></span></span>意味着我们观测到了原假设成立情况下只有5%可能发生的数据</h2>
+<p>这不能一下子从P值定义看出，观测到数据和更极端情况，在原假设下发生的概率。 P值结果正好是0.05（或者其他值）是
+<p>is the most probable of all the other possible results included in the “tail area” that defines the P value. The
+  probability of any individ- ual result is actually quite small, and Fisher said he threw in the rest of the tail area
+  “as an approximation.” As we will see later in this chapter, the inclusion of these rarer outcomes poses serious
+  logical and quantitative problems for the P value, and using comparative rather than single probabilities to measure
+  evidence eliminates the need to include outcomes other than what was observed.
+<p>这就是在JAMA调查中问的关于P值含义的问题。下面哪个是<span class="math math-inline"><span class=katex><span class=katex-mathml><math
+          xmlns=http://www.w3.org/1998/Math/MathML>
+          <semantics>
+            <mrow>
+              <mi>P</mi>
+              <mo>></mo>
+              <mn>0.05</mn>
+            </mrow>
+            <annotation encoding=application/x-tex>P>0.05</annotation>
+          </semantics>
+        </math></span><span class=katex-html aria-hidden=true><span class=base><span class=strut
+            style=height:.72243em;vertical-align:-.0391em></span><span class="mord mathdefault"
+            style=margin-right:.13889em>P</span><span class=mspace style=margin-right:.2777777777777778em></span><span
+            class=mrel>></span><span class=mspace style=margin-right:.2777777777777778em></span></span><span
+          class=base><span class=strut style=height:.64444em;vertical-align:0></span><span class=mord>0</span><span
+            class=mord>.</span><span class=mord>0</span><span class=mord>5</span></span></span></span></span>的正确解释：
+<p>A. 如果重复实验，有5%的几率发现实验组和对照组存在差异。
+<p>B. 这么大的差异水平完全是偶然发生的概率小于0.05
+<p>C. 这么大的差异水平完全是偶然发生的概率大于0.05
+<p>D. 95%的几率实验是正确的
+<p>正确答案是C，然而正确答案应该表述为，“这么大和更大的差异水平，完全是偶然发生的概率大于0.05"
+<h2 id=误解7-p005-和-p-leq-005-含义相同>误解7: <span class="math math-inline"><span class=katex><span class=katex-mathml><math
+          xmlns=http://www.w3.org/1998/Math/MathML>
+          <semantics>
+            <mrow>
+              <mi>P</mi>
+              <mo>=</mo>
+              <mn>0.05</mn>
+            </mrow>
+            <annotation encoding=application/x-tex>P=0.05</annotation>
+          </semantics>
+        </math></span><span class=katex-html aria-hidden=true><span class=base><span class=strut
+            style=height:.68333em;vertical-align:0></span><span class="mord mathdefault"
+            style=margin-right:.13889em>P</span><span class=mspace style=margin-right:.2777777777777778em></span><span
+            class=mrel>=</span><span class=mspace style=margin-right:.2777777777777778em></span></span><span
+          class=base><span class=strut style=height:.64444em;vertical-align:0></span><span class=mord>0</span><span
+            class=mord>.</span><span class=mord>0</span><span class=mord>5</span></span></span></span></span> 和 <span
+    class="math math-inline"><span class=katex><span class=katex-mathml><math xmlns=http://www.w3.org/1998/Math/MathML>
+          <semantics>
+            <mrow>
+              <mi>P</mi>
+              <mo>≤</mo>
+              <mn>0.05</mn>
+            </mrow>
+            <annotation encoding=application/x-tex>P \leq 0.05</annotation>
+          </semantics>
+        </math></span><span class=katex-html aria-hidden=true><span class=base><span class=strut
+            style=height:.8193em;vertical-align:-.13597em></span><span class="mord mathdefault"
+            style=margin-right:.13889em>P</span><span class=mspace style=margin-right:.2777777777777778em></span><span
+            class=mrel>≤</span><span class=mspace style=margin-right:.2777777777777778em></span></span><span
+          class=base><span class=strut style=height:.64444em;vertical-align:0></span><span class=mord>0</span><span
+            class=mord>.</span><span class=mord>0</span><span class=mord>5</span></span></span></span></span>
+  <strong>含义相同</strong></h2>
+<h2 id=误解8p值最好用小于号表达，比如p-leq-02当-p-0015>误解8:P值最好用小于号表达，比如<span class="math math-inline"><span class=katex><span
+        class=katex-mathml><math xmlns=http://www.w3.org/1998/Math/MathML>
+          <semantics>
+            <mrow>
+              <mi>P</mi>
+              <mo>≤</mo>
+              <mn>02</mn>
+            </mrow>
+            <annotation encoding=application/x-tex>P \leq 02</annotation>
+          </semantics>
+        </math></span><span class=katex-html aria-hidden=true><span class=base><span class=strut
+            style=height:.8193em;vertical-align:-.13597em></span><span class="mord mathdefault"
+            style=margin-right:.13889em>P</span><span class=mspace style=margin-right:.2777777777777778em></span><span
+            class=mrel>≤</span><span class=mspace style=margin-right:.2777777777777778em></span></span><span
+          class=base><span class=strut style=height:.64444em;vertical-align:0></span><span class=mord>0</span><span
+            class=mord>2</span></span></span></span></span>当 <span class="math math-inline"><span class=katex><span
+        class=katex-mathml><math xmlns=http://www.w3.org/1998/Math/MathML>
+          <semantics>
+            <mrow>
+              <mi>P</mi>
+              <mo>=</mo>
+              <mn>0.015</mn>
+            </mrow>
+            <annotation encoding=application/x-tex>P= 0.015</annotation>
+          </semantics>
+        </math></span><span class=katex-html aria-hidden=true><span class=base><span class=strut
+            style=height:.68333em;vertical-align:0></span><span class="mord mathdefault"
+            style=margin-right:.13889em>P</span><span class=mspace style=margin-right:.2777777777777778em></span><span
+            class=mrel>=</span><span class=mspace style=margin-right:.2777777777777778em></span></span><span
+          class=base><span class=strut style=height:.64444em;vertical-align:0></span><span class=mord>0</span><span
+            class=mord>.</span><span class=mord>0</span><span class=mord>1</span><span
+            class=mord>5</span></span></span></span></span></h2>
+<p>用不等式结论表达所有的P值是同时使用假设检验和P值引起的困惑。一般设 <span class="math math-inline"><span class=katex><span class=katex-mathml><math
+          xmlns=http://www.w3.org/1998/Math/MathML>
+          <semantics>
+            <mrow>
+              <mi>P</mi>
+              <mo>=</mo>
+              <mn>0.05</mn>
+            </mrow>
+            <annotation encoding=application/x-tex>P=0.05</annotation>
+          </semantics>
+        </math></span><span class=katex-html aria-hidden=true><span class=base><span class=strut
+            style=height:.68333em;vertical-align:0></span><span class="mord mathdefault"
+            style=margin-right:.13889em>P</span><span class=mspace style=margin-right:.2777777777777778em></span><span
+            class=mrel>=</span><span class=mspace style=margin-right:.2777777777777778em></span></span><span
+          class=base><span class=strut style=height:.64444em;vertical-align:0></span><span class=mord>0</span><span
+            class=mord>.</span><span class=mord>0</span><span class=mord>5</span></span></span></span></span>
+  意味着最高容忍第一类错误概率 5%。在这样的检验里，唯一重要的信息是观测到的差异能不能落在拒绝域。比如，是不是 <span class="math math-inline"><span class=katex><span
+        class=katex-mathml><math xmlns=http://www.w3.org/1998/Math/MathML>
+          <semantics>
+            <mrow>
+              <mi>P</mi>
+              <mo>≤</mo>
+              <mn>0.05</mn>
+            </mrow>
+            <annotation encoding=application/x-tex>P\leq 0.05</annotation>
+          </semantics>
+        </math></span><span class=katex-html aria-hidden=true><span class=base><span class=strut
+            style=height:.8193em;vertical-align:-.13597em></span><span class="mord mathdefault"
+            style=margin-right:.13889em>P</span><span class=mspace style=margin-right:.2777777777777778em></span><span
+            class=mrel>≤</span><span class=mspace style=margin-right:.2777777777777778em></span></span><span
+          class=base><span class=strut style=height:.64444em;vertical-align:0></span><span class=mord>0</span><span
+            class=mord>.</span><span class=mord>0</span><span
+            class=mord>5</span></span></span></span></span>。在这个例子下，用不等式表达P值还有道理。但我们一般关注的是证据在<strong>多大程度（how
+    much）</strong>上反对原假设。这样的话，P值是0.5，0.04还是0.0001就很重要。如果用不等式表达应不应该拒绝原假设，那么必须和预先确定阀值结合使用，比如0.05。阀值不能依赖于观察到的P值。也就是说如果观测到
+  <span class="math math-inline"><span class=katex><span class=katex-mathml><math
+          xmlns=http://www.w3.org/1998/Math/MathML>
+          <semantics>
+            <mrow>
+              <mi>P</mi>
+              <mo>=</mo>
+              <mn>0.008</mn>
+            </mrow>
+            <annotation encoding=application/x-tex>P=0.008</annotation>
+          </semantics>
+        </math></span><span class=katex-html aria-hidden=true><span class=base><span class=strut
+            style=height:.68333em;vertical-align:0></span><span class="mord mathdefault"
+            style=margin-right:.13889em>P</span><span class=mspace style=margin-right:.2777777777777778em></span><span
+            class=mrel>=</span><span class=mspace style=margin-right:.2777777777777778em></span></span><span
+          class=base><span class=strut style=height:.64444em;vertical-align:0></span><span class=mord>0</span><span
+            class=mord>.</span><span class=mord>0</span><span class=mord>0</span><span
+            class=mord>8</span></span></span></span></span>不能说<span class="math math-inline"><span class=katex><span
+        class=katex-mathml><math xmlns=http://www.w3.org/1998/Math/MathML>
+          <semantics>
+            <mrow>
+              <mi>P</mi>
+              <mo>≤</mo>
+              <mn>0.01</mn>
+            </mrow>
+            <annotation encoding=application/x-tex>P \leq 0.01</annotation>
+          </semantics>
+        </math></span><span class=katex-html aria-hidden=true><span class=base><span class=strut
+            style=height:.8193em;vertical-align:-.13597em></span><span class="mord mathdefault"
+            style=margin-right:.13889em>P</span><span class=mspace style=margin-right:.2777777777777778em></span><span
+            class=mrel>≤</span><span class=mspace style=margin-right:.2777777777777778em></span></span><span
+          class=base><span class=strut style=height:.64444em;vertical-align:0></span><span class=mord>0</span><span
+            class=mord>.</span><span class=mord>0</span><span
+            class=mord>1</span></span></span></span></span>，而显著性标准是0.05。必须说 <span class="math math-inline"><span
+      class=katex><span class=katex-mathml><math xmlns=http://www.w3.org/1998/Math/MathML>
+          <semantics>
+            <mrow>
+              <mi>P</mi>
+              <mo>≤</mo>
+              <mn>0.05</mn>
+            </mrow>
+            <annotation encoding=application/x-tex>P \leq 0.05</annotation>
+          </semantics>
+        </math></span><span class=katex-html aria-hidden=true><span class=base><span class=strut
+            style=height:.8193em;vertical-align:-.13597em></span><span class="mord mathdefault"
+            style=margin-right:.13889em>P</span><span class=mspace style=margin-right:.2777777777777778em></span><span
+            class=mrel>≤</span><span class=mspace style=margin-right:.2777777777777778em></span></span><span
+          class=base><span class=strut style=height:.64444em;vertical-align:0></span><span class=mord>0</span><span
+            class=mord>.</span><span class=mord>0</span><span class=mord>5</span></span></span></span></span>
+<h2 id=误解9-p005-意味着拒绝原假设的话，第一类错误的概率仅是005>误解9: <span class="math math-inline"><span class=katex><span
+        class=katex-mathml><math xmlns=http://www.w3.org/1998/Math/MathML>
+          <semantics>
+            <mrow>
+              <mi>P</mi>
+              <mo>=</mo>
+              <mn>0.05</mn>
+            </mrow>
+            <annotation encoding=application/x-tex>P=0.05</annotation>
+          </semantics>
+        </math></span><span class=katex-html aria-hidden=true><span class=base><span class=strut
+            style=height:.68333em;vertical-align:0></span><span class="mord mathdefault"
+            style=margin-right:.13889em>P</span><span class=mspace style=margin-right:.2777777777777778em></span><span
+            class=mrel>=</span><span class=mspace style=margin-right:.2777777777777778em></span></span><span
+          class=base><span class=strut style=height:.64444em;vertical-align:0></span><span class=mord>0</span><span
+            class=mord>.</span><span class=mord>0</span><span class=mord>5</span></span></span></span></span>
+  意味着拒绝原假设的话，第一类错误的概率仅是0.05</h2>
+<p>这个误解和误解1相同，尽管一下子看不出来。第一类错误是”假阳性率“，当原假设成立的时候拒绝原假设。5%的概率错误拒绝原假设相当于5%的可能原假设成立，也就是误解1（0.05的P值意味着原假设只有0.05的概率为真）。
+<p>
+  用另一种方式讲，假设我们在检验一个已知有效药物，比如原假设避孕药不能避孕。假如我们拒绝原假设，那么错误拒绝原假设（第一类错误）的概率是0。因为拒绝原假设的结论都是错的（避孕药能避孕），那么P值大小根本无所谓。相反的，如果原假设是止咳药不能避孕，那么所有拒绝原假设的实验结论都是错的（第一类错误概率是1），也和P值无关。
+<p>很显然，拒绝原假设是正确还是错误不止取决于P值。
+<h2 id=误解10-显著性水平005，犯第一类错误的概率是005>误解10: 显著性水平0.05，犯第一类错误的概率是0.05</h2>
+<p>
+  和误解9不同的是，这里我们在实验开始前就决定第一类错误的概率。但是第一类错误的概率取决于原假设是不是成立，如果成立，那么犯第一类错误的概率的确是0.05；如果不成立，那么不可能犯第一类错误。如果不知道原假设是不是成立，那么假阳性率在0到0.05之间。
+<p>当然，上述情况不考虑实验假设是联合，比如几千个基因都对肥胖没有影响。
+<h2 id=误解11-当不在乎另一侧结果时，应该采用单侧p值>误解11: 当不在乎另一侧结果时，应该采用单侧P值</h2>
+<p>
+  这是一个微妙且复杂的问题。有很多相关的细节讨论，也有一些不赞同的。但是很显然，使用单侧P值会平添证据的说服力。也就是说，使用单侧P值意味着这样的P值包括了人的主观态度或者偏好。如果仅想用P值说明证据信服的程度，那么这么做并没有道理。如果更关注第一类或者第二类错误的概率，那么用单侧检验还有道理，但这样的话不需要计算P值。
+<h2 id=误解12-科学结论应该根据p值是否显著做出>误解12: 科学结论应该根据P值是否显著做出</h2>
+<p>
+  这个误解基本概括了其他所有误解。这等价于实验效应的规模毫无意义，科学结论的仅有证据就是眼前的实验，信心和行动能直接由统计结果得出。需要结合其他人的工作才能根据我们的实验得出结论。在某些情形下，即使P值显著，科学上成立的结论或许仍然是原假设；另外的情况是，不显著的P值可能仍然要拒绝原假设。我们必须同时考虑实验本身的严重误差和结论是错误的，来支撑行为。
+<h2 id=结论>结论</h2>&#60!-- ## P值替代
+
+只有一种推断——贝叶斯公式——计算出的数字比其他解释更具深度。贝叶斯公式可以写作如下：
+
+Odds(取得数据后原假设成立) = Odds(取得数据前原假设成立) * 贝叶斯因子
+
+
+或者写作：
+
+$$
+后验概率(H_0, 已知数据) = 前验概率(H_0, 已知数据) * \frac{Pr(数据，H_0成立)}{Pr(数据，H_1成立)}
+$$
+
+Odds（优势）$Odds=\frac{probability}{1-probability}$ --> &#60!-- 最振奋的是，P值不在公式里。我们使用了贝叶斯因子，基本相当于诊断检验的似然比。 --><p>
+  P值度量观测到的数据在两个完全相反假设下，多有把握预测出现观察到数据。P值是对证据的度量，而不是其他很多误解。P值的另一个批评是极大高估了反对原假设的证据
+<p>
+  最根本的问题是理解到没有什么标准方法能产生出一个数字，这个数字能揭示出一个结论的概率。某个假设的正确与否既取决于实验内<strong>和</strong>实验外，还要看假设蕴含的内在机制的合理性和其他证据。如果背后的机制是不太合理的，显著的P值也不能说明这个机制是合理的。很少有一次实验就提供充分证据。认识到这一点，就能防止P值的滥用。
+<p>还有，效应的规模十分重要。实验结果应该呈现整个置信区间，而不单是P值或者效应估计。置信区间同时包含了从观测到的数据估计出的效应规模和不精确程度。
+<p><a
+    href=https://www.semanticscholar.org/paper/A-dirty-dozen%3A-twelve-p-value-misconceptions.-Goodman/3ace8fea1e22ac42546178c3246a80b080679775>A
+    dirty dozen</a>

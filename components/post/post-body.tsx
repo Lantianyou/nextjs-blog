@@ -1,5 +1,5 @@
 import cn from 'classnames'
-import styles from './github-markdown.module.css'
+import styles from 'styles/github-markdown.module.css'
 
 export default function PostBody({ children }) {
     return (
