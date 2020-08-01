@@ -1,5 +1,4 @@
 import { GetStaticProps } from 'next'
-import Head from 'next/head'
 import fs from 'fs'
 import path from 'path'
 import Post from 'components/post/post'
@@ -20,6 +19,13 @@ const Blog = ({ htmlString, data, slug }) => {
           to   { background: transparent; }
         }
         `}</style>
+        <style jsx>{`
+          main {
+            margin-right:20%;
+          }
+        `}
+
+        </style>
         <div dangerouslySetInnerHTML={{ __html: htmlString }} />
       </Post>
     </>

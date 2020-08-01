@@ -1,5 +1,5 @@
 ---
-title: 大停滞
+title: P值的12种错误解释
 cover:
   image: 'spacex.jpg'
   description: '超音速飞机'

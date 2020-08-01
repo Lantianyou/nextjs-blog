@@ -29,7 +29,7 @@ export default function MarkDownContent({
 
   return (
     <>
-      <div className='max-w-2xl mx-auto'><SiteNav /></div>
+      <SiteNav />
       <ProgressBar />
       <Container>
         <PostHeader title={title} date={date} />

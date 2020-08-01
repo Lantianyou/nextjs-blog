@@ -12,8 +12,8 @@ export default function Layout({
   return (
     <>
       <Meta />
+      <Alert preview={preview} />
       <div className="min-h-screen">
-        <Alert preview={preview} />
         <main>{children}</main>
         <Footer />
       </div>

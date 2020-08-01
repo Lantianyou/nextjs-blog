@@ -15,7 +15,7 @@ import rehypePrisma from '@mapbox/rehype-prism'
 
 // 对Markdown进行再parse，使得markdown可以带有html元素
 // import raw from 'rehype-raw'
-
+const drafts = ['get-big-fast.md', 'the-other-side.md', 'a-case-for-china.md', 'test.md', 'think-different.md']
 export const postsDir = path.join(process.cwd(), 'posts')
 
 const getPostMetadata = (slug): PostMetadata => {
@@ -39,7 +39,7 @@ export const getPostsMetadata = (): PostMetadata[] => {
 export const getPostsSlug = () => {
     const fileNames = fs.readdirSync(postsDir)
     return fileNames
-        .filter(fileName => fileName.includes('.md'))
+        .filter(fileName => fileName.includes('.md') && !drafts.includes(fileName))
         .map(fileName => fileName.replace('.md', ''))
 }
 
@@ -85,18 +85,3 @@ interface PostMetadata {
     }
     excerpt: string
 }
-
-// 带有数学公式的Markdown
-// export const getMathPost = async (fileName = 'example.md') => {
-
-//     const fileDir = path.join(process.cwd(), 'otherPost', fileName)
-
-//     const processor = await unified()
-//         .use(markdown)
-//         .use(math)
-//         .use(remark2rehype)
-//         .use(katex)
-//         .use(stringify)
-//         .process(fs.readFileSync(fileDir))
-//     return processor.toString()
-// }
