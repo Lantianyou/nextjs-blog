@@ -29,7 +29,6 @@ export default function MarkDownContent({
 
   return (
     <>
-      <SiteNav />
       <ProgressBar />
       <Container>
         <PostHeader title={title} date={date} />

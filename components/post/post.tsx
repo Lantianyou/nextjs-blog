@@ -31,7 +31,7 @@ export default function Post({
 }) {
 
   return (
-    <Layout preview={true}>
+    <>
       <Head>
         <title>{title}</title>
         <meta name="twitter:title" content={title} />
@@ -42,6 +42,6 @@ export default function Post({
         {children}
         <Signature author={author} />
       </MarkDownContent>
-    </Layout >
+    </>
   )
 }

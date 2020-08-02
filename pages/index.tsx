@@ -1,19 +1,15 @@
 import { GetStaticProps } from 'next'
 import Link from 'next/link'
 import Head from 'next/head'
-import Layout from 'components/layout'
 import { siteTitle } from 'components/meta'
 import Container from 'components/container'
-import SiteNav from 'components/header/site-nav'
 import PostDate from 'components/post/post-date'
 import { getPostsMetadata } from 'lib/getPosts'
 
 
 export default function Home({ postsMetadata }) {
-    // const heroPost = postsMetadata[0]
-    // const morePosts = postsMetadata.slice(1)
     return (
-        <Layout preview={false}>
+        <>
             <style jsx>{`
                 ul li {
                     padding: 10px 15px;
@@ -61,8 +57,6 @@ export default function Home({ postsMetadata }) {
             <Head>
                 <title>{siteTitle}</title>
             </Head>
-            <SiteNav />
-            {/* <HeaderImage /> */}
             <Container>
                 <div className="max-w-2xl mx-auto">
                     <ul>
@@ -75,7 +69,7 @@ export default function Home({ postsMetadata }) {
                     </ul>
                 </div>
             </Container>
-        </Layout >
+        </ >
     )
 }
 
