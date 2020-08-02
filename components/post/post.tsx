@@ -1,8 +1,9 @@
 import Head from 'next/head'
-import Layout from "components/layout"
-import MarkDownContent from 'components/non-markdown'
+import dynamic from 'next/dynamic'
+import ContentLoader from "react-content-loader"
 import Signature from 'components/signature'
 
+const MarkDownContent = dynamic(import('components/non-markdown'), { loading: () => <ContentLoader /> })
 export const siteTitle = '兰天游'
 
 
@@ -38,7 +39,7 @@ export default function Post({
         <meta name="twitter:description" content={excerpt} />
         <meta name="twitter:image" content={`https://lantianyou.xyz/images/${cover.image}`} />
       </Head>
-      <MarkDownContent title={title} date={date} loading={true} slug={slug}>
+      <MarkDownContent title={title} date={date} slug={slug}>
         {children}
         <Signature author={author} />
       </MarkDownContent>
