@@ -1,6 +1,6 @@
 export const lightTheme = {
     body: '#fff',
-    text: '#363537',
+    text: '#333',
     toggleBorder: '#FFF',
     gradient: 'linear-gradient(#39598A, #79D7ED)',
     theme: 'light',

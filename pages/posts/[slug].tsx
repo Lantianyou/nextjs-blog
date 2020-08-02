@@ -25,7 +25,7 @@ const Blog: NextPage<{ htmlString: string, slug: string, data: PostMetadata }> =
           to   { background: transparent; }
         }
         `}</style>
-        <div dangerouslySetInnerHTML={{ __html: htmlString }} className={cn('markdown-body', styles['markdown-body'])} />
+        <div dangerouslySetInnerHTML={{ __html: htmlString }} className={cn('markdown-body', styles['markdown-body'])} style={{ fontSize: '18px' }} />
       </Post>
     </>
   )
