@@ -1,5 +1,5 @@
-import fs from 'fs'
-import path from 'path'
+import { readFileSync, readdirSync } from 'fs'
+import { join } from 'path'
 import minify from 'rehype-preset-minify'
 import matter from 'gray-matter'
 import remark from 'remark'
@@ -16,11 +16,11 @@ import rehypePrisma from '@mapbox/rehype-prism'
 // 对Markdown进行再parse，使得markdown可以带有html元素
 // import raw from 'rehype-raw'
 const drafts = ['get-big-fast.md', 'the-other-side.md', 'a-case-for-china.md', 'test.md', 'think-different.md']
-export const postsDir = path.join(process.cwd(), 'posts')
+export const postsDir = join(process.cwd(), 'posts')
 
 const getPostMetadata = (slug): PostMetadata => {
-    const fileDir = path.join(postsDir, slug + '.md')
-    const markdownWithMetaData = fs.readFileSync(fileDir, 'utf-8').toString()
+    const fileDir = join(postsDir, slug + '.md')
+    const markdownWithMetaData = readFileSync(fileDir, 'utf-8').toString()
     const { data } = matter(markdownWithMetaData)
 
     let meta = {
@@ -37,15 +37,15 @@ export const getPostsMetadata = (): PostMetadata[] => {
 }
 
 export const getPostsSlug = () => {
-    const fileNames = fs.readdirSync(postsDir)
+    const fileNames = readdirSync(postsDir)
     return fileNames
         .filter(fileName => fileName.includes('.md') && !drafts.includes(fileName))
         .map(fileName => fileName.replace('.md', ''))
 }
 
 export const getPostAndMetadata = async (slug) => {
-    const fileDir = path.join(postsDir, slug + '.md')
-    const markdownWithMetaData = fs.readFileSync(fileDir, 'utf-8').toString()
+    const fileDir = join(postsDir, slug + '.md')
+    const markdownWithMetaData = readFileSync(fileDir, 'utf-8').toString()
     const parsedMarkdown = matter(markdownWithMetaData)
 
     const processedContent = await remark()
@@ -63,7 +63,7 @@ export const getPostAndMetadata = async (slug) => {
 
     const htmlString = processedContent.toString()
 
-    // fs.appendFileSync(`${postsDir}/${slug}.html`, htmlString)
+    // appendFileSync(`${postsDir}/${slug}.html`, htmlString)
 
     return {
         htmlString,
