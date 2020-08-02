@@ -66,7 +66,7 @@ export default function Home({ postsMetadata }) {
             <Container>
                 <div className="max-w-2xl mx-auto">
                     <ul>
-                        {postsMetadata.map(postMetadata => <li>
+                        {postsMetadata.map(postMetadata => <li key={postMetadata.slug}>
                             <span><PostDate dateString={postMetadata.date} /></span>
                             <Link href={`posts/${postMetadata.slug}`}>
                                 <a>{postMetadata.title}</a>

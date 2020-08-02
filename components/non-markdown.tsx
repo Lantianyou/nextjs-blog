@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
+import ContentLoader from "react-content-loader"
 import Container from 'components/container'
 import ProgressBar from 'components/post/progress-bar'
 import PostHeader from 'components/post/post-header'
 import PostBody from 'components/post/post-body'
 import PostFooter from 'components/post/post-footer'
-import MyLoader from 'components/content-loader'
 import SiteNav from 'components/header/site-nav'
 
 export default function MarkDownContent({
@@ -34,7 +34,7 @@ export default function MarkDownContent({
       <Container>
         <PostHeader title={title} date={date} />
         <PostBody>
-          {isLoading ? <MyLoader /> : children}
+          {isLoading ? <ContentLoader /> : children}
         </PostBody>
         <PostFooter slug={slug} title={title} />
       </Container>
