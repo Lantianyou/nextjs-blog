@@ -4,8 +4,6 @@ import ContentLoader from "react-content-loader"
 import Signature from 'components/signature'
 
 const MarkDownContent = dynamic(import('components/non-markdown'), { loading: () => <ContentLoader /> })
-export const siteTitle = '兰天游'
-
 
 export default function Post({
   children,

@@ -11,10 +11,10 @@ import math from 'remark-math'
 import footnotes from 'remark-footnotes'
 import katex from 'rehype-katex'
 import stringify from 'rehype-stringify'
+import raw from 'rehype-raw'
 import rehypePrisma from '@mapbox/rehype-prism'
 
 // 对Markdown进行再parse，使得markdown可以带有html元素
-// import raw from 'rehype-raw'
 const drafts = ['get-big-fast.md', 'the-other-side.md', 'a-case-for-china.md', 'test.md', 'think-different.md']
 export const postsDir = join(process.cwd(), 'posts')
 
@@ -55,6 +55,7 @@ export const getPostAndMetadata = async (slug) => {
         .use(footnotes)
         .use(remarkSlug)
         .use(remark2rehype, { allowDangerousHtml: true })
+        .use(raw)
         .use(katex)
         .use(rehypePrisma)
         .use(minify)
