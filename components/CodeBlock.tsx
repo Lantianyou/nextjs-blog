@@ -7,7 +7,6 @@ import nightOwl from "prism-react-renderer/themes/nightOwl";
 import nightOwlLight from "prism-react-renderer/themes/nightOwlLight";
 import Message from 'components/message'
 
-
 const CodeBlock = ({ children, className }) => {
   const language = className.replace(/language-/, '')
   const themeContext = useContext(ThemeContext);

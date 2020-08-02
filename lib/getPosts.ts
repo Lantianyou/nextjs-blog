@@ -72,7 +72,7 @@ export const getPostAndMetadata = async (slug) => {
     }
 }
 
-interface PostMetadata {
+export type PostMetadata = {
     slug: string
     title: string
     cover: {

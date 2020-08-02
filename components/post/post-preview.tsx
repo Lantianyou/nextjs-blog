@@ -1,10 +1,13 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, FunctionComponent } from 'react'
 import Link from 'next/link'
 import { Fade } from 'react-reveal'
 import PostDate from './post-date';
 import CoverImage from './cover-image'
+import { PostMetadata } from 'lib/getPosts'
 
-export default function PostPreview({
+type Props = PostMetadata & { isOdd: Boolean }
+
+const PostPreview: FunctionComponent<Props> = ({
   title,
   cover,
   date,
@@ -12,7 +15,7 @@ export default function PostPreview({
   author,
   isOdd,
   slug
-}) {
+}) => {
   const { image, description } = cover
 
   const [isMobile, setIsMobile] = useState(false)
@@ -56,3 +59,5 @@ export default function PostPreview({
     </Fade>
   )
 }
+
+export default PostPreview

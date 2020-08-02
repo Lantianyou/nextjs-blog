@@ -2,18 +2,10 @@ import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import ContentLoader from "react-content-loader"
 import Signature from 'components/signature'
-
+import { FunctionComponent } from 'react'
 const MarkDownContent = dynamic(import('components/non-markdown'), { loading: () => <ContentLoader /> })
 
-export default function Post({
-  children,
-  title,
-  date,
-  cover,
-  excerpt,
-  author,
-  slug
-}: {
+const Post: FunctionComponent<{
   children: React.ReactNode,
   title: string,
   date: string,
@@ -27,20 +19,30 @@ export default function Post({
     picture: string
   },
   slug: string
-}) {
+}> = ({
+  children,
+  title,
+  date,
+  cover,
+  excerpt,
+  author,
+  slug
+}) => {
 
-  return (
-    <>
-      <Head>
-        <title>{title}</title>
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={excerpt} />
-        <meta name="twitter:image" content={`https://lantianyou.xyz/images/${cover.image}`} />
-      </Head>
-      <MarkDownContent title={title} date={date} slug={slug}>
-        {children}
-        <Signature author={author} />
-      </MarkDownContent>
-    </>
-  )
-}
+    return (
+      <>
+        <Head>
+          <title>{title}</title>
+          <meta name="twitter:title" content={title} />
+          <meta name="twitter:description" content={excerpt} />
+          <meta name="twitter:image" content={`https://lantianyou.xyz/images/${cover.image}`} />
+        </Head>
+        <MarkDownContent title={title} date={date} slug={slug}>
+          {children}
+          <Signature author={author} />
+        </MarkDownContent>
+      </>
+    )
+  }
+
+export default Post

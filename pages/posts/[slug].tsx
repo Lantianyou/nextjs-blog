@@ -1,11 +1,11 @@
-import { GetStaticProps, GetStaticPaths } from 'next'
+import { GetStaticProps, GetStaticPaths, NextPage } from 'next'
 import Head from 'next/head'
 import cn from 'classnames'
 import Post from 'components/post/post'
 import styles from 'styles/github-markdown.module.css'
-import { getPostsSlug, getPostAndMetadata } from 'lib/getPosts'
+import { getPostsSlug, getPostAndMetadata, PostMetadata } from 'lib/getPosts'
 
-const Blog = ({ htmlString, data, slug }) => {
+const Blog: NextPage<{ htmlString: string, slug: string, data: PostMetadata }> = ({ htmlString, data, slug }) => {
   const { author, date, title, cover, excerpt } = data
   const useMath = slug === 'pvalue-misconception'
   return (

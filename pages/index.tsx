@@ -1,13 +1,13 @@
-import { GetStaticProps } from 'next'
+import { GetStaticProps, NextPage } from 'next'
 import Link from 'next/link'
 import Head from 'next/head'
 import { siteTitle } from 'components/meta'
 import Container from 'components/container'
 import PostDate from 'components/post/post-date'
-import { getPostsMetadata } from 'lib/getPosts'
+import { getPostsMetadata, PostMetadata } from 'lib/getPosts'
 
 
-export default function Home({ postsMetadata }) {
+const Home: NextPage<{ postsMetadata: PostMetadata[] }> = ({ postsMetadata }) => {
     return (
         <>
             <style jsx>{`
@@ -84,3 +84,5 @@ export const getStaticProps: GetStaticProps = async () => {
         }
     }
 }
+
+export default Home

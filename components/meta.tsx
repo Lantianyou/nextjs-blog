@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Router from 'next/router'
 import NProgress from 'nprogress'
+
 export const siteTitle = '最重要的事 Think different'
 
 Router.events.on('routeChangeStart', () => {
