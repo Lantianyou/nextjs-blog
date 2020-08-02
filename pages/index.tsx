@@ -69,7 +69,7 @@ export default function Home({ postsMetadata }) {
                         {postsMetadata.map(postMetadata => <li>
                             <span><PostDate dateString={postMetadata.date} /></span>
                             <Link href={`posts/${postMetadata.slug}`}>
-                                {postMetadata.title}
+                                <a>{postMetadata.title}</a>
                             </Link>
                         </li>)}
                     </ul>

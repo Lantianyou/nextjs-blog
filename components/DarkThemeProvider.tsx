@@ -1,9 +1,11 @@
+import { useContext } from 'react'
+import { ThemeContext } from 'pages/_app'
 import { ThemeProvider } from 'styled-components'
 import { lightTheme, darkTheme } from "styles/theme"
-import { useSelector } from 'react-redux'
 
 const DarkThemeProvider = ({ children }) => {
-    const darkThemeEnabled = useSelector((state) => state.preferences.darkThemeEnabled)
+
+    const { darkThemeEnabled } = useContext(ThemeContext)
 
     return (
         <ThemeProvider theme={darkThemeEnabled ? darkTheme : lightTheme}>

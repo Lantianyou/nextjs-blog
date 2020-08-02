@@ -1,12 +1,12 @@
+import { createContext, useState } from 'react'
 import "styles/tailwind.css";
 import 'styles/global.css'
-import { Provider as ReduxProvider } from 'react-redux'
+import React from 'react'
 import { GlobalStyles } from 'styles/global'
 import DarkThemeProvider from 'components/DarkThemeProvider'
 import { AppProps } from 'next/app'
 import { MDXProvider } from '@mdx-js/react'
 import CodeBlock from 'components/CodeBlock'
-import store from 'lib/store'
 
 
 const mdComponents = {
@@ -14,15 +14,20 @@ const mdComponents = {
   code: CodeBlock
 }
 
+export const ThemeContext = createContext(null)
+
+
 export default function App({ Component, pageProps }: AppProps) {
+  const [darkThemeEnabled, setDarkThemeEnabled] = useState(false)
+  const toggleTheme = () => setDarkThemeEnabled(!darkThemeEnabled)
   return (
-    <ReduxProvider store={store}>
-      <MDXProvider components={mdComponents}>
-        <DarkThemeProvider>
+    <ThemeContext.Provider value={{ darkThemeEnabled, toggleTheme }} >
+      <DarkThemeProvider>
+        <MDXProvider components={mdComponents}>
           <GlobalStyles />
           <Component {...pageProps} />
-        </DarkThemeProvider>
-      </MDXProvider>
-    </ReduxProvider>
+        </MDXProvider>
+      </DarkThemeProvider>
+    </ThemeContext.Provider>
   )
 }
