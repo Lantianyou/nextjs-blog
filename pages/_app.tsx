@@ -21,10 +21,8 @@ export default function App({ Component, pageProps }: AppProps) {
     <ThemeContext.Provider value={theme} >
       <DarkThemeProvider>
         <Layout preview={true}>
-          <MDXProvider components={mdComponents}>
-            <SiteNav />
-            <Component {...pageProps} />
-          </MDXProvider>
+          <SiteNav />
+          <Component {...pageProps} />
         </Layout>
       </DarkThemeProvider>
     </ThemeContext.Provider>

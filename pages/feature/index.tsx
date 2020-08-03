@@ -1,26 +1,17 @@
-export const meta = {
-    title:'feature',
-    date:'2020-07-26'
-}
-
-import {Tweet} from 'react-twitter-widgets'
+import { Tweet } from 'react-twitter-widgets'
 import MarkDownContent from 'components/markdown'
 import YouTube from 'react-youtube';
 
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css"
-  integrity="sha384-BdGj8xC2eZkQaxoQ8nSLefg4AV4/AwB3Fj+8SUSo7pnKP6Eoy18liIKTPn9oBYNG"
-  crossOrigin="anonymous"
-/>
+export default function () {
+    return (
+        <>
+            {/* <MarkDownContent title={meta.title} date={meta.date} slug={'../feature'}> */}
 
-<MarkDownContent title={meta.title} date={meta.date} loading={true} slug={'../feature'}>
+                ## 插入视频
 
-## 插入视频
+            <div><YouTube videoId="2g811Eo7K8U" /></div>
 
-<div><YouTube videoId="2g811Eo7K8U" /></div>
-
-## 代码高亮和复制
+            {/* ## 代码高亮和复制
 
 ```javascript
 export const getBlogsSlug = () => {
@@ -33,10 +24,10 @@ export const getBlogsSlug = () => {
 const getBlogMetadata = (slug): BlogMetadata => {
     const fileDir = path.join(blogsDirectory, slug + '.md')
     const markdownWithMetaData = fs.readFileSync(fileDir, 'utf-8').toString()
-    const { data } = matter(markdownWithMetaData)
+    const {data} = matter(markdownWithMetaData)
 
     let meta = {
-        slug,
+                    slug,
         ...data,
     }
 
@@ -51,9 +42,11 @@ $$
 L = \frac{1}{2} \rho v^2 S C_L
 $$
 
-## 嵌入twitter
+## 嵌入twitter */}
 
-<Tweet tweetId="1285964302441156610" />
-
-</MarkDownContent>
+            <Tweet tweetId="1285964302441156610" />
+            {/* </MarkDownContent> */}
+        </>
+    )
+}
 
