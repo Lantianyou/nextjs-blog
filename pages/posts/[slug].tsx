@@ -2,7 +2,7 @@ import { GetStaticProps, GetStaticPaths, NextPage } from 'next'
 import Head from 'next/head'
 import cn from 'classnames'
 import Post from 'components/post/post'
-import styles from 'styles/github-markdown.module.css'
+import styles from 'public/css/github-markdown.module.css'
 import { getPostsSlug, getPostAndMetadata, PostMetadata } from 'lib/getPosts'
 
 const Blog: NextPage<{ htmlString: string, slug: string, data: PostMetadata }> = ({ htmlString, data, slug }) => {

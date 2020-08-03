@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react'
+import { useState } from 'react'
 import "styles/tailwind.css";
 import 'styles/global.css'
 import { GlobalStyles } from 'styles/global'
@@ -8,6 +8,7 @@ import { MDXProvider } from '@mdx-js/react'
 import CodeBlock from 'components/CodeBlock'
 import Layout from 'components/layout'
 import SiteNav from 'components/header/site-nav'
+import ThemeContext from 'components/theme-context'
 
 
 const mdComponents = {
@@ -15,13 +16,10 @@ const mdComponents = {
   code: CodeBlock
 }
 
-export const ThemeContext = createContext(null)
-
 export default function App({ Component, pageProps }: AppProps) {
-  const [darkThemeEnabled, setDarkThemeEnabled] = useState(false)
-  const toggleTheme = () => setDarkThemeEnabled(!darkThemeEnabled)
+  const theme = useState(false)
   return (
-    <ThemeContext.Provider value={{ darkThemeEnabled, toggleTheme }} >
+    <ThemeContext.Provider value={theme} >
       <DarkThemeProvider>
         <Layout preview={true}>
           <MDXProvider components={mdComponents}>

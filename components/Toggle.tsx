@@ -1,10 +1,12 @@
 import { useContext } from 'react'
 import cn from 'classnames'
 import { Moon, Sun } from 'react-feather'
-import { ThemeContext } from 'pages/_app'
+import ThemeContext from 'components/theme-context'
 
 const Toggle = () => {
-  const { darkThemeEnabled, toggleTheme } = useContext(ThemeContext)
+
+  const [darkThemeEnabled, setDarkThemeEnabled] = useContext(ThemeContext)
+  const toggleTheme = () => setDarkThemeEnabled(!darkThemeEnabled)
 
   return (
     <button

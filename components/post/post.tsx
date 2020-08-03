@@ -1,9 +1,10 @@
+import { FunctionComponent } from 'react'
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import ContentLoader from "react-content-loader"
 import Signature from 'components/signature'
-import { FunctionComponent } from 'react'
-const MarkDownContent = dynamic(import('components/non-markdown'), { loading: () => <ContentLoader /> })
+
+const MarkDownContent = dynamic(import('components/markdown'), { loading: () => <ContentLoader /> })
 
 const Post: FunctionComponent<{
   children: React.ReactNode,
