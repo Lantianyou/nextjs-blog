@@ -32,12 +32,12 @@ const Blog: NextPage<{ htmlString: string, slug: string, data: PostMetadata }> =
   )
 }
 
+type T = {
+  slug: string
+}
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { slug } = params
-  if (Array.isArray(slug)) {
-    return
-  }
+  const { slug } = params as T
   const postAndMetadata = await getPostAndMetadata(slug)
   return {
     props: { ...postAndMetadata, slug }
