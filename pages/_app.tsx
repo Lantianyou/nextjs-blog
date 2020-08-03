@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import "styles/tailwind.css";
 import 'styles/global.css'
-import { GlobalStyles } from 'styles/global'
 import DarkThemeProvider from 'components/DarkThemeProvider'
 import { AppProps } from 'next/app'
 import { MDXProvider } from '@mdx-js/react'
@@ -24,7 +23,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <Layout preview={true}>
           <MDXProvider components={mdComponents}>
             <SiteNav />
-            <GlobalStyles />
             <Component {...pageProps} />
           </MDXProvider>
         </Layout>

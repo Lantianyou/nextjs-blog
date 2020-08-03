@@ -2,13 +2,24 @@ import Link from 'next/link'
 import CoverImage from './cover-image'
 import PostDate from './post-date'
 
+type Props = {
+    title: string
+    cover: {
+        image: string,
+        description: string
+    }
+    date: string
+    excerpt: string
+    slug: string
+}
+
 export default function HeroPost({
     title,
     cover,
     date,
     excerpt,
     slug,
-}) {
+}: Props) {
     const { image, description } = cover
     return (
         <section className='flex flex-col md:flex-row items-center mt-20'>

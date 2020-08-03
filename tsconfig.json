@@ -2,10 +2,18 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/components/*": ["components/*"],
-      "@lib/*": ["lib/*"],
-      "@styles/*": ["styles/*"],
-      "@data/*": ["data/*"]
+      "@/components/*": [
+        "components/*"
+      ],
+      "@lib/*": [
+        "lib/*"
+      ],
+      "@styles/*": [
+        "styles/*"
+      ],
+      "@data/*": [
+        "data/*"
+      ]
     },
     "target": "es5",
     "lib": [
@@ -15,7 +23,6 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
@@ -24,10 +31,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    
+    "checkJs": true,
+    "noImplicitAny": false,
+    "strictFunctionTypes": true,
+    "strict": false
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "./lib/getPosts"
   ],
   "include": [
     "next-env.d.ts",

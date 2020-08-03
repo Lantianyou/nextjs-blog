@@ -1,7 +1,9 @@
+import { NextApiRequest, NextApiResponse } from "next"
+
 const fs = require('fs')
 const { join } = require('path')
 
-export default async (req, res) => {
+export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   const fileName = 'resume.pdf'
   const filePath = join(process.cwd(), 'public', 'assets', fileName)

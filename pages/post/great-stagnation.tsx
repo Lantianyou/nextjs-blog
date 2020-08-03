@@ -4,7 +4,14 @@ import { join } from 'path'
 import Post from 'components/post/post'
 import { getPostAndMetadata } from 'lib/getPosts'
 
-const Blog = ({ htmlString, data, slug }) => {
+import { PostMetadata } from 'lib/getPosts'
+
+type Props = {
+  data: PostMetadata,
+  slug: string,
+  htmlString: string
+}
+const Blog = ({ htmlString, data, slug }: Props) => {
   const { author, date, title, cover, excerpt } = data
   return (
     <>

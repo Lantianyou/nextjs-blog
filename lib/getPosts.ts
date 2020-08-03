@@ -18,7 +18,7 @@ import rehypePrisma from '@mapbox/rehype-prism'
 const drafts = ['get-big-fast.md', 'the-other-side.md', 'a-case-for-china.md', 'test.md', 'think-different.md']
 export const postsDir = join(process.cwd(), 'posts')
 
-const getPostMetadata = (slug): PostMetadata => {
+const getPostMetadata = (slug: string): PostMetadata => {
     const fileDir = join(postsDir, slug + '.md')
     const markdownWithMetaData = readFileSync(fileDir, 'utf-8').toString()
     const { data } = matter(markdownWithMetaData)
@@ -43,7 +43,7 @@ export const getPostsSlug = () => {
         .map(fileName => fileName.replace('.md', ''))
 }
 
-export const getPostAndMetadata = async (slug) => {
+export const getPostAndMetadata = async (slug: string) => {
     const fileDir = join(postsDir, slug + '.md')
     const markdownWithMetaData = readFileSync(fileDir, 'utf-8').toString()
     const parsedMarkdown = matter(markdownWithMetaData)
@@ -72,17 +72,21 @@ export const getPostAndMetadata = async (slug) => {
     }
 }
 
-export type PostMetadata = {
+export interface PostMetadata {
     slug: string
     title: string
-    cover: {
-        image: string
-        description: string
-    }
+    cover: cover
     date: string
-    author: {
-        name: string
-        picture: string
-    }
+    author: author
     excerpt: string
+}
+
+export interface author {
+    name: string
+    picture: string
+}
+
+export interface cover {
+    image: string
+    description: string
 }

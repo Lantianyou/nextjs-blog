@@ -1,16 +1,17 @@
 import { useContext, useState } from 'react';
-import { ThemeContext } from 'styled-components';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { Fade } from 'react-reveal'
-import Highlight, { defaultProps } from 'prism-react-renderer'
+// import { ThemeContext } from 'styled-components';
+import CopyToClipboard from 'react-copy-to-clipboard';
+// import { Fade } from 'react-reveal'
+import Highlight, { defaultProps, Language } from 'prism-react-renderer'
 import nightOwl from "prism-react-renderer/themes/nightOwl";
 import nightOwlLight from "prism-react-renderer/themes/nightOwlLight";
 import Message from 'components/message'
+import ThemeContext from 'components/theme-context'
 
-const CodeBlock = ({ children, className }) => {
-  const language = className.replace(/language-/, '')
-  const themeContext = useContext(ThemeContext);
-  const codeTheme = themeContext['theme'] === 'dark' ? nightOwl : nightOwlLight
+const CodeBlock = ({ children, className }: { children: string, className: string }) => {
+  const language = className.replace(/language-/, '') as Language
+  const [darkThemeEnabled] = useContext(ThemeContext);
+  const codeTheme = darkThemeEnabled ? nightOwl : nightOwlLight
   const text = children.toString()
   const [copied, setCopied] = useState(false)
 
@@ -21,7 +22,10 @@ const CodeBlock = ({ children, className }) => {
 
   return (
     <div>
-      {copied ? <Fade top distance='10px'><Message message='已复制' newMessage={false} /> </Fade> : copy}
+      {copied ?
+        // <Fade top distance='10px'>
+        <Message message='已复制' newMessage={false} />
+        : copy}
       <Highlight {...defaultProps} code={children} theme={codeTheme} language={language}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <pre className={className} style={{ ...style, padding: '20px' }}>

@@ -1,9 +1,10 @@
-import { GetStaticProps, GetStaticPaths, NextPage } from 'next'
+import { GetStaticProps, GetStaticPaths, NextPage, NextPageContext } from 'next'
 import Head from 'next/head'
 import cn from 'classnames'
 import Post from 'components/post/post'
 import styles from 'public/css/github-markdown.module.css'
 import { getPostsSlug, getPostAndMetadata, PostMetadata } from 'lib/getPosts'
+import { ParsedUrlQuery } from 'querystring'
 
 const Blog: NextPage<{ htmlString: string, slug: string, data: PostMetadata }> = ({ htmlString, data, slug }) => {
   const { author, date, title, cover, excerpt } = data
@@ -34,6 +35,9 @@ const Blog: NextPage<{ htmlString: string, slug: string, data: PostMetadata }> =
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params
+  if (Array.isArray(slug)) {
+    return
+  }
   const postAndMetadata = await getPostAndMetadata(slug)
   return {
     props: { ...postAndMetadata, slug }

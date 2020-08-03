@@ -1,7 +1,14 @@
 import Link from 'next/link'
 import cn from 'classnames'
 
-export default function CoverImage({ title, src, slug, description }) {
+type Props = {
+    title: string,
+    src: string,
+    slug: string,
+    description: string
+}
+
+export default function CoverImage({ title, src, slug, description }: Props) {
     if (!src) {
         return <div></div>
     }
