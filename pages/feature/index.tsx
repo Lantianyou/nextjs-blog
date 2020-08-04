@@ -1,6 +1,7 @@
 import { Tweet } from 'react-twitter-widgets'
 import MarkDownContent from 'components/markdown'
 import YouTube from 'react-youtube';
+import CodeBlock from 'components/CodeBlock'
 
 export default function () {
     return (
@@ -10,30 +11,9 @@ export default function () {
                 ## 插入视频
 
             <div><YouTube videoId="2g811Eo7K8U" /></div>
-
             {/* ## 代码高亮和复制
 
-```javascript
-export const getBlogsSlug = () => {
-    const fileNames = fs.readdirSync(blogsDirectory)
-    return fileNames
-        .filter(fileName => fileName.includes('.md'))
-        .map(fileName => fileName.replace('.md', ''))
-}
 
-const getBlogMetadata = (slug): BlogMetadata => {
-    const fileDir = path.join(blogsDirectory, slug + '.md')
-    const markdownWithMetaData = fs.readFileSync(fileDir, 'utf-8').toString()
-    const {data} = matter(markdownWithMetaData)
-
-    let meta = {
-                    slug,
-        ...data,
-    }
-
-    return meta as BlogMetadata
-}
-```
 
 
 
