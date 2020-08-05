@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import "public/css/tailwind.css";
 import 'public/css/global.css'
 import DarkThemeProvider from 'components/DarkThemeProvider'
@@ -16,15 +15,12 @@ import ThemeContext from 'components/theme-context'
 // }
 
 export default function App({ Component, pageProps }: AppProps) {
-  const theme = useState(false)
   return (
-    <ThemeContext.Provider value={theme} >
       <DarkThemeProvider>
         <Layout preview={true}>
           <SiteNav />
           <Component {...pageProps} />
         </Layout>
       </DarkThemeProvider>
-    </ThemeContext.Provider>
   )
 }
