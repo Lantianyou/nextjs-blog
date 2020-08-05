@@ -1,11 +1,10 @@
 import { useContext, ReactNode, useState } from "react";
 import { ThemeProvider } from "styled-components";
-import ThemeContext from "components/theme-context";
+import ThemeContext from "components/theme/theme-context";
 
 const DarkThemeProvider = ({ children }: { children: ReactNode }) => {
   const theme = useState(false);
   const [darkThemeEnabled] = useContext(ThemeContext);
-
   return (
     <ThemeContext.Provider value={theme}>
       <ThemeProvider theme={darkThemeEnabled ? darkTheme : lightTheme}>
