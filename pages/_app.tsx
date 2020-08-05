@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import "styles/tailwind.css";
-import 'styles/global.css'
+import "public/css/tailwind.css";
+import 'public/css/global.css'
 import DarkThemeProvider from 'components/DarkThemeProvider'
 import { AppProps } from 'next/app'
 import { MDXProvider } from '@mdx-js/react'
