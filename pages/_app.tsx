@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "public/css/tailwind.css";
 import "public/css/global.css";
 import DarkThemeProvider from "components/theme/DarkThemeProvider";
@@ -6,6 +7,7 @@ import { MDXProvider } from "@mdx-js/react";
 // import CodeBlock from 'components/CodeBlock'
 import Layout from "components/layout";
 import SiteNav from "components/header/site-nav";
+import ThemeContext from "components/theme/theme-context";
 
 // const mdComponents = {
 //   pre: props => <div {...props} />,
@@ -13,12 +15,15 @@ import SiteNav from "components/header/site-nav";
 // }
 
 export default function App({ Component, pageProps }: AppProps) {
+  const theme = useState(false);
   return (
-    <DarkThemeProvider>
+    <ThemeContext.Provider value={theme}>
       <Layout preview={true}>
-        <SiteNav />
-        <Component {...pageProps} />
+        <DarkThemeProvider>
+          <SiteNav />
+          <Component {...pageProps} />
+        </DarkThemeProvider>
       </Layout>
-    </DarkThemeProvider>
+    </ThemeContext.Provider>
   );
 }

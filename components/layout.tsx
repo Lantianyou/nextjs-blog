@@ -1,14 +1,14 @@
-import Meta from "./meta"
-import Footer from './footer'
-import Alert from './alert'
-import { ReactNode } from "react"
+import Meta from "./meta";
+import Footer from "./footer";
+import Alert from "./alert";
+import { ReactNode } from "react";
 
 export default function Layout({
   preview,
   children,
 }: {
-  preview: boolean,
-  children: ReactNode
+  preview: boolean;
+  children: ReactNode;
 }) {
   return (
     <>
@@ -19,5 +19,5 @@ export default function Layout({
         <Footer />
       </div>
     </>
-  )
+  );
 }

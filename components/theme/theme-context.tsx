@@ -1,5 +1,7 @@
-import { createContext, SetStateAction, Dispatch } from 'react'
+import { createContext, SetStateAction, Dispatch } from "react";
 
-const ThemeContext = createContext<[boolean, Dispatch<SetStateAction<boolean>>]>([false, () => { }]);
+const ThemeContext = createContext<
+  [boolean, Dispatch<SetStateAction<boolean>>]
+>([false, () => {}]);
 
-export default ThemeContext
+export default ThemeContext;
