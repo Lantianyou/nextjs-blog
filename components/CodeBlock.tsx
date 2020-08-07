@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-// import { ThemeContext } from 'styled-components';
+import cn from "classnames";
 import CopyToClipboard from "react-copy-to-clipboard";
 // import { Fade } from 'react-reveal'
 import Highlight, { defaultProps, Language } from "prism-react-renderer";
@@ -18,11 +18,13 @@ const CodeBlock = ({
   const language = className.replace(/lang-/, "") as Language;
   const [darkThemeEnabled] = useContext(ThemeContext);
   const codeTheme = darkThemeEnabled ? nightOwlLight : nightOwl;
+  const backgroundColor = darkThemeEnabled ? "#FBFBFB" : "#011627";
+  const color = darkThemeEnabled ? "#403f53" : "#d6deeb";
   const text = children.toString();
   const [copied, setCopied] = useState(false);
 
   const copy = (
-    <div className="text-center py-4">
+    <div className={cn("text-center")} style={{ backgroundColor, color }}>
       <CopyToClipboard text={text} onCopy={() => setCopied(true)}>
         <button aria-label="复制代码块">复制</button>
       </CopyToClipboard>
@@ -30,10 +32,21 @@ const CodeBlock = ({
   );
 
   return (
-    <div>
+    <>
+      <style jsx>
+        {`
+          pre {
+            padding: 0;
+          }
+        `}
+      </style>
       {copied ? (
         // <Fade top distance='10px'>
-        <Message message="已复制" newMessage={false} />
+        <Message
+          message="已复制"
+          newMessage={false}
+          style={{ backgroundColor, color }}
+        />
       ) : (
         copy
       )}
@@ -55,7 +68,7 @@ const CodeBlock = ({
           </pre>
         )}
       </Highlight>
-    </div>
+    </>
   );
 };
 

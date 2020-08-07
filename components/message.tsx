@@ -1,14 +1,19 @@
 export default function Copy({
   message,
   newMessage,
+  style,
 }: {
   message: string;
   newMessage: boolean;
+  style: {
+    backgroundColor: string;
+    color: string;
+  };
 }) {
   return (
-    <div className='text-center py-4 lg:px-4"'>
+    <div className="text-center" style={style}>
       <div
-        className="p-2 bg-indigo-800 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex"
+        className="bg-indigo-800 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex"
         role="alert"
       >
         {newMessage && (
