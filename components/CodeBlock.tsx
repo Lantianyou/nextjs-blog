@@ -33,13 +33,6 @@ const CodeBlock = ({
 
   return (
     <>
-      <style jsx>
-        {`
-          pre {
-            padding: 0;
-          }
-        `}
-      </style>
       {copied ? (
         // <Fade top distance='10px'>
         <Message
