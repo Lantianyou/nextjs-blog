@@ -1,7 +1,7 @@
 import Container from "components/container";
 import ProgressBar from "components/post/progress-bar";
-import PostHeader from "components/post/post-header";
 import PostBody from "components/post/post-body";
+import PostHeader from "components/post/post-header";
 import PostFooter from "components/post/post-footer";
 
 export default function MarkDownContent({

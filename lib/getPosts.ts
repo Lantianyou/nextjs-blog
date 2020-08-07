@@ -80,6 +80,19 @@ export const getPostAndMetadata = async (slug: string) => {
   };
 };
 
+export const getPost = async (slug: string) => {
+  const fileDir = join(postsDir, slug + ".md");
+  const markdownWithMetaData = readFileSync(fileDir, "utf-8").toString();
+  const parsedMarkdown = matter(markdownWithMetaData);
+
+  const processsedContent = await remark().process(parsedMarkdown.content);
+
+  return {
+    content: processsedContent.toString(),
+    data: parsedMarkdown.data,
+  };
+};
+
 export interface PostMetadata {
   slug: string;
   title: string;
