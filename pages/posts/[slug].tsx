@@ -3,15 +3,15 @@ import Head from "next/head";
 import cn from "classnames";
 import Post from "components/post/post";
 import styles from "public/css/github-markdown.module.css";
-import { getPostsSlug, getPostAndMetadata, PostMetadata } from "lib/getPosts";
+import { getPostsSlug, PostMetadata } from "lib/getPosts";
 
 const Blog: NextPage<{
   htmlString: string;
   slug: string;
   data: PostMetadata;
 }> = ({ htmlString, data, slug }) => {
-  const { author, date, title, cover, excerpt } = data;
   const useMath = slug === "pvalue-misconception";
+
   return (
     <>
       {useMath && (
@@ -25,14 +25,7 @@ const Blog: NextPage<{
           />
         </Head>
       )}
-      <Post
-        author={author}
-        title={title}
-        date={date}
-        cover={cover}
-        excerpt={excerpt}
-        slug={slug}
-      >
+      <Post {...data}>
         <style jsx global>{`
           :target {
             animation: yellowflash-bg 2s;
@@ -63,7 +56,10 @@ type T = {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params as T;
-  const postAndMetadata = await getPostAndMetadata(slug);
+  const postAndMetadata = await fetch(
+    `http://localhost:3000/api/post/${slug}`
+  ).then((r) => r.json());
+
   return {
     props: { ...postAndMetadata, slug },
   };

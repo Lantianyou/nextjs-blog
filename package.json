@@ -32,6 +32,7 @@
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^8.0.0",
+    "isomorphic-unfetch": "^3.0.0",
     "jimp": "^0.14.0",
     "lqip-loader": "^2.2.0",
     "netlify-identity-widget": "^1.8.0",
@@ -74,6 +75,7 @@
     "simple-functional-loader": "^1.2.1",
     "styled-components": "^5.1.1",
     "svg-sprite-loader": "^5.0.0",
+    "swr": "^0.3.0",
     "universal-config": "^0.3.0"
   },
   "devDependencies": {

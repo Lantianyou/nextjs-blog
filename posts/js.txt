@@ -1,0 +1,5 @@
+- value:
+  boolean string number null undefined
+- references:
+  Array Function Object
+  变量存储的是内存地址，copy the ref

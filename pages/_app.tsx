@@ -17,6 +17,7 @@ import ThemeContext from "components/theme/theme-context";
 export default function App({ Component, pageProps }: AppProps) {
   const [darkThemeEnabled, setDarkThemeEnabled] = useState(false);
   const [language, setLanguageTheme] = useState("en");
+
   return (
     <ThemeContext.Provider
       value={[
@@ -26,12 +27,12 @@ export default function App({ Component, pageProps }: AppProps) {
         setLanguageTheme,
       ]}
     >
-      <Layout preview={true}>
-        <DarkThemeProvider>
+      <DarkThemeProvider>
+        <Layout preview={true}>
           <SiteNav />
           <Component {...pageProps} />
-        </DarkThemeProvider>
-      </Layout>
+        </Layout>
+      </DarkThemeProvider>
     </ThemeContext.Provider>
   );
 }
