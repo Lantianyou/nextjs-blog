@@ -23,6 +23,3 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     res.status(200).json(data.data);
   }
 };
-
-    // if (["title", "date", "exerpt"].includes(query[1])) {
-
