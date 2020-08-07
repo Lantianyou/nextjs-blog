@@ -15,9 +15,9 @@ const CodeBlock = ({
   children: string;
   className: string;
 }) => {
-  const language = className.replace(/language-/, "") as Language;
+  const language = className.replace(/lang-/, "") as Language;
   const [darkThemeEnabled] = useContext(ThemeContext);
-  const codeTheme = darkThemeEnabled ? nightOwl : nightOwlLight;
+  const codeTheme = darkThemeEnabled ? nightOwlLight : nightOwl;
   const text = children.toString();
   const [copied, setCopied] = useState(false);
 

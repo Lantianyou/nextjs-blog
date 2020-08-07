@@ -19,7 +19,6 @@ const drafts = [
   "get-big-fast.md",
   "the-other-side.md",
   "a-case-for-china.md",
-  "test.md",
   "think-different.md",
 ];
 export const postsDir = join(process.cwd(), "posts");

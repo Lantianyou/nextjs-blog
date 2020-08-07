@@ -3,6 +3,7 @@ import Head from "next/head";
 import cn from "classnames";
 import Markdown from "markdown-to-jsx";
 import Youtube from "components/Youtube";
+import CodeBlock from "components/CodeBlock";
 import PostMeta from "components/post/post-meta";
 import Container from "components/container";
 import Signature from "components/signature";
@@ -58,6 +59,9 @@ export default function ({ posts }) {
             options={{
               overrides: {
                 Youtube: { component: Youtube },
+                code: {
+                  component: CodeBlock,
+                },
               },
             }}
           >
