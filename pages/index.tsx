@@ -23,12 +23,12 @@ const Home: NextPage<{ postsMetadata: PostMetadata[] }> = ({
   useEffect(() => {
     setMounted(true);
   }, []);
-  if (error) {
-    return <div>server error</div>;
-  }
-  if (!data) {
-    return <div>loading</div>;
-  }
+  // if (error) {
+  //   return <div>server error</div>;
+  // }
+  // if (!data) {
+  //   return <div>loading</div>;
+  // }
   return (
     <>
       <style jsx>{`
