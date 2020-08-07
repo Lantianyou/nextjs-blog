@@ -1,44 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { join } from "path";
-import matter from "gray-matter";
-import { readFileSync, readdirSync } from "fs";
-
-const drafts = [
-  "get-big-fast.md",
-  "the-other-side.md",
-  "a-case-for-china.md",
-  "test.md",
-  "think-different.md",
-];
-
-export const postsDir = join(process.cwd(), "posts");
-
-const getPostMetadata = (slug: string): PostMetadata => {
-  const fileDir = join(postsDir, slug + ".md");
-  const markdownWithMetaData = readFileSync(fileDir, "utf-8").toString();
-  const { data } = matter(markdownWithMetaData);
-
-  let meta = {
-    slug,
-    ...data,
-  };
-
-  return meta as PostMetadata;
-};
-
-const getPostsSlug = () => {
-  const fileNames = readdirSync(postsDir);
-  return fileNames
-    .filter(
-      (fileName) => fileName.includes(".md") && !drafts.includes(fileName)
-    )
-    .map((fileName) => fileName.replace(".md", ""));
-};
-
-const getPostsMetadata = (): PostMetadata[] => {
-  const posts = getPostsSlug();
-  return posts.map((post) => getPostMetadata(post));
-};
+import { getPostsMetadata } from "lib/getPosts";
 
 export default (req: NextApiRequest, res: NextApiResponse) => {
   const postsMetadata = getPostsMetadata();
