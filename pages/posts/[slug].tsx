@@ -1,9 +1,10 @@
 import { GetStaticProps, GetStaticPaths, NextPage } from "next";
 import Head from "next/head";
 import cn from "classnames";
+// import fetch from "node-fetch";
 import Post from "components/post/post";
 import styles from "public/css/github-markdown.module.css";
-import { getPostsSlug, PostMetadata } from "lib/getPosts";
+import { getPostsSlug, getPostAndMetadata, PostMetadata } from "lib/getPosts";
 
 const Blog: NextPage<{
   htmlString: string;
@@ -56,9 +57,7 @@ type T = {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params as T;
-  const postAndMetadata = await fetch(
-    `http://localhost:3000/api/post/${slug}`
-  ).then((r) => r.json());
+  const postAndMetadata = await getPostAndMetadata(slug);
 
   return {
     props: { ...postAndMetadata, slug },
