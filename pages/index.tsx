@@ -5,10 +5,30 @@ import { siteTitle } from "components/meta";
 import Container from "components/container";
 import PostDate from "components/post/post-date";
 import { getPostsMetadata, PostMetadata } from "lib/getPosts";
+import useSWR from "swr";
+import { useEffect, useState } from "react";
+
+const endPoint = "http://localhost:3000/api/posts";
+
+const fetcher = async (path) => {
+  const res = await fetch(path);
+  return res.json();
+};
 
 const Home: NextPage<{ postsMetadata: PostMetadata[] }> = ({
   postsMetadata,
 }) => {
+  const [mounted, setMounted] = useState(false);
+  const { data, error } = useSWR(mounted ? endPoint : null, fetcher);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  if (error) {
+    return <div>server error</div>;
+  }
+  if (!data) {
+    return <div>loading</div>;
+  }
   return (
     <>
       <style jsx>{`
@@ -61,7 +81,7 @@ const Home: NextPage<{ postsMetadata: PostMetadata[] }> = ({
       <Container>
         <div className="max-w-2xl mx-auto">
           <ul>
-            {postsMetadata.map((postMetadata) => (
+            {data.posts.map((postMetadata) => (
               <li key={postMetadata.slug}>
                 <span>
                   <PostDate dateString={postMetadata.date} />
