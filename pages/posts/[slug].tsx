@@ -3,7 +3,7 @@ import Head from "next/head";
 import cn from "classnames";
 import Markdown from "markdown-to-jsx";
 import Youtube from "components/Youtube";
-import CodeBlock from "components/CodeBlock";
+import CodeBlock from "components/code-block";
 import PostMeta from "components/post/post-meta";
 import Container from "components/container";
 import Signature from "components/signature";
@@ -49,6 +49,7 @@ export default function ({ posts }) {
       <Container>
         <PostHeader title={title} date={date} />
         <article
+          id="article-top"
           className={cn(
             "markdown-body max-w-2xl mx-auto",
             styles["markdown-body"]
