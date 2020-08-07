@@ -84,7 +84,13 @@ export const getPost = async (slug: string) => {
   const markdownWithMetaData = readFileSync(fileDir, "utf-8").toString();
   const parsedMarkdown = matter(markdownWithMetaData);
 
-  const processsedContent = await remark().process(parsedMarkdown.content);
+  const processsedContent = await remark()
+    .use(math)
+    .use(emogi)
+    .use(images)
+    .use(footnotes)
+    .use(remarkSlug)
+    .process(parsedMarkdown.content);
 
   return {
     content: processsedContent.toString(),

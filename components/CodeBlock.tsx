@@ -17,9 +17,9 @@ const CodeBlock = ({
 }) => {
   const language = className.replace(/lang-/, "") as Language;
   const [darkThemeEnabled] = useContext(ThemeContext);
-  const codeTheme = darkThemeEnabled ? nightOwlLight : nightOwl;
-  const backgroundColor = darkThemeEnabled ? "#FBFBFB" : "#011627";
-  const color = darkThemeEnabled ? "#403f53" : "#d6deeb";
+  const codeTheme = !darkThemeEnabled ? nightOwlLight : nightOwl;
+  const backgroundColor = !darkThemeEnabled ? "#FBFBFB" : "#011627";
+  const color = !darkThemeEnabled ? "#403f53" : "#d6deeb";
   const text = children.toString();
   const [copied, setCopied] = useState(false);
 
@@ -50,7 +50,14 @@ const CodeBlock = ({
         language={language}
       >
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
-          <pre className={className} style={{ ...style, padding: "20px" }}>
+          <pre
+            className={className}
+            style={{
+              ...style,
+              padding: "20px",
+              marginBottom: "0",
+            }}
+          >
             {tokens.map((line, i) => (
               <div key={i} {...getLineProps({ line, key: i })}>
                 {line.map((token, key) => (
