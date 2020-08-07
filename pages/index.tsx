@@ -81,7 +81,7 @@ const Home: NextPage<{ postsMetadata: PostMetadata[] }> = ({
       <Container>
         <div className="max-w-2xl mx-auto">
           <ul>
-            {data.posts.map((postMetadata) => (
+            {postsMetadata.map((postMetadata) => (
               <li key={postMetadata.slug}>
                 <span>
                   <PostDate dateString={postMetadata.date} />
