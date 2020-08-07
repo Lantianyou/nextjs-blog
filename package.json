@@ -24,6 +24,7 @@
     "@types/react-copy-to-clipboard": "^4.3.0",
     "@types/react-scroll": "^1.5.5",
     "@types/styled-components": "^5.1.2",
+    "@types/youtube": "0.0.39",
     "babel-register": "^6.26.0",
     "classnames": "^2.2.6",
     "date-fns": "^2.14.0",
