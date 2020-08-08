@@ -7,6 +7,15 @@ export default function Footer() {
     <footer className="bg-accent-1 border-t border-accent-2">
       <div className="flex flex-col md:flex-row justify-around items-center max-w-2xl mx-auto">
         {/* 颜色取自medium */}
+        <Link href="/about" as="/about">
+          <a
+            aria-label="resume"
+            className="font-bold py-2"
+            style={{ color: footerColor }}
+          >
+            Contact me:
+          </a>
+        </Link>
         <a
           href="https://github.com/Lantianyou/nextjs-blog"
           className="py-2"
@@ -31,15 +40,6 @@ export default function Footer() {
         <a href="https://www.linkedin.com/in/lantianyou">
           <Linkedin color={footerColor} />
         </a>
-        <Link href="/about" as="/about">
-          <a
-            aria-label="resume"
-            className="font-bold py-2"
-            style={{ color: "rgba(117, 117, 117, 1)" }}
-          >
-            About
-          </a>
-        </Link>
       </div>
     </footer>
   );

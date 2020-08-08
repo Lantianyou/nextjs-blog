@@ -2,7 +2,7 @@ import Head from "next/head";
 import Router from "next/router";
 import NProgress from "nprogress";
 
-export const siteTitle = "最重要的事 Think different";
+export const siteTitle = "兰天游 Think different";
 
 Router.events.on("routeChangeStart", () => {
   NProgress.start();
