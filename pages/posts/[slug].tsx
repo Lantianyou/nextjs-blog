@@ -5,7 +5,7 @@ import Markdown from "markdown-to-jsx";
 import Youtube from "components/Youtube";
 import CodeBlock from "components/code-block";
 import PostMeta from "components/post/post-meta";
-import Container from "components/container";
+import ContentContainer from "components/content-container";
 import Signature from "components/signature";
 import styles from "public/css/github-markdown.module.css";
 import PostHeader from "components/post/post-header";
@@ -46,14 +46,11 @@ export default function ({ posts }) {
       `}</style>
       <PostMeta excerpt={excerpt} cover={cover} title={title} />
       <ProgressBar />
-      <Container>
+      <ContentContainer>
         <PostHeader title={title} date={date} />
         <article
           id="article-top"
-          className={cn(
-            "markdown-body max-w-2xl mx-auto",
-            styles["markdown-body"]
-          )}
+          className={cn("markdown-body", styles["markdown-body"])}
           style={{ fontSize: "18px" }}
         >
           <Markdown
@@ -71,7 +68,7 @@ export default function ({ posts }) {
           <Signature author={author} />
         </article>
         <PostFooter slug={slug} title={title} />
-      </Container>
+      </ContentContainer>
     </>
   );
 }

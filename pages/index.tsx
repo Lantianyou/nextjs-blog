@@ -2,7 +2,7 @@ import { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
 import Head from "next/head";
 import { siteTitle } from "components/meta";
-import Container from "components/container";
+import ContentContainer from "components/content-container";
 import PostDate from "components/post/post-date";
 import { getPostsMetadata, PostMetadata } from "lib/getPosts";
 import useSWR from "swr";
@@ -78,25 +78,23 @@ const Home: NextPage<{ postsMetadata: PostMetadata[] }> = ({
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <Container>
-        <div className="max-w-2xl mx-auto">
-          <ul>
-            {postsMetadata.map((postMetadata) => (
-              <li key={postMetadata.slug}>
-                <span>
-                  <PostDate dateString={postMetadata.date} />
-                </span>
-                <Link
-                  href={`posts/${postMetadata.slug}`}
-                  as={`posts/${postMetadata.slug}`}
-                >
-                  <a>{postMetadata.title}</a>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </Container>
+      <ContentContainer>
+        <ul>
+          {postsMetadata.map((postMetadata) => (
+            <li key={postMetadata.slug}>
+              <span>
+                <PostDate dateString={postMetadata.date} />
+              </span>
+              <Link
+                href={`posts/${postMetadata.slug}`}
+                as={`posts/${postMetadata.slug}`}
+              >
+                <a>{postMetadata.title}</a>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </ContentContainer>
     </>
   );
 };
