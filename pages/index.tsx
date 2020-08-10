@@ -5,10 +5,8 @@ import { siteTitle } from "components/meta";
 import ContentContainer from "components/content-container";
 import PostDate from "components/post/post-date";
 import { getPostsMetadata, PostMetadata } from "lib/getPosts";
-import useSWR from "swr";
-import { useEffect, useState } from "react";
 
-const endPoint = "http://localhost:3000/api/posts";
+// const endPoint = "http://localhost:3000/api/posts";
 
 const fetcher = async (path) => {
   const res = await fetch(path);
@@ -18,17 +16,6 @@ const fetcher = async (path) => {
 const Home: NextPage<{ postsMetadata: PostMetadata[] }> = ({
   postsMetadata,
 }) => {
-  const [mounted, setMounted] = useState(false);
-  const { data, error } = useSWR(mounted ? endPoint : null, fetcher);
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-  // if (error) {
-  //   return <div>server error</div>;
-  // }
-  // if (!data) {
-  //   return <div>loading</div>;
-  // }
   return (
     <>
       <style jsx>{`

@@ -11,6 +11,7 @@ import styles from "public/css/github-markdown.module.css";
 import PostHeader from "components/post/post-header";
 import PostFooter from "components/post/post-footer";
 import ProgressBar from "components/post/progress-bar";
+import { Tweet } from "react-twitter-widgets";
 import { getPost, getPostsSlug } from "lib/getPosts";
 
 export default function ({ posts }) {
@@ -57,6 +58,7 @@ export default function ({ posts }) {
             options={{
               overrides: {
                 Youtube: { component: Youtube },
+                Tweet: { component: Tweet },
                 code: {
                   component: CodeBlock,
                 },

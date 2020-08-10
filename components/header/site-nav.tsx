@@ -1,13 +1,17 @@
 import Link from "next/link";
 import Toggle from "components/Toggle";
-import Container from "components/container";
 
 export default function SiteNav() {
   return (
     <>
       <div className="mt-10 mb-5 text-2xl md:text-4xl text-center font-bold">
         <Link href="/" as="/">
-          <a aria-label="首页"> 兰天游</a>
+          <a
+            aria-label="首页"
+            style={{ color: "black", textDecoration: "none" }}
+          >
+            兰天游
+          </a>
         </Link>
       </div>
       <div className="sticky z-10 max-w-2xl mx-auto mt-5">
