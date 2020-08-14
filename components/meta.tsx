@@ -2,7 +2,7 @@ import Head from "next/head";
 import Router from "next/router";
 import NProgress from "nprogress";
 
-export const siteTitle = "兰天游 Think different";
+export const siteTitle = "兰天游 What if the opposite is also true?";
 
 Router.events.on("routeChangeStart", () => {
   NProgress.start();
