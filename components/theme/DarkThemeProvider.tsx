@@ -1,4 +1,4 @@
-import { ReactNode, useState, useContext } from "react";
+import { ReactNode, useContext } from "react";
 import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "components/theme/theme";
 import ThemeContext from "components/theme/theme-context";
