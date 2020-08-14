@@ -12,7 +12,6 @@ export default function ({ title, excerpt, cover }) {
           content={`https://lantianyou.xyz/images/${cover.image}`}
         />
       </Head>
-      
     </>
   );
 }

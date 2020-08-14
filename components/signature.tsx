@@ -1,6 +1,6 @@
-import { author } from "lib/getPosts";
+import { Author } from "lib/getPosts";
 
-export default function ({ author }: { author: author }) {
+export default function ({ author }: { author: Author }) {
   return (
     <div>
       <p>Think different,</p>

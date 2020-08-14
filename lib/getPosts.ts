@@ -28,7 +28,7 @@ const getPostMetadata = (slug: string): PostMetadata => {
   const markdownWithMetaData = readFileSync(fileDir, "utf-8").toString();
   const { data } = matter(markdownWithMetaData);
 
-  let meta = {
+  const meta = {
     slug,
     ...data,
   };
@@ -101,18 +101,18 @@ export const getPost = async (slug: string) => {
 export interface PostMetadata {
   slug: string;
   title: string;
-  cover: cover;
+  cover: Cover;
   date: string;
-  author: author;
+  author: Author;
   excerpt: string;
 }
 
-export interface author {
+export interface Author {
   name: string;
   picture: string;
 }
 
-export interface cover {
+export interface Cover {
   image: string;
   description: string;
 }
