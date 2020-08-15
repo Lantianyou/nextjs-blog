@@ -3,6 +3,7 @@ import Head from "next/head";
 import cn from "classnames";
 import Markdown from "markdown-to-jsx";
 import Youtube from "components/Youtube";
+import { Tweet } from "react-twitter-widgets";
 import CodeBlock from "components/code-block";
 import PostMeta from "components/post/post-meta";
 import ContentContainer from "components/content-container";
@@ -11,7 +12,6 @@ import styles from "public/css/github-markdown.module.css";
 import PostHeader from "components/post/post-header";
 import PostFooter from "components/post/post-footer";
 import ProgressBar from "components/post/progress-bar";
-import { Tweet } from "react-twitter-widgets";
 import { getPost, getPostsSlug } from "lib/getPosts";
 
 export default function ({ posts }) {

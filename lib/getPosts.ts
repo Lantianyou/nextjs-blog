@@ -27,26 +27,23 @@ const readMarkdown = flow([getFileName, readFile, matter]);
 
 const getPostMetadata = (slug: string): PostMetadata => {
   const { data } = readMarkdown(slug);
-  const meta = {
+  return {
     slug,
     ...data,
   };
-
-  return meta as PostMetadata;
 };
 
 export const getPostsMetadata = (): PostMetadata[] =>
   map(getPostsSlug(), getPostMetadata);
 
-export const getPostsSlug = () => {
-  const validPost = (fileName) =>
-    fileName.includes(".md") && !drafts.includes(fileName);
+const validPost = (fileName) =>
+  fileName.endsWith(".md") && !drafts.includes(fileName);
 
-  return chain(readdirSync(postsDir))
+export const getPostsSlug = () =>
+  chain(readdirSync(postsDir))
     .filter(validPost)
     .map((f) => f.slice(0, -3))
     .value();
-};
 
 export const getPost = async (slug: string) => {
   // tslint:disable-next-line: prefer-const
