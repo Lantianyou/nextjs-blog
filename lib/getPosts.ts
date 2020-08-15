@@ -1,6 +1,6 @@
 import { readFileSync, readdirSync } from "fs";
 import { join } from "path";
-import _ from "lodash";
+import { flow, map, chain } from "lodash";
 import matter from "gray-matter";
 import remark from "remark";
 import emogi from "remark-emoji";
@@ -9,7 +9,7 @@ import remarkSlug from "remark-slug";
 import math from "remark-math";
 import footnotes from "remark-footnotes";
 
-// 对Markdown进行再parse，使得markdown可以带有html元素
+// 全局变量
 const drafts = [
   "get-big-fast.md",
   "the-other-side.md",
@@ -20,10 +20,10 @@ export const postsDir = join(process.cwd(), "posts");
 
 // 函数
 const getFileName = (slug) => join(postsDir, slug + ".md");
+
 const readFile = (fileName) => readFileSync(fileName, "utf-8").toString();
-const readMarkdown = _.flow([getFileName, readFile, matter]);
-const validPost = (fileName) =>
-  fileName.includes(".md") && !drafts.includes(fileName);
+
+const readMarkdown = flow([getFileName, readFile, matter]);
 
 const getPostMetadata = (slug: string): PostMetadata => {
   const { data } = readMarkdown(slug);
@@ -36,29 +36,32 @@ const getPostMetadata = (slug: string): PostMetadata => {
 };
 
 export const getPostsMetadata = (): PostMetadata[] =>
-  _.map(getPostsSlug(), getPostMetadata);
+  map(getPostsSlug(), getPostMetadata);
 
 export const getPostsSlug = () => {
-  const fileNames = readdirSync(postsDir);
+  const validPost = (fileName) =>
+    fileName.includes(".md") && !drafts.includes(fileName);
 
-  return _.chain(fileNames)
+  return chain(readdirSync(postsDir))
     .filter(validPost)
-    .map((fileName) => fileName.slice(0, -3))
+    .map((f) => f.slice(0, -3))
     .value();
 };
 
 export const getPost = async (slug: string) => {
-  const { content, data } = readMarkdown(slug);
-  const processsedContent = await remark()
+  // tslint:disable-next-line: prefer-const
+  let { content, data } = readMarkdown(slug);
+  content = await remark()
     .use(math)
     .use(emogi)
     .use(images)
     .use(footnotes)
     .use(remarkSlug)
     .process(content);
+  content = content.toString();
 
   return {
-    content: processsedContent.toString(),
+    content,
     data,
   };
 };
