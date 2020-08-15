@@ -38,23 +38,22 @@ const getPostMetadata = (slug: string): PostMetadata => {
   return meta as PostMetadata;
 };
 
-export const getPostsMetadata = (): PostMetadata[] => {
-  const posts = getPostsSlug();
-  return posts.map((post) => getPostMetadata(post));
-};
+export const getPostsMetadata = (): PostMetadata[] =>
+  _.map(getPostsSlug(), getPostMetadata);
 
 export const getPostsSlug = () => {
   const fileNames = readdirSync(postsDir);
-  return fileNames
-    .filter(
-      (fileName) => fileName.includes(".md") && !drafts.includes(fileName)
-    )
-    .map((fileName) => fileName.replace(".md", ""));
+  const validPost = (fileName) =>
+    fileName.includes(".md") && !drafts.includes(fileName);
+
+  return _.chain(fileNames)
+    .filter(validPost)
+    .map((fileName) => fileName.replace(".md", ""))
+    .value();
 };
 
-const markdownToHTML = async (parsedMarkdown) => {
-  const t = await parseMarkdown();
-  return t
+const markdownToHTML = () =>
+  parseMarkdown()
     .use(remark2rehype, {
       allowDangerousHtml: true,
     })
@@ -62,31 +61,24 @@ const markdownToHTML = async (parsedMarkdown) => {
     .use(katex)
     .use(rehypePrisma)
     .use(minify)
-    .use(stringify)
-    .process(parsedMarkdown.content)
-    .toString();
-};
+    .use(stringify);
 
 export const getPostAndMetadata = async (slug: string) => {
   const parsedMarkdown = readMarkdown(slug);
-  const htmlString = markdownToHTML(parsedMarkdown);
+  const htmlString = await markdownToHTML()
+    .process(parsedMarkdown.content)
+    .toString();
 
   return {
     data: parsedMarkdown.data,
     htmlString,
   };
 };
-const parseMarkdown = async () =>
-  await remark()
-    .use(math)
-    .use(emogi)
-    .use(images)
-    .use(footnotes)
-    .use(remarkSlug);
+const parseMarkdown = () =>
+  remark().use(math).use(emogi).use(images).use(footnotes).use(remarkSlug);
 
 const processMarkdown = async (parsedMarkdown) => {
-  const t = await parseMarkdown();
-  return t.process(parsedMarkdown.content);
+  return await parseMarkdown().process(parsedMarkdown.content);
 };
 
 export const getPost = async (slug: string) => {
