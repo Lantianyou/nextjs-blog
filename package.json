@@ -34,6 +34,7 @@
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^8.0.0",
     "jimp": "^0.14.0",
+    "lodash": "^4.17.20",
     "lqip-loader": "^2.2.0",
     "markdown-to-jsx": "^6.11.4",
     "netlify-identity-widget": "^1.8.0",

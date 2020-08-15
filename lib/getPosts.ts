@@ -1,5 +1,6 @@
 import { readFileSync, readdirSync } from "fs";
 import { join } from "path";
+import _ from "lodash";
 import minify from "rehype-preset-minify";
 import matter from "gray-matter";
 import remark from "remark";
@@ -23,11 +24,12 @@ const drafts = [
 ];
 export const postsDir = join(process.cwd(), "posts");
 
-const getPostMetadata = (slug: string): PostMetadata => {
-  const fileDir = join(postsDir, slug + ".md");
-  const markdownWithMetaData = readFileSync(fileDir, "utf-8").toString();
-  const { data } = matter(markdownWithMetaData);
+const getFileName = (slug) => join(postsDir, slug + ".md");
+const readFile = (fileName) => readFileSync(fileName, "utf-8").toString();
+const readMarkdown = (slug) => _.flow([getFileName, readFile, matter])(slug);
 
+const getPostMetadata = (slug: string): PostMetadata => {
+  const { data } = readMarkdown(slug);
   const meta = {
     slug,
     ...data,
@@ -50,47 +52,46 @@ export const getPostsSlug = () => {
     .map((fileName) => fileName.replace(".md", ""));
 };
 
-export const getPostAndMetadata = async (slug: string) => {
-  const fileDir = join(postsDir, slug + ".md");
-  const markdownWithMetaData = readFileSync(fileDir, "utf-8").toString();
-  const parsedMarkdown = matter(markdownWithMetaData);
-
-  const processedContent = await remark()
-    .use(math)
-    .use(emogi)
-    .use(images)
-    .use(footnotes)
-    .use(remarkSlug)
-    .use(remark2rehype, { allowDangerousHtml: true })
+const markdownToHTML = async (parsedMarkdown) => {
+  const t = await parseMarkdown();
+  return t
+    .use(remark2rehype, {
+      allowDangerousHtml: true,
+    })
     .use(raw)
     .use(katex)
     .use(rehypePrisma)
     .use(minify)
     .use(stringify)
-    .process(parsedMarkdown.content);
+    .process(parsedMarkdown.content)
+    .toString();
+};
 
-  const htmlString = processedContent.toString();
-
-  // appendFileSync(`${postsDir}/${slug}.html`, htmlString)
+export const getPostAndMetadata = async (slug: string) => {
+  const parsedMarkdown = readMarkdown(slug);
+  const htmlString = markdownToHTML(parsedMarkdown);
 
   return {
     data: parsedMarkdown.data,
     htmlString,
   };
 };
-
-export const getPost = async (slug: string) => {
-  const fileDir = join(postsDir, slug + ".md");
-  const markdownWithMetaData = readFileSync(fileDir, "utf-8").toString();
-  const parsedMarkdown = matter(markdownWithMetaData);
-
-  const processsedContent = await remark()
+const parseMarkdown = async () =>
+  await remark()
     .use(math)
     .use(emogi)
     .use(images)
     .use(footnotes)
-    .use(remarkSlug)
-    .process(parsedMarkdown.content);
+    .use(remarkSlug);
+
+const processMarkdown = async (parsedMarkdown) => {
+  const t = await parseMarkdown();
+  return t.process(parsedMarkdown.content);
+};
+
+export const getPost = async (slug: string) => {
+  const parsedMarkdown = readMarkdown(slug);
+  const processsedContent = await processMarkdown(parsedMarkdown);
 
   return {
     content: processsedContent.toString(),
