@@ -26,7 +26,7 @@ export const postsDir = join(process.cwd(), "posts");
 
 const getFileName = (slug) => join(postsDir, slug + ".md");
 const readFile = (fileName) => readFileSync(fileName, "utf-8").toString();
-const readMarkdown = (slug) => _.flow([getFileName, readFile, matter])(slug);
+const readMarkdown = _.flow([getFileName, readFile, matter]);
 
 const getPostMetadata = (slug: string): PostMetadata => {
   const { data } = readMarkdown(slug);
