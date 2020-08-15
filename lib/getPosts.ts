@@ -64,30 +64,25 @@ const markdownToHTML = () =>
     .use(stringify);
 
 export const getPostAndMetadata = async (slug: string) => {
-  const parsedMarkdown = readMarkdown(slug);
-  const htmlString = await markdownToHTML()
-    .process(parsedMarkdown.content)
-    .toString();
+  const { content, data } = readMarkdown(slug);
+  const htmlString = await markdownToHTML().process(content).toString();
 
   return {
-    data: parsedMarkdown.data,
+    data,
     htmlString,
   };
 };
+
 const parseMarkdown = () =>
   remark().use(math).use(emogi).use(images).use(footnotes).use(remarkSlug);
 
-const processMarkdown = async (parsedMarkdown) => {
-  return await parseMarkdown().process(parsedMarkdown.content);
-};
-
 export const getPost = async (slug: string) => {
-  const parsedMarkdown = readMarkdown(slug);
-  const processsedContent = await processMarkdown(parsedMarkdown);
+  const { content, data } = readMarkdown(slug);
+  const processsedContent = await parseMarkdown().process(content).toString();
 
   return {
-    content: processsedContent.toString(),
-    data: parsedMarkdown.data,
+    content: processsedContent,
+    data,
   };
 };
 
