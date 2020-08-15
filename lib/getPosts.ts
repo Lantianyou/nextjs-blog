@@ -18,9 +18,12 @@ const drafts = [
 ];
 export const postsDir = join(process.cwd(), "posts");
 
+// 函数
 const getFileName = (slug) => join(postsDir, slug + ".md");
 const readFile = (fileName) => readFileSync(fileName, "utf-8").toString();
 const readMarkdown = _.flow([getFileName, readFile, matter]);
+const validPost = (fileName) =>
+  fileName.includes(".md") && !drafts.includes(fileName);
 
 const getPostMetadata = (slug: string): PostMetadata => {
   const { data } = readMarkdown(slug);
@@ -37,12 +40,10 @@ export const getPostsMetadata = (): PostMetadata[] =>
 
 export const getPostsSlug = () => {
   const fileNames = readdirSync(postsDir);
-  const validPost = (fileName) =>
-    fileName.includes(".md") && !drafts.includes(fileName);
 
   return _.chain(fileNames)
     .filter(validPost)
-    .map((fileName) => fileName.replace(".md", ""))
+    .map((fileName) => fileName.slice(0, -3))
     .value();
 };
 
@@ -54,11 +55,10 @@ export const getPost = async (slug: string) => {
     .use(images)
     .use(footnotes)
     .use(remarkSlug)
-    .process(content)
-    .toString();
+    .process(content);
 
   return {
-    content: processsedContent,
+    content: processsedContent.toString(),
     data,
   };
 };
