@@ -1,12 +1,6 @@
-import { createContext, SetStateAction, Dispatch } from "react";
+import { createContext, Dispatch } from "react";
+import { State, Action } from "pages/_app";
 
-const ThemeContext = createContext<
-  [
-    boolean,
-    Dispatch<SetStateAction<boolean>>,
-    string,
-    Dispatch<SetStateAction<string>>
-  ]
->([false, () => {}, "en", () => {}]);
+const ThemeContext = createContext<[State, Dispatch<Action>]>(null);
 
 export default ThemeContext;

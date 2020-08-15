@@ -4,8 +4,15 @@ import { Moon, Sun } from "react-feather";
 import ThemeContext from "components/theme/theme-context";
 
 const Toggle = () => {
-  const [darkThemeEnabled, setDarkThemeEnabled] = useContext(ThemeContext);
-  const toggleTheme = () => setDarkThemeEnabled(!darkThemeEnabled);
+  const [state, dispatch] = useContext(ThemeContext);
+  const { darkThemeEnabled } = state;
+  const toggleTheme = () => {
+    if (state.darkThemeEnabled) {
+      dispatch({ type: "lightTheme" });
+    } else {
+      dispatch({ type: "darkTheme" });
+    }
+  };
 
   return (
     <button

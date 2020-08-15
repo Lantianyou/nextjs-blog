@@ -16,7 +16,8 @@ const CodeBlock = ({
   className: string;
 }) => {
   const language = className.replace(/lang-/, "") as Language;
-  const [darkThemeEnabled] = useContext(ThemeContext);
+  const [state] = useContext(ThemeContext);
+  const { darkThemeEnabled } = state;
   const codeTheme = !darkThemeEnabled ? nightOwlLight : nightOwl;
   const backgroundColor = !darkThemeEnabled ? "#FBFBFB" : "#011627";
   const color = !darkThemeEnabled ? "#403f53" : "#d6deeb";

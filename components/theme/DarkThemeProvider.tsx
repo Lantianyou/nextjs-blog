@@ -4,7 +4,8 @@ import { darkTheme, lightTheme } from "components/theme/theme";
 import ThemeContext from "components/theme/theme-context";
 
 const DarkThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [darkThemeEnabled] = useContext(ThemeContext);
+  const [state] = useContext(ThemeContext);
+  const { darkThemeEnabled } = state;
   return (
     <ThemeProvider theme={darkThemeEnabled ? darkTheme : lightTheme}>
       <style jsx global>{`
