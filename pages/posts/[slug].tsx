@@ -82,7 +82,6 @@ type T = {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params as T;
   const { content, data } = await getPost(slug);
-
   return {
     props: {
       posts: {

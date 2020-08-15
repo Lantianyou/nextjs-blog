@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { getPostsSlug, getPostAndMetadata } from "lib/getPosts";
+import { getPostsSlug } from "lib/getPosts";
 
 type T = {
   slug: string;
@@ -13,13 +13,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   if (!validSlugs.includes(slug)) {
     res.status(404);
-  }
-
-  let data = await getPostAndMetadata(slug);
-  if (!Array.isArray(query)) {
-    res.status(200).json(data);
-  } else {
-    console.log(query);
-    res.status(200).json(data.data);
   }
 };

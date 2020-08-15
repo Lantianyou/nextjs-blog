@@ -1,19 +1,13 @@
 import { readFileSync, readdirSync } from "fs";
 import { join } from "path";
 import _ from "lodash";
-import minify from "rehype-preset-minify";
 import matter from "gray-matter";
 import remark from "remark";
 import emogi from "remark-emoji";
 import images from "remark-images";
-import remark2rehype from "remark-rehype";
 import remarkSlug from "remark-slug";
 import math from "remark-math";
 import footnotes from "remark-footnotes";
-import katex from "rehype-katex";
-import stringify from "rehype-stringify";
-import raw from "rehype-raw";
-import rehypePrisma from "@mapbox/rehype-prism";
 
 // 对Markdown进行再parse，使得markdown可以带有html元素
 const drafts = [
@@ -52,33 +46,16 @@ export const getPostsSlug = () => {
     .value();
 };
 
-const markdownToHTML = () =>
-  parseMarkdown()
-    .use(remark2rehype, {
-      allowDangerousHtml: true,
-    })
-    .use(raw)
-    .use(katex)
-    .use(rehypePrisma)
-    .use(minify)
-    .use(stringify);
-
-export const getPostAndMetadata = async (slug: string) => {
-  const { content, data } = readMarkdown(slug);
-  const htmlString = await markdownToHTML().process(content).toString();
-
-  return {
-    data,
-    htmlString,
-  };
-};
-
-const parseMarkdown = () =>
-  remark().use(math).use(emogi).use(images).use(footnotes).use(remarkSlug);
-
 export const getPost = async (slug: string) => {
   const { content, data } = readMarkdown(slug);
-  const processsedContent = await parseMarkdown().process(content).toString();
+  const processsedContent = await remark()
+    .use(math)
+    .use(emogi)
+    .use(images)
+    .use(footnotes)
+    .use(remarkSlug)
+    .process(content)
+    .toString();
 
   return {
     content: processsedContent,
