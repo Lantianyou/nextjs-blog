@@ -1,24 +1,18 @@
-
-
 Dear Ms Cooke:
 
 Thanks for your warm reply. I have successfully implemented the dark mode!
-
-
 
 Now I have a series of questions to ask you:
 
 1. Why are your website so fast?
 
-   Specifically, your website serve high quality image at an amazing speed. I am having trouble putting image downloaded from unsplash, because they are so big (3~20 mb). 
+   Specifically, your website serve high quality image at an amazing speed. I am having trouble putting image downloaded from unsplash, because they are so big (3~20 mb).
 
-   Besides image compressing, how to display image of various sizes? For example, if the post’s container is 600px, and the image is 1200px*1000px, and I want the image display the full image into 600px*500px. 
+   Besides image compressing, how to display image of various sizes? For example, if the post’s container is 600px, and the image is 1200px*1000px, and I want the image display the full image into 600px*500px.
 
    Which CSS property should I set, is there any best practices people follow?
 
    What is more, is there any check list you follow when developing a website to make sure it has amazing speed?
-
-   
 
 2. What is your blog’s database and its model schema?
 
@@ -45,8 +39,6 @@ Now I have a series of questions to ask you:
    You are quite experienced in using react. Lots of resources are just scratching the surface. How did you learn the real advanced stuff in React, for example React Fiber, the performance enhancement etc.
 
 All those questions may seem overwhelming for you but there is no hurry. You can take your time, pick some questions easy to answer, and I only expect some high level answers, some resources link or recommended books.
-
-
 
 Thanks,
 

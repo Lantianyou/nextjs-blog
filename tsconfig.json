@@ -2,25 +2,13 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/components/*": [
-        "components/*"
-      ],
-      "@lib/*": [
-        "lib/*"
-      ],
-      "@styles/*": [
-        "styles/*"
-      ],
-      "@data/*": [
-        "data/*"
-      ]
+      "@/components/*": ["components/*"],
+      "@lib/*": ["lib/*"],
+      "@styles/*": ["styles/*"],
+      "@data/*": ["data/*"]
     },
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
@@ -36,14 +24,6 @@
     "strictFunctionTypes": true,
     "strict": false
   },
-  "exclude": [
-    "node_modules",
-    "./lib/getPosts"
-  ],
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "custome.d.ts"
-  ]
+  "exclude": ["node_modules", "./lib/getPosts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "custome.d.ts"]
 }
