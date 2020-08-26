@@ -6,13 +6,6 @@ import ContentContainer from "components/content-container";
 import PostDate from "components/post/post-date";
 import { getPostsMetadata, PostMetadata } from "lib/getPosts";
 
-// const endPoint = "http://localhost:3000/api/posts";
-
-const fetcher = async (path) => {
-  const res = await fetch(path);
-  return res.json();
-};
-
 const Home: NextPage<{ postsMetadata: PostMetadata[] }> = ({
   postsMetadata,
 }) => {
