@@ -1,0 +1,10 @@
+// For configuration documentation see http://romefrontend.dev/#project-configuration
+name: "nextjs-blog"
+lint: {
+	ignore: [
+		".next"
+		"out"
+		"node_modules"
+]
+}
+root: true

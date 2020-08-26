@@ -23,6 +23,7 @@
     "@types/youtube": "0.0.39",
     "babel-register": "^6.26.0",
     "classnames": "^2.2.6",
+    "core-js": "^3.6.5",
     "date-fns": "^2.15.0",
     "feather-icons": "^4.28.0",
     "image-trace-loader": "^1.0.2",

@@ -1,8 +1,5 @@
 module.exports = {
-  purge: [
-    "./pages/**/*.tsx",
-    './components/**/*.tsx'
-  ],
+  purge: ["./pages/**/*.tsx", "./components/**/*.tsx"],
   theme: {
     container: {
       center: true,
@@ -11,4 +8,7 @@ module.exports = {
   },
   variants: {},
   plugins: [],
-}
+  future: {
+    removeDeprecatedGapUtilities: true,
+  },
+};
