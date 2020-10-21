@@ -34,7 +34,8 @@ P值的完整定义是：**在原假设为真的情况下，观测到的结果�
 
 ## 误解3: 统计显著的发现在临床上是重要的
 
-这大部分情况下是错的。第一、或许效果太小在临床上不重要。P值包含着效应程度大小的信息，可以用效应估计和置信区间的形式给出。第二、指标本身在临床上不重要，因为它可能是替代性指标（[Surrogate endpoint - Wikiwand](https://www.wikiwand.com/en/Surrogate_endpoint#/:~:text=In%20clinical%20trials,%20a%20surrogate,necessarily%20have%20a%20guaranteed%20relationship.)）。比如无法收集到某个抗癌药物的存活率，那么用响应率来代替存活率，对药物产生响应显著不意味着抗癌药能延长生命。
+这大部分情况下是错的。第一、或许效果太小在临床上不重要。P值包含着效应程度大小的信息，可以用效应估计和置信区间的形式给出。第二、指标本身在临床上不重要，因为它
+可能是替代性指标（[Surrogate endpoint - Wikiwand](https://www.wikiwand.com/en/Surrogate_endpoint#/:~:text=In%20clinical%20trials,%20a%20surrogate,necessarily%20have%20a%20guaranteed%20relationship.)）。比如无法收集到某个抗癌药物的存活率，那么用响应率来代替存活率，对药物产生响应显著不意味着抗癌药能延长生命。
 
 ## 误解4: 同时在显著性水平上下的P值是自相矛盾的实验
 
@@ -51,8 +52,13 @@ P值的完整定义是：**在原假设为真的情况下，观测到的结果�
 
 这不能一下子从P值定义看出，观测到数据和更极端情况，在原假设下发生的概率。 P值结果正好是0.05（或者其他值）是
 
-
-is the most probable of all the other possible results included in the “tail area” that defines the P value. The probability of any individ- ual result is actually quite small, and Fisher said he threw in the rest of the tail area “as an approximation.” As we will see later in this chapter, the inclusion of these rarer outcomes poses serious logical and quantitative problems for the P value, and using comparative rather than single probabilities to measure evidence eliminates the need to include outcomes other than what was observed.
+is the most probable of all the other possible results included in the “tail area”
+that defines the P value. The probability of any individual result is actually
+quite small, and Fisher said he threw in the rest of the tail area “as an
+approximation.” As we will see later in this chapter, the inclusion of these
+rarer outcomes poses serious logical and quantitative problems for the P value,
+and using comparative rather than single probabilities to measure evidence
+eliminates the need to include outcomes other than what was observed.
 
 这就是在JAMA调查中问的关于P值含义的问题。下面哪个是$P>0.05$的正确解释：
 
@@ -70,7 +76,11 @@ D. 95%的几率实验是正确的
 
 ## 误解8:P值最好用小于号表达，比如$P \leq 02$当 $P= 0.015$
 
-用不等式结论表达所有的P值是同时使用假设检验和P值引起的困惑。一般设 $P=0.05$ 意味着最高容忍第一类错误概率 5%。在这样的检验里，唯一重要的信息是观测到的差异能不能落在拒绝域。比如，是不是 $P\leq 0.05$。在这个例子下，用不等式表达P值还有道理。但我们一般关注的是证据在**多大程度（how much）**上反对原假设。这样的话，P值是0.5，0.04还是0.0001就很重要。如果用不等式表达应不应该拒绝原假设，那么必须和预先确定阀值结合使用，比如0.05。阀值不能依赖于观察到的P值。也就是说如果观测到 $P=0.008$不能说$P \leq 0.01$，而显著性标准是0.05。必须说 $P \leq 0.05$
+用不等式结论表达所有的P值是同时使用假设检验和P值引起的困惑。一般设 $P=0.05$ 意味着最高容忍第一类错误概率 5%。在这样的检验里，唯一重要的信息是观测
+到的差异能不能落在拒绝域。比如，是不是 $P\leq 0.05$。在这个例子下，用不等式表达P值还有道理。但我们一般关注的是证据在
+**多大程度（how much）**上反对原假设。这样的话，P值是0.5，0.04还是0.0001就很重要。如果用不等式表达应不应该拒绝原假设，那么必须和预先
+确定阀值结合使用，比如0.05。阀值不能依赖于观察到的P值。也就是说如果观测到 $P=0.008$不能说$P \leq 0.01$，而显著性标准是0.05。必须
+说 $P \leq 0.05$
 
 ## 误解9: $P=0.05$ 意味着拒绝原假设的话，第一类错误的概率仅是0.05
 
@@ -102,7 +112,6 @@ D. 95%的几率实验是正确的
 
 Odds(取得数据后原假设成立) = Odds(取得数据前原假设成立) * 贝叶斯因子
 
-
 或者写作：
 
 $$
@@ -119,4 +128,4 @@ P值度量观测到的数据在两个完全相反假设下，多有把握预测�
 
 还有，效应的规模十分重要。实验结果应该呈现整个置信区间，而不单是P值或者效应估计。置信区间同时包含了从观测到的数据估计出的效应规模和不精确程度。
 
-[A dirty dozen](https://www.semanticscholar.org/paper/A-dirty-dozen%3A-twelve-p-value-misconceptions.-Goodman/3ace8fea1e22ac42546178c3246a80b080679775)
+[A dirty dozen](<https://www.semanticscholar.org/paper/A-dirty-dozen%3A-twelve-p-value-misconceptions.-Goodman/3ace8fea1e22ac42546178c3246a80b080679775>
