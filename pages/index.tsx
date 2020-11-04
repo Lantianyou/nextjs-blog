@@ -1,10 +1,10 @@
 import { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
 import Head from "next/head";
-import { siteTitle } from "components/meta";
-import ContentContainer from "components/content-container";
-import PostDate from "components/post/post-date";
-import { getPostsMetadata, PostMetadata } from "lib/getPosts";
+import { siteTitle } from "../components/meta";
+import ContentContainer from "../components/content-container";
+import PostDate from "../components/post/post-date";
+import { getPostsMetadata, PostMetadata } from "../lib/getPosts";
 
 const Home: NextPage<{ postsMetadata: PostMetadata[] }> = ({
   postsMetadata,

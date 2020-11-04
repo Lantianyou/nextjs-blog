@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Toggle from "components/Toggle";
+import Toggle from "../Toggle";
 
 export default function SiteNav() {
   return (

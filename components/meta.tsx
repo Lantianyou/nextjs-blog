@@ -1,20 +1,6 @@
 import Head from "next/head";
-import Router from "next/router";
-import NProgress from "nprogress";
 
 export const siteTitle = "兰天游 What if the opposite is also true?";
-
-Router.events.on("routeChangeStart", () => {
-  NProgress.start();
-});
-
-Router.events.on("routeChangeComplete", () => {
-  NProgress.done();
-});
-
-Router.events.on("routeChangeError", () => {
-  NProgress.done();
-});
 
 export default function Meta() {
   return (

@@ -1,4 +1,4 @@
-import { Author } from "lib/getPosts";
+import { Author } from "../lib/getPosts";
 
 export default function ({ author }: { author: Author }) {
   return (

@@ -1,4 +1,4 @@
-import SiteBranding from "components/header/site-branding";
+import SiteBranding from "./header/site-branding";
 
 function HeaderImage() {
   return (

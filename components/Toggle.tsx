@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import cn from "classnames";
 import { Moon, Sun } from "react-feather";
-import ThemeContext from "components/theme/theme-context";
+import ThemeContext from "./theme/theme-context";
 
 const Toggle = () => {
   const [state, dispatch] = useContext(ThemeContext);

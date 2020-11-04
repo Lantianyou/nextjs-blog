@@ -5,8 +5,8 @@ import CopyToClipboard from "react-copy-to-clipboard";
 import Highlight, { defaultProps, Language } from "prism-react-renderer";
 import nightOwl from "prism-react-renderer/themes/nightOwl";
 import nightOwlLight from "prism-react-renderer/themes/nightOwlLight";
-import Message from "components/message";
-import ThemeContext from "components/theme/theme-context";
+import Message from "./message";
+import ThemeContext from "./theme/theme-context";
 
 const CodeBlock = ({
   children,

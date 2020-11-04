@@ -1,11 +1,11 @@
 import { useReducer } from "react";
-import "public/css/tailwind.css";
-import "public/css/global.css";
-import DarkThemeProvider from "components/theme/DarkThemeProvider";
+import "../public/css/tailwind.css";
+import "../public/css/global.css";
+import DarkThemeProvider from "../components/theme/DarkThemeProvider";
 import { AppProps } from "next/app";
-import Layout from "components/layout";
-import SiteNav from "components/header/site-nav";
-import ThemeContext from "components/theme/theme-context";
+import Layout from "../components/layout";
+import SiteNav from "../components/header/site-nav";
+import ThemeContext from "../components/theme/theme-context";
 
 const initialState: State = {
   darkThemeEnabled: false,

@@ -6,6 +6,7 @@ firebase.json
 
 # dependencies
 /node_modules
+/web_modules
 /.pnp
 .pnp.js
 

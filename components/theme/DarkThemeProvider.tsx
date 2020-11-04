@@ -1,7 +1,7 @@
 import { ReactNode, useContext } from "react";
 import { ThemeProvider } from "styled-components";
-import { darkTheme, lightTheme } from "components/theme/theme";
-import ThemeContext from "components/theme/theme-context";
+import { darkTheme, lightTheme } from "./theme";
+import ThemeContext from "./theme-context";
 
 const DarkThemeProvider = ({ children }: { children: ReactNode }) => {
   const [state] = useContext(ThemeContext);
