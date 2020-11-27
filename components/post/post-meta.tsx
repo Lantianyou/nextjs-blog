@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-export default function ({ title, excerpt, cover }) {
+const PostMeta =  ({ title, excerpt, cover }) => {
   return (
     <>
       <Head>
@@ -15,3 +15,5 @@ export default function ({ title, excerpt, cover }) {
     </>
   );
 }
+
+export default PostMeta
