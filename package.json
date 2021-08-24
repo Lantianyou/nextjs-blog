@@ -24,7 +24,7 @@
     "date-fns": "^2.16.1",
     "feather-icons": "^4.28.0",
     "jimp": "^0.16.1",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "lqip-loader": "^2.2.1",
     "markdown-to-jsx": "^6.11.4",
     "netlify-identity-widget": "^1.9.1",
