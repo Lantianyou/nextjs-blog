@@ -28,4 +28,5 @@ module.exports = {
     locales: ["en", "nl"],
     defaultLocale: "en",
   },
+  swcMinify: true,
 };
