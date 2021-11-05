@@ -24,7 +24,6 @@
     "feather-icons": "^4.28.0",
     "jimp": "^0.16.1",
     "lodash": "^4.17.21",
-    "lqip-loader": "^2.2.1",
     "markdown-to-jsx": "^6.11.4",
     "netlify-identity-widget": "^1.9.1",
     "next": "*",
@@ -43,7 +42,7 @@
     "react-scroll": "^1.8.1",
     "react-twitter-widgets": "^1.9.5",
     "react-youtube": "^7.13.0",
-    "remark": "^12.0.1",
+    "remark": "^14.0.1",
     "remark-emoji": "^2.1.0",
     "remark-footnotes": "^2.0.0",
     "remark-html": "^13.0.2",
@@ -57,7 +56,7 @@
     "universal-config": "^0.3.0"
   },
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^2.3.0",
+    "@fullhuman/postcss-purgecss": "^4.0.3",
     "@types/node": "^14.14.0",
     "@types/react": "^16.9.53",
     "@types/youtube": "0.0.38",
@@ -67,7 +66,7 @@
     "gray-matter": "^4.0.2",
     "next-images": "^1.6.0",
     "postcss-preset-env": "^6.7.0",
-    "tailwindcss": "^1.9.5",
+    "tailwindcss": "^2.2.19",
     "typescript": "*"
   }
 }
