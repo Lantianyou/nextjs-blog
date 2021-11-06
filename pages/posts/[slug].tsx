@@ -14,7 +14,7 @@ import PostFooter from "../../components/post/post-footer";
 import ProgressBar from "../../components/post/progress-bar";
 import { getPost, getPostsSlug } from "../../lib/getPosts";
 
-export default function ({ posts }) {
+export default function Slug({ posts }) {
   const { content, data } = posts;
   const { excerpt, cover, title, author, date, slug } = data;
   const useMath = false;

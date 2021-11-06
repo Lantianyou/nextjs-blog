@@ -1,6 +1,6 @@
 import { Author } from "../lib/getPosts";
 
-export default function ({ author }: { author: Author }) {
+export default function Signature({ author }: { author: Author }) {
   return (
     <div>
       <p>Think different,</p>
