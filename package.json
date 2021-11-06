@@ -9,7 +9,7 @@
     "export": "next export",
     "format": "prettier --ignore-path ./.gitignore --write \"./**/*.{html,json,js,ts,css}\"",
     "format:check": "prettier --ignore-path ./.gitignore --check \"./**/*.{html,json,js,ts,css}\"",
-    "lint": "eslint --ignore-path ./.gitignore --fix \"./**/*.{js,ts}\"",
+    "lint": "next lint",
     "lint:check": "eslint --ignore-path ./.gitignore --quiet \"./**/*.{js,ts}\""
   },
   "dependencies": {
@@ -61,6 +61,7 @@
     "@types/react": "^16.9.53",
     "@types/youtube": "0.0.38",
     "eslint": "^7.11.0",
+    "eslint-config-next": "12.0.3",
     "eslint-config-prettier": "^6.13.0",
     "eslint-plugin-import": "^2.22.1",
     "gray-matter": "^4.0.2",
