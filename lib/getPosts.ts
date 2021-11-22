@@ -2,7 +2,7 @@ import { readFileSync, readdirSync } from "fs";
 import { join } from "path";
 import { flow, map, chain } from "lodash";
 import matter from "gray-matter";
-import remark from "remark";
+import { remark } from "remark";
 import emogi from "remark-emoji";
 import images from "remark-images";
 import remarkSlug from "remark-slug";

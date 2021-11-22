@@ -1,10 +1,8 @@
 import Meta from "./meta";
 import Footer from "./footer";
-import Alert from "./alert";
 import { ReactNode } from "react";
 
 export default function Layout({
-  preview,
   children,
 }: {
   preview: boolean;
