@@ -1,7 +1,6 @@
 import { useReducer } from "react";
 import "../public/css/tailwind.css";
 import "../public/css/global.css";
-import DarkThemeProvider from "../components/theme/DarkThemeProvider";
 import { AppProps } from "next/app";
 import Layout from "../components/layout";
 import SiteNav from "../components/header/site-nav";
@@ -28,12 +27,10 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <ThemeContext.Provider value={[state, dispatch]}>
-      <DarkThemeProvider>
-        <Layout preview={true}>
-          <SiteNav />
-          <Component {...pageProps} />
-        </Layout>
-      </DarkThemeProvider>
+      <Layout preview={true}>
+        <SiteNav />
+        <Component {...pageProps} />
+      </Layout>
     </ThemeContext.Provider>
   );
 }
