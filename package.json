@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "@next/bundle-analyzer": "^10.0.0",
-    "@types/classnames": "^2.2.10",
     "@types/react-copy-to-clipboard": "^4.3.0",
     "@types/react-scroll": "^1.8.2",
     "babel-register": "^6.26.0",
@@ -37,7 +36,6 @@
     "react-dom": "*",
     "react-feather": "^2.0.8",
     "react-loading-skeleton": "^2.1.1",
-    "react-reveal": "^1.2.2",
     "react-scroll": "^1.8.1",
     "react-twitter-widgets": "^1.9.5",
     "react-youtube": "^7.13.0",
@@ -49,7 +47,6 @@
     "remark-math": "^3.0.1",
     "remark-slug": "^6.0.0",
     "remark-toc": "^7.0.0",
-    "responsive-loader": "^2.2.0",
     "simple-functional-loader": "^1.2.1",
     "universal-config": "^0.3.0"
   },
