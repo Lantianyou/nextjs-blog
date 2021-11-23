@@ -67,7 +67,7 @@
     "gray-matter": "^4.0.2",
     "next-images": "^1.6.0",
     "postcss-preset-env": "^7.0.1",
-    "tailwindcss": "^2.2.19",
+    "tailwindcss": "*",
     "typescript": "*"
   }
 }
